@@ -1,0 +1,2551 @@
+Sandbox logs:
+0 dict_keys(['BANANAS', 'PEARLS'])
+100 dict_keys(['BANANAS', 'PEARLS'])
+200 dict_keys(['BANANAS', 'PEARLS'])
+300 dict_keys(['BANANAS', 'PEARLS'])
+400 dict_keys(['BANANAS', 'PEARLS'])
+500 dict_keys(['BANANAS', 'PEARLS'])
+600 dict_keys(['BANANAS', 'PEARLS'])
+700 dict_keys(['BANANAS', 'PEARLS'])
+800 dict_keys(['BANANAS', 'PEARLS'])
+900 dict_keys(['BANANAS', 'PEARLS'])
+1000 dict_keys(['BANANAS', 'PEARLS'])
+1100 dict_keys(['BANANAS', 'PEARLS'])
+1200 dict_keys(['BANANAS', 'PEARLS'])
+1300 dict_keys(['BANANAS', 'PEARLS'])
+1400 dict_keys(['BANANAS', 'PEARLS'])
+1500 dict_keys(['BANANAS', 'PEARLS'])
+1600 dict_keys(['BANANAS', 'PEARLS'])
+1700 dict_keys(['BANANAS', 'PEARLS'])
+1800 dict_keys(['BANANAS', 'PEARLS'])
+1900 dict_keys(['BANANAS', 'PEARLS'])
+2000 dict_keys(['BANANAS', 'PEARLS'])
+2100 dict_keys(['BANANAS', 'PEARLS'])
+2200 dict_keys(['BANANAS', 'PEARLS'])
+2300 dict_keys(['BANANAS', 'PEARLS'])
+2400 dict_keys(['BANANAS', 'PEARLS'])
+2500 dict_keys(['BANANAS', 'PEARLS'])
+2600 dict_keys(['BANANAS', 'PEARLS'])
+2700 dict_keys(['BANANAS', 'PEARLS'])
+2800 dict_keys(['BANANAS', 'PEARLS'])
+2900 dict_keys(['BANANAS', 'PEARLS'])
+3000 dict_keys(['BANANAS', 'PEARLS'])
+3100 dict_keys(['BANANAS', 'PEARLS'])
+3200 dict_keys(['BANANAS', 'PEARLS'])
+3300 dict_keys(['BANANAS', 'PEARLS'])
+3400 dict_keys(['BANANAS', 'PEARLS'])
+3500 dict_keys(['BANANAS', 'PEARLS'])
+3600 dict_keys(['BANANAS', 'PEARLS'])
+3700 dict_keys(['BANANAS', 'PEARLS'])
+3800 dict_keys(['BANANAS', 'PEARLS'])
+3900 dict_keys(['BANANAS', 'PEARLS'])
+4000 dict_keys(['BANANAS', 'PEARLS'])
+4100 dict_keys(['BANANAS', 'PEARLS'])
+4200 dict_keys(['BANANAS', 'PEARLS'])
+4300 dict_keys(['BANANAS', 'PEARLS'])
+4400 dict_keys(['BANANAS', 'PEARLS'])
+4500 dict_keys(['BANANAS', 'PEARLS'])
+4600 dict_keys(['BANANAS', 'PEARLS'])
+4700 dict_keys(['BANANAS', 'PEARLS'])
+4800 dict_keys(['BANANAS', 'PEARLS'])
+4900 dict_keys(['BANANAS', 'PEARLS'])
+5000 dict_keys(['BANANAS', 'PEARLS'])
+5100 dict_keys(['BANANAS', 'PEARLS'])
+5200 dict_keys(['BANANAS', 'PEARLS'])
+5300 dict_keys(['BANANAS', 'PEARLS'])
+5400 dict_keys(['BANANAS', 'PEARLS'])
+5500 dict_keys(['BANANAS', 'PEARLS'])
+5600 dict_keys(['BANANAS', 'PEARLS'])
+5700 dict_keys(['BANANAS', 'PEARLS'])
+5800 dict_keys(['BANANAS', 'PEARLS'])
+5900 dict_keys(['BANANAS', 'PEARLS'])
+6000 dict_keys(['BANANAS', 'PEARLS'])
+6100 dict_keys(['BANANAS', 'PEARLS'])
+6200 dict_keys(['BANANAS', 'PEARLS'])
+6300 dict_keys(['BANANAS', 'PEARLS'])
+6400 dict_keys(['BANANAS', 'PEARLS'])
+6500 dict_keys(['BANANAS', 'PEARLS'])
+6600 dict_keys(['BANANAS', 'PEARLS'])
+6700 dict_keys(['BANANAS', 'PEARLS'])
+6800 dict_keys(['BANANAS', 'PEARLS'])
+6900 dict_keys(['BANANAS', 'PEARLS'])
+7000 dict_keys(['BANANAS', 'PEARLS'])
+7100 dict_keys(['BANANAS', 'PEARLS'])
+7200 dict_keys(['BANANAS', 'PEARLS'])
+7300 dict_keys(['BANANAS', 'PEARLS'])
+7400 dict_keys(['BANANAS', 'PEARLS'])
+7500 dict_keys(['BANANAS', 'PEARLS'])
+7600 dict_keys(['BANANAS', 'PEARLS'])
+7700 dict_keys(['BANANAS', 'PEARLS'])
+7800 dict_keys(['BANANAS', 'PEARLS'])
+7900 dict_keys(['BANANAS', 'PEARLS'])
+8000 dict_keys(['BANANAS', 'PEARLS'])
+8100 dict_keys(['BANANAS', 'PEARLS'])
+8200 dict_keys(['BANANAS', 'PEARLS'])
+8300 dict_keys(['BANANAS', 'PEARLS'])
+8400 dict_keys(['BANANAS', 'PEARLS'])
+8500 dict_keys(['BANANAS', 'PEARLS'])
+8600 dict_keys(['BANANAS', 'PEARLS'])
+8700 dict_keys(['BANANAS', 'PEARLS'])
+8800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -12
+BUY 12x 9998
+8900 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  5
+SELL -12x 10002
+9000 dict_keys(['BANANAS', 'PEARLS'])
+9100 dict_keys(['BANANAS', 'PEARLS'])
+9200 dict_keys(['BANANAS', 'PEARLS'])
+9300 dict_keys(['BANANAS', 'PEARLS'])
+9400 dict_keys(['BANANAS', 'PEARLS'])
+9500 dict_keys(['BANANAS', 'PEARLS'])
+9600 dict_keys(['BANANAS', 'PEARLS'])
+9700 dict_keys(['BANANAS', 'PEARLS'])
+9800 dict_keys(['BANANAS', 'PEARLS'])
+9900 dict_keys(['BANANAS', 'PEARLS'])
+10000 dict_keys(['BANANAS', 'PEARLS'])
+10100 dict_keys(['BANANAS', 'PEARLS'])
+10200 dict_keys(['BANANAS', 'PEARLS'])
+10300 dict_keys(['BANANAS', 'PEARLS'])
+10400 dict_keys(['BANANAS', 'PEARLS'])
+10500 dict_keys(['BANANAS', 'PEARLS'])
+10600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+10700 dict_keys(['BANANAS', 'PEARLS'])
+10800 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+10900 dict_keys(['BANANAS', 'PEARLS'])
+11000 dict_keys(['BANANAS', 'PEARLS'])
+11100 dict_keys(['BANANAS', 'PEARLS'])
+11200 dict_keys(['BANANAS', 'PEARLS'])
+11300 dict_keys(['BANANAS', 'PEARLS'])
+11400 dict_keys(['BANANAS', 'PEARLS'])
+11500 dict_keys(['BANANAS', 'PEARLS'])
+11600 dict_keys(['BANANAS', 'PEARLS'])
+11700 dict_keys(['BANANAS', 'PEARLS'])
+11800 dict_keys(['BANANAS', 'PEARLS'])
+11900 dict_keys(['BANANAS', 'PEARLS'])
+12000 dict_keys(['BANANAS', 'PEARLS'])
+12100 dict_keys(['BANANAS', 'PEARLS'])
+12200 dict_keys(['BANANAS', 'PEARLS'])
+12300 dict_keys(['BANANAS', 'PEARLS'])
+12400 dict_keys(['BANANAS', 'PEARLS'])
+12500 dict_keys(['BANANAS', 'PEARLS'])
+12600 dict_keys(['BANANAS', 'PEARLS'])
+12700 dict_keys(['BANANAS', 'PEARLS'])
+12800 dict_keys(['BANANAS', 'PEARLS'])
+12900 dict_keys(['BANANAS', 'PEARLS'])
+13000 dict_keys(['BANANAS', 'PEARLS'])
+13100 dict_keys(['BANANAS', 'PEARLS'])
+13200 dict_keys(['BANANAS', 'PEARLS'])
+13300 dict_keys(['BANANAS', 'PEARLS'])
+13400 dict_keys(['BANANAS', 'PEARLS'])
+13500 dict_keys(['BANANAS', 'PEARLS'])
+13600 dict_keys(['BANANAS', 'PEARLS'])
+13700 dict_keys(['BANANAS', 'PEARLS'])
+13800 dict_keys(['BANANAS', 'PEARLS'])
+13900 dict_keys(['BANANAS', 'PEARLS'])
+14000 dict_keys(['BANANAS', 'PEARLS'])
+14100 dict_keys(['BANANAS', 'PEARLS'])
+14200 dict_keys(['BANANAS', 'PEARLS'])
+14300 dict_keys(['BANANAS', 'PEARLS'])
+14400 dict_keys(['BANANAS', 'PEARLS'])
+14500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 10000
+14600 dict_keys(['BANANAS', 'PEARLS'])
+14700 dict_keys(['BANANAS', 'PEARLS'])
+14800 dict_keys(['BANANAS', 'PEARLS'])
+14900 dict_keys(['BANANAS', 'PEARLS'])
+15000 dict_keys(['BANANAS', 'PEARLS'])
+15100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+15200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 10000
+15300 dict_keys(['BANANAS', 'PEARLS'])
+15400 dict_keys(['BANANAS', 'PEARLS'])
+15500 dict_keys(['BANANAS', 'PEARLS'])
+15600 dict_keys(['BANANAS', 'PEARLS'])
+15700 dict_keys(['BANANAS', 'PEARLS'])
+15800 dict_keys(['BANANAS', 'PEARLS'])
+15900 dict_keys(['BANANAS', 'PEARLS'])
+16000 dict_keys(['BANANAS', 'PEARLS'])
+16100 dict_keys(['BANANAS', 'PEARLS'])
+16200 dict_keys(['BANANAS', 'PEARLS'])
+16300 dict_keys(['BANANAS', 'PEARLS'])
+16400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+16500 dict_keys(['BANANAS', 'PEARLS'])
+16600 dict_keys(['BANANAS', 'PEARLS'])
+16700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  3
+SELL -5x 10002
+16800 dict_keys(['BANANAS', 'PEARLS'])
+16900 dict_keys(['BANANAS', 'PEARLS'])
+17000 dict_keys(['BANANAS', 'PEARLS'])
+17100 dict_keys(['BANANAS', 'PEARLS'])
+17200 dict_keys(['BANANAS', 'PEARLS'])
+17300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+17400 dict_keys(['BANANAS', 'PEARLS'])
+17500 dict_keys(['BANANAS', 'PEARLS'])
+17600 dict_keys(['BANANAS', 'PEARLS'])
+17700 dict_keys(['BANANAS', 'PEARLS'])
+17800 dict_keys(['BANANAS', 'PEARLS'])
+17900 dict_keys(['BANANAS', 'PEARLS'])
+18000 dict_keys(['BANANAS', 'PEARLS'])
+18100 dict_keys(['BANANAS', 'PEARLS'])
+18200 dict_keys(['BANANAS', 'PEARLS'])
+18300 dict_keys(['BANANAS', 'PEARLS'])
+18400 dict_keys(['BANANAS', 'PEARLS'])
+18500 dict_keys(['BANANAS', 'PEARLS'])
+18600 dict_keys(['BANANAS', 'PEARLS'])
+18700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  9
+SELL -1x 10002
+18800 dict_keys(['BANANAS', 'PEARLS'])
+18900 dict_keys(['BANANAS', 'PEARLS'])
+19000 dict_keys(['BANANAS', 'PEARLS'])
+19100 dict_keys(['BANANAS', 'PEARLS'])
+19200 dict_keys(['BANANAS', 'PEARLS'])
+19300 dict_keys(['BANANAS', 'PEARLS'])
+19400 dict_keys(['BANANAS', 'PEARLS'])
+19500 dict_keys(['BANANAS', 'PEARLS'])
+19600 dict_keys(['BANANAS', 'PEARLS'])
+19700 dict_keys(['BANANAS', 'PEARLS'])
+19800 dict_keys(['BANANAS', 'PEARLS'])
+19900 dict_keys(['BANANAS', 'PEARLS'])
+20000 dict_keys(['BANANAS', 'PEARLS'])
+20100 dict_keys(['BANANAS', 'PEARLS'])
+20200 dict_keys(['BANANAS', 'PEARLS'])
+20300 dict_keys(['BANANAS', 'PEARLS'])
+20400 dict_keys(['BANANAS', 'PEARLS'])
+20500 dict_keys(['BANANAS', 'PEARLS'])
+20600 dict_keys(['BANANAS', 'PEARLS'])
+20700 dict_keys(['BANANAS', 'PEARLS'])
+20800 dict_keys(['BANANAS', 'PEARLS'])
+20900 dict_keys(['BANANAS', 'PEARLS'])
+21000 dict_keys(['BANANAS', 'PEARLS'])
+21100 dict_keys(['BANANAS', 'PEARLS'])
+21200 dict_keys(['BANANAS', 'PEARLS'])
+21300 dict_keys(['BANANAS', 'PEARLS'])
+21400 dict_keys(['BANANAS', 'PEARLS'])
+21500 dict_keys(['BANANAS', 'PEARLS'])
+21600 dict_keys(['BANANAS', 'PEARLS'])
+21700 dict_keys(['BANANAS', 'PEARLS'])
+21800 dict_keys(['BANANAS', 'PEARLS'])
+21900 dict_keys(['BANANAS', 'PEARLS'])
+22000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 10000
+22100 dict_keys(['BANANAS', 'PEARLS'])
+22200 dict_keys(['BANANAS', 'PEARLS'])
+22300 dict_keys(['BANANAS', 'PEARLS'])
+22400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  2
+SELL -2x 10002
+22500 dict_keys(['BANANAS', 'PEARLS'])
+22600 dict_keys(['BANANAS', 'PEARLS'])
+22700 dict_keys(['BANANAS', 'PEARLS'])
+22800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -3
+BUY 3x 9998
+22900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+23000 dict_keys(['BANANAS', 'PEARLS'])
+23100 dict_keys(['BANANAS', 'PEARLS'])
+23200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+23300 dict_keys(['BANANAS', 'PEARLS'])
+23400 dict_keys(['BANANAS', 'PEARLS'])
+23500 dict_keys(['BANANAS', 'PEARLS'])
+23600 dict_keys(['BANANAS', 'PEARLS'])
+23700 dict_keys(['BANANAS', 'PEARLS'])
+23800 dict_keys(['BANANAS', 'PEARLS'])
+23900 dict_keys(['BANANAS', 'PEARLS'])
+24000 dict_keys(['BANANAS', 'PEARLS'])
+24100 dict_keys(['BANANAS', 'PEARLS'])
+24200 dict_keys(['BANANAS', 'PEARLS'])
+24300 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  6
+SELL -5x 10002
+24400 dict_keys(['BANANAS', 'PEARLS'])
+24500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+24600 dict_keys(['BANANAS', 'PEARLS'])
+24700 dict_keys(['BANANAS', 'PEARLS'])
+24800 dict_keys(['BANANAS', 'PEARLS'])
+24900 dict_keys(['BANANAS', 'PEARLS'])
+25000 dict_keys(['BANANAS', 'PEARLS'])
+25100 dict_keys(['BANANAS', 'PEARLS'])
+25200 dict_keys(['BANANAS', 'PEARLS'])
+25300 dict_keys(['BANANAS', 'PEARLS'])
+25400 dict_keys(['BANANAS', 'PEARLS'])
+25500 dict_keys(['BANANAS', 'PEARLS'])
+25600 dict_keys(['BANANAS', 'PEARLS'])
+25700 dict_keys(['BANANAS', 'PEARLS'])
+25800 dict_keys(['BANANAS', 'PEARLS'])
+25900 dict_keys(['BANANAS', 'PEARLS'])
+26000 dict_keys(['BANANAS', 'PEARLS'])
+26100 dict_keys(['BANANAS', 'PEARLS'])
+26200 dict_keys(['BANANAS', 'PEARLS'])
+26300 dict_keys(['BANANAS', 'PEARLS'])
+26400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  3
+SELL -2x 10002
+26500 dict_keys(['BANANAS', 'PEARLS'])
+26600 dict_keys(['BANANAS', 'PEARLS'])
+26700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -6
+BUY 6x 10000
+26800 dict_keys(['BANANAS', 'PEARLS'])
+26900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+27000 dict_keys(['BANANAS', 'PEARLS'])
+27100 dict_keys(['BANANAS', 'PEARLS'])
+27200 dict_keys(['BANANAS', 'PEARLS'])
+27300 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  5
+SELL -7x 10000
+27400 dict_keys(['BANANAS', 'PEARLS'])
+27500 dict_keys(['BANANAS', 'PEARLS'])
+27600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+27700 dict_keys(['BANANAS', 'PEARLS'])
+27800 dict_keys(['BANANAS', 'PEARLS'])
+27900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+28000 dict_keys(['BANANAS', 'PEARLS'])
+28100 dict_keys(['BANANAS', 'PEARLS'])
+28200 dict_keys(['BANANAS', 'PEARLS'])
+28300 dict_keys(['BANANAS', 'PEARLS'])
+28400 dict_keys(['BANANAS', 'PEARLS'])
+28500 dict_keys(['BANANAS', 'PEARLS'])
+28600 dict_keys(['BANANAS', 'PEARLS'])
+28700 dict_keys(['BANANAS', 'PEARLS'])
+28800 dict_keys(['BANANAS', 'PEARLS'])
+28900 dict_keys(['BANANAS', 'PEARLS'])
+29000 dict_keys(['BANANAS', 'PEARLS'])
+29100 dict_keys(['BANANAS', 'PEARLS'])
+29200 dict_keys(['BANANAS', 'PEARLS'])
+29300 dict_keys(['BANANAS', 'PEARLS'])
+29400 dict_keys(['BANANAS', 'PEARLS'])
+29500 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -5x 10002
+29600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+29700 dict_keys(['BANANAS', 'PEARLS'])
+29800 dict_keys(['BANANAS', 'PEARLS'])
+29900 dict_keys(['BANANAS', 'PEARLS'])
+30000 dict_keys(['BANANAS', 'PEARLS'])
+30100 dict_keys(['BANANAS', 'PEARLS'])
+30200 dict_keys(['BANANAS', 'PEARLS'])
+30300 dict_keys(['BANANAS', 'PEARLS'])
+30400 dict_keys(['BANANAS', 'PEARLS'])
+30500 dict_keys(['BANANAS', 'PEARLS'])
+30600 dict_keys(['BANANAS', 'PEARLS'])
+30700 dict_keys(['BANANAS', 'PEARLS'])
+30800 dict_keys(['BANANAS', 'PEARLS'])
+30900 dict_keys(['BANANAS', 'PEARLS'])
+31000 dict_keys(['BANANAS', 'PEARLS'])
+31100 dict_keys(['BANANAS', 'PEARLS'])
+31200 dict_keys(['BANANAS', 'PEARLS'])
+31300 dict_keys(['BANANAS', 'PEARLS'])
+31400 dict_keys(['BANANAS', 'PEARLS'])
+31500 dict_keys(['BANANAS', 'PEARLS'])
+31600 dict_keys(['BANANAS', 'PEARLS'])
+31700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+31800 dict_keys(['BANANAS', 'PEARLS'])
+31900 dict_keys(['BANANAS', 'PEARLS'])
+32000 dict_keys(['BANANAS', 'PEARLS'])
+32100 dict_keys(['BANANAS', 'PEARLS'])
+32200 dict_keys(['BANANAS', 'PEARLS'])
+32300 dict_keys(['BANANAS', 'PEARLS'])
+32400 dict_keys(['BANANAS', 'PEARLS'])
+32500 dict_keys(['BANANAS', 'PEARLS'])
+32600 dict_keys(['BANANAS', 'PEARLS'])
+32700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -5x 10002
+32800 dict_keys(['BANANAS', 'PEARLS'])
+32900 dict_keys(['BANANAS', 'PEARLS'])
+33000 dict_keys(['BANANAS', 'PEARLS'])
+33100 dict_keys(['BANANAS', 'PEARLS'])
+33200 dict_keys(['BANANAS', 'PEARLS'])
+33300 dict_keys(['BANANAS', 'PEARLS'])
+33400 dict_keys(['BANANAS', 'PEARLS'])
+33500 dict_keys(['BANANAS', 'PEARLS'])
+33600 dict_keys(['BANANAS', 'PEARLS'])
+33700 dict_keys(['BANANAS', 'PEARLS'])
+33800 dict_keys(['BANANAS', 'PEARLS'])
+33900 dict_keys(['BANANAS', 'PEARLS'])
+34000 dict_keys(['BANANAS', 'PEARLS'])
+34100 dict_keys(['BANANAS', 'PEARLS'])
+34200 dict_keys(['BANANAS', 'PEARLS'])
+34300 dict_keys(['BANANAS', 'PEARLS'])
+34400 dict_keys(['BANANAS', 'PEARLS'])
+34500 dict_keys(['BANANAS', 'PEARLS'])
+34600 dict_keys(['BANANAS', 'PEARLS'])
+34700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+34800 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -5x 10002
+34900 dict_keys(['BANANAS', 'PEARLS'])
+35000 dict_keys(['BANANAS', 'PEARLS'])
+35100 dict_keys(['BANANAS', 'PEARLS'])
+35200 dict_keys(['BANANAS', 'PEARLS'])
+35300 dict_keys(['BANANAS', 'PEARLS'])
+35400 dict_keys(['BANANAS', 'PEARLS'])
+35500 dict_keys(['BANANAS', 'PEARLS'])
+35600 dict_keys(['BANANAS', 'PEARLS'])
+35700 dict_keys(['BANANAS', 'PEARLS'])
+35800 dict_keys(['BANANAS', 'PEARLS'])
+35900 dict_keys(['BANANAS', 'PEARLS'])
+36000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+36100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+36200 dict_keys(['BANANAS', 'PEARLS'])
+36300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+36400 dict_keys(['BANANAS', 'PEARLS'])
+36500 dict_keys(['BANANAS', 'PEARLS'])
+36600 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  4
+SELL -6x 10002
+36700 dict_keys(['BANANAS', 'PEARLS'])
+36800 dict_keys(['BANANAS', 'PEARLS'])
+36900 dict_keys(['BANANAS', 'PEARLS'])
+37000 dict_keys(['BANANAS', 'PEARLS'])
+37100 dict_keys(['BANANAS', 'PEARLS'])
+37200 dict_keys(['BANANAS', 'PEARLS'])
+37300 dict_keys(['BANANAS', 'PEARLS'])
+37400 dict_keys(['BANANAS', 'PEARLS'])
+37500 dict_keys(['BANANAS', 'PEARLS'])
+37600 dict_keys(['BANANAS', 'PEARLS'])
+37700 dict_keys(['BANANAS', 'PEARLS'])
+37800 dict_keys(['BANANAS', 'PEARLS'])
+37900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -3
+BUY 3x 10000
+38000 dict_keys(['BANANAS', 'PEARLS'])
+38100 dict_keys(['BANANAS', 'PEARLS'])
+38200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+38300 dict_keys(['BANANAS', 'PEARLS'])
+38400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -5x 10002
+38500 dict_keys(['BANANAS', 'PEARLS'])
+38600 dict_keys(['BANANAS', 'PEARLS'])
+38700 dict_keys(['BANANAS', 'PEARLS'])
+38800 dict_keys(['BANANAS', 'PEARLS'])
+38900 dict_keys(['BANANAS', 'PEARLS'])
+39000 dict_keys(['BANANAS', 'PEARLS'])
+39100 dict_keys(['BANANAS', 'PEARLS'])
+39200 dict_keys(['BANANAS', 'PEARLS'])
+39300 dict_keys(['BANANAS', 'PEARLS'])
+39400 dict_keys(['BANANAS', 'PEARLS'])
+39500 dict_keys(['BANANAS', 'PEARLS'])
+39600 dict_keys(['BANANAS', 'PEARLS'])
+39700 dict_keys(['BANANAS', 'PEARLS'])
+39800 dict_keys(['BANANAS', 'PEARLS'])
+39900 dict_keys(['BANANAS', 'PEARLS'])
+40000 dict_keys(['BANANAS', 'PEARLS'])
+40100 dict_keys(['BANANAS', 'PEARLS'])
+40200 dict_keys(['BANANAS', 'PEARLS'])
+40300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 10000
+40400 dict_keys(['BANANAS', 'PEARLS'])
+40500 dict_keys(['BANANAS', 'PEARLS'])
+40600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -7
+BUY 7x 9998
+40700 dict_keys(['BANANAS', 'PEARLS'])
+40800 dict_keys(['BANANAS', 'PEARLS'])
+40900 dict_keys(['BANANAS', 'PEARLS'])
+41000 dict_keys(['BANANAS', 'PEARLS'])
+41100 dict_keys(['BANANAS', 'PEARLS'])
+41200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -8
+BUY 8x 9998
+41300 dict_keys(['BANANAS', 'PEARLS'])
+41400 dict_keys(['BANANAS', 'PEARLS'])
+41500 dict_keys(['BANANAS', 'PEARLS'])
+41600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+41700 dict_keys(['BANANAS', 'PEARLS'])
+41800 dict_keys(['BANANAS', 'PEARLS'])
+41900 dict_keys(['BANANAS', 'PEARLS'])
+42000 dict_keys(['BANANAS', 'PEARLS'])
+42100 dict_keys(['BANANAS', 'PEARLS'])
+42200 dict_keys(['BANANAS', 'PEARLS'])
+42300 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  4
+SELL -24x 10000
+42400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+42500 dict_keys(['BANANAS', 'PEARLS'])
+42600 dict_keys(['BANANAS', 'PEARLS'])
+42700 dict_keys(['BANANAS', 'PEARLS'])
+42800 dict_keys(['BANANAS', 'PEARLS'])
+42900 dict_keys(['BANANAS', 'PEARLS'])
+43000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  7
+SELL -5x 10002
+43100 dict_keys(['BANANAS', 'PEARLS'])
+43200 dict_keys(['BANANAS', 'PEARLS'])
+43300 dict_keys(['BANANAS', 'PEARLS'])
+43400 dict_keys(['BANANAS', 'PEARLS'])
+43500 dict_keys(['BANANAS', 'PEARLS'])
+43600 dict_keys(['BANANAS', 'PEARLS'])
+43700 dict_keys(['BANANAS', 'PEARLS'])
+43800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+43900 dict_keys(['BANANAS', 'PEARLS'])
+44000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  4
+SELL -1x 10002
+44100 dict_keys(['BANANAS', 'PEARLS'])
+44200 dict_keys(['BANANAS', 'PEARLS'])
+44300 dict_keys(['BANANAS', 'PEARLS'])
+44400 dict_keys(['BANANAS', 'PEARLS'])
+44500 dict_keys(['BANANAS', 'PEARLS'])
+44600 dict_keys(['BANANAS', 'PEARLS'])
+44700 dict_keys(['BANANAS', 'PEARLS'])
+44800 dict_keys(['BANANAS', 'PEARLS'])
+44900 dict_keys(['BANANAS', 'PEARLS'])
+45000 dict_keys(['BANANAS', 'PEARLS'])
+45100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+45200 dict_keys(['BANANAS', 'PEARLS'])
+45300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+45400 dict_keys(['BANANAS', 'PEARLS'])
+45500 dict_keys(['BANANAS', 'PEARLS'])
+45600 dict_keys(['BANANAS', 'PEARLS'])
+45700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  4
+SELL -2x 10002
+45800 dict_keys(['BANANAS', 'PEARLS'])
+45900 dict_keys(['BANANAS', 'PEARLS'])
+46000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+46100 dict_keys(['BANANAS', 'PEARLS'])
+46200 dict_keys(['BANANAS', 'PEARLS'])
+46300 dict_keys(['BANANAS', 'PEARLS'])
+46400 dict_keys(['BANANAS', 'PEARLS'])
+46500 dict_keys(['BANANAS', 'PEARLS'])
+46600 dict_keys(['BANANAS', 'PEARLS'])
+46700 dict_keys(['BANANAS', 'PEARLS'])
+46800 dict_keys(['BANANAS', 'PEARLS'])
+46900 dict_keys(['BANANAS', 'PEARLS'])
+47000 dict_keys(['BANANAS', 'PEARLS'])
+47100 dict_keys(['BANANAS', 'PEARLS'])
+47200 dict_keys(['BANANAS', 'PEARLS'])
+47300 dict_keys(['BANANAS', 'PEARLS'])
+47400 dict_keys(['BANANAS', 'PEARLS'])
+47500 dict_keys(['BANANAS', 'PEARLS'])
+47600 dict_keys(['BANANAS', 'PEARLS'])
+47700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+47800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+47900 dict_keys(['BANANAS', 'PEARLS'])
+48000 dict_keys(['BANANAS', 'PEARLS'])
+48100 dict_keys(['BANANAS', 'PEARLS'])
+48200 dict_keys(['BANANAS', 'PEARLS'])
+48300 dict_keys(['BANANAS', 'PEARLS'])
+48400 dict_keys(['BANANAS', 'PEARLS'])
+48500 dict_keys(['BANANAS', 'PEARLS'])
+48600 dict_keys(['BANANAS', 'PEARLS'])
+48700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  2
+SELL -7x 10002
+48800 dict_keys(['BANANAS', 'PEARLS'])
+48900 dict_keys(['BANANAS', 'PEARLS'])
+49000 dict_keys(['BANANAS', 'PEARLS'])
+49100 dict_keys(['BANANAS', 'PEARLS'])
+49200 dict_keys(['BANANAS', 'PEARLS'])
+49300 dict_keys(['BANANAS', 'PEARLS'])
+49400 dict_keys(['BANANAS', 'PEARLS'])
+49500 dict_keys(['BANANAS', 'PEARLS'])
+49600 dict_keys(['BANANAS', 'PEARLS'])
+49700 dict_keys(['BANANAS', 'PEARLS'])
+49800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+49900 dict_keys(['BANANAS', 'PEARLS'])
+50000 dict_keys(['BANANAS', 'PEARLS'])
+50100 dict_keys(['BANANAS', 'PEARLS'])
+50200 dict_keys(['BANANAS', 'PEARLS'])
+50300 dict_keys(['BANANAS', 'PEARLS'])
+50400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  4
+SELL -1x 10002
+50500 dict_keys(['BANANAS', 'PEARLS'])
+50600 dict_keys(['BANANAS', 'PEARLS'])
+50700 dict_keys(['BANANAS', 'PEARLS'])
+50800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+50900 dict_keys(['BANANAS', 'PEARLS'])
+51000 dict_keys(['BANANAS', 'PEARLS'])
+51100 dict_keys(['BANANAS', 'PEARLS'])
+51200 dict_keys(['BANANAS', 'PEARLS'])
+51300 dict_keys(['BANANAS', 'PEARLS'])
+51400 dict_keys(['BANANAS', 'PEARLS'])
+51500 dict_keys(['BANANAS', 'PEARLS'])
+51600 dict_keys(['BANANAS', 'PEARLS'])
+51700 dict_keys(['BANANAS', 'PEARLS'])
+51800 dict_keys(['BANANAS', 'PEARLS'])
+51900 dict_keys(['BANANAS', 'PEARLS'])
+52000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  3
+SELL -1x 10000
+52100 dict_keys(['BANANAS', 'PEARLS'])
+52200 dict_keys(['BANANAS', 'PEARLS'])
+52300 dict_keys(['BANANAS', 'PEARLS'])
+52400 dict_keys(['BANANAS', 'PEARLS'])
+52500 dict_keys(['BANANAS', 'PEARLS'])
+52600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+52700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+52800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+52900 dict_keys(['BANANAS', 'PEARLS'])
+53000 dict_keys(['BANANAS', 'PEARLS'])
+53100 dict_keys(['BANANAS', 'PEARLS'])
+53200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+53300 dict_keys(['BANANAS', 'PEARLS'])
+53400 dict_keys(['BANANAS', 'PEARLS'])
+53500 dict_keys(['BANANAS', 'PEARLS'])
+53600 dict_keys(['BANANAS', 'PEARLS'])
+53700 dict_keys(['BANANAS', 'PEARLS'])
+53800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -13
+BUY 13x 9998
+53900 dict_keys(['BANANAS', 'PEARLS'])
+54000 dict_keys(['BANANAS', 'PEARLS'])
+54100 dict_keys(['BANANAS', 'PEARLS'])
+54200 dict_keys(['BANANAS', 'PEARLS'])
+54300 dict_keys(['BANANAS', 'PEARLS'])
+54400 dict_keys(['BANANAS', 'PEARLS'])
+54500 dict_keys(['BANANAS', 'PEARLS'])
+54600 dict_keys(['BANANAS', 'PEARLS'])
+54700 dict_keys(['BANANAS', 'PEARLS'])
+54800 dict_keys(['BANANAS', 'PEARLS'])
+54900 dict_keys(['BANANAS', 'PEARLS'])
+55000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+55100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  9
+SELL -23x 10002
+55200 dict_keys(['BANANAS', 'PEARLS'])
+55300 dict_keys(['BANANAS', 'PEARLS'])
+55400 dict_keys(['BANANAS', 'PEARLS'])
+55500 dict_keys(['BANANAS', 'PEARLS'])
+55600 dict_keys(['BANANAS', 'PEARLS'])
+55700 dict_keys(['BANANAS', 'PEARLS'])
+55800 dict_keys(['BANANAS', 'PEARLS'])
+55900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -11
+BUY 11x 9998
+56000 dict_keys(['BANANAS', 'PEARLS'])
+56100 dict_keys(['BANANAS', 'PEARLS'])
+56200 dict_keys(['BANANAS', 'PEARLS'])
+56300 dict_keys(['BANANAS', 'PEARLS'])
+56400 dict_keys(['BANANAS', 'PEARLS'])
+56500 dict_keys(['BANANAS', 'PEARLS'])
+56600 dict_keys(['BANANAS', 'PEARLS'])
+56700 dict_keys(['BANANAS', 'PEARLS'])
+56800 dict_keys(['BANANAS', 'PEARLS'])
+56900 dict_keys(['BANANAS', 'PEARLS'])
+57000 dict_keys(['BANANAS', 'PEARLS'])
+57100 dict_keys(['BANANAS', 'PEARLS'])
+57200 dict_keys(['BANANAS', 'PEARLS'])
+57300 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -11x 10002
+57400 dict_keys(['BANANAS', 'PEARLS'])
+57500 dict_keys(['BANANAS', 'PEARLS'])
+57600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+57700 dict_keys(['BANANAS', 'PEARLS'])
+57800 dict_keys(['BANANAS', 'PEARLS'])
+57900 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+58000 dict_keys(['BANANAS', 'PEARLS'])
+58100 dict_keys(['BANANAS', 'PEARLS'])
+58200 dict_keys(['BANANAS', 'PEARLS'])
+58300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+58400 dict_keys(['BANANAS', 'PEARLS'])
+58500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+58600 dict_keys(['BANANAS', 'PEARLS'])
+58700 dict_keys(['BANANAS', 'PEARLS'])
+58800 dict_keys(['BANANAS', 'PEARLS'])
+58900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+59000 dict_keys(['BANANAS', 'PEARLS'])
+59100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+59200 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  3
+SELL -5x 10000
+59300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -13
+BUY 13x 9998
+59400 dict_keys(['BANANAS', 'PEARLS'])
+59500 dict_keys(['BANANAS', 'PEARLS'])
+59600 dict_keys(['BANANAS', 'PEARLS'])
+59700 dict_keys(['BANANAS', 'PEARLS'])
+59800 dict_keys(['BANANAS', 'PEARLS'])
+59900 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -13x 10002
+60000 dict_keys(['BANANAS', 'PEARLS'])
+60100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+60200 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  3
+SELL -1x 10000
+60300 dict_keys(['BANANAS', 'PEARLS'])
+60400 dict_keys(['BANANAS', 'PEARLS'])
+60500 dict_keys(['BANANAS', 'PEARLS'])
+60600 dict_keys(['BANANAS', 'PEARLS'])
+60700 dict_keys(['BANANAS', 'PEARLS'])
+60800 dict_keys(['BANANAS', 'PEARLS'])
+60900 dict_keys(['BANANAS', 'PEARLS'])
+61000 dict_keys(['BANANAS', 'PEARLS'])
+61100 dict_keys(['BANANAS', 'PEARLS'])
+61200 dict_keys(['BANANAS', 'PEARLS'])
+61300 dict_keys(['BANANAS', 'PEARLS'])
+61400 dict_keys(['BANANAS', 'PEARLS'])
+61500 dict_keys(['BANANAS', 'PEARLS'])
+61600 dict_keys(['BANANAS', 'PEARLS'])
+61700 dict_keys(['BANANAS', 'PEARLS'])
+61800 dict_keys(['BANANAS', 'PEARLS'])
+61900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+62000 dict_keys(['BANANAS', 'PEARLS'])
+62100 dict_keys(['BANANAS', 'PEARLS'])
+62200 dict_keys(['BANANAS', 'PEARLS'])
+62300 dict_keys(['BANANAS', 'PEARLS'])
+62400 dict_keys(['BANANAS', 'PEARLS'])
+62500 dict_keys(['BANANAS', 'PEARLS'])
+62600 dict_keys(['BANANAS', 'PEARLS'])
+62700 dict_keys(['BANANAS', 'PEARLS'])
+62800 dict_keys(['BANANAS', 'PEARLS'])
+62900 dict_keys(['BANANAS', 'PEARLS'])
+63000 dict_keys(['BANANAS', 'PEARLS'])
+63100 dict_keys(['BANANAS', 'PEARLS'])
+63200 dict_keys(['BANANAS', 'PEARLS'])
+63300 dict_keys(['BANANAS', 'PEARLS'])
+63400 dict_keys(['BANANAS', 'PEARLS'])
+63500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+63600 dict_keys(['BANANAS', 'PEARLS'])
+63700 dict_keys(['BANANAS', 'PEARLS'])
+63800 dict_keys(['BANANAS', 'PEARLS'])
+63900 dict_keys(['BANANAS', 'PEARLS'])
+64000 dict_keys(['BANANAS', 'PEARLS'])
+64100 dict_keys(['BANANAS', 'PEARLS'])
+64200 dict_keys(['BANANAS', 'PEARLS'])
+64300 dict_keys(['BANANAS', 'PEARLS'])
+64400 dict_keys(['BANANAS', 'PEARLS'])
+64500 dict_keys(['BANANAS', 'PEARLS'])
+64600 dict_keys(['BANANAS', 'PEARLS'])
+64700 dict_keys(['BANANAS', 'PEARLS'])
+64800 dict_keys(['BANANAS', 'PEARLS'])
+64900 dict_keys(['BANANAS', 'PEARLS'])
+65000 dict_keys(['BANANAS', 'PEARLS'])
+65100 dict_keys(['BANANAS', 'PEARLS'])
+65200 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  5
+SELL -2x 10002
+65300 dict_keys(['BANANAS', 'PEARLS'])
+65400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+65500 dict_keys(['BANANAS', 'PEARLS'])
+65600 dict_keys(['BANANAS', 'PEARLS'])
+65700 dict_keys(['BANANAS', 'PEARLS'])
+65800 dict_keys(['BANANAS', 'PEARLS'])
+65900 dict_keys(['BANANAS', 'PEARLS'])
+66000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+66100 dict_keys(['BANANAS', 'PEARLS'])
+66200 dict_keys(['BANANAS', 'PEARLS'])
+66300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+66400 dict_keys(['BANANAS', 'PEARLS'])
+66500 dict_keys(['BANANAS', 'PEARLS'])
+66600 dict_keys(['BANANAS', 'PEARLS'])
+66700 dict_keys(['BANANAS', 'PEARLS'])
+66800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+66900 dict_keys(['BANANAS', 'PEARLS'])
+67000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  4
+SELL -5x 10002
+67100 dict_keys(['BANANAS', 'PEARLS'])
+67200 dict_keys(['BANANAS', 'PEARLS'])
+67300 dict_keys(['BANANAS', 'PEARLS'])
+67400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+67500 dict_keys(['BANANAS', 'PEARLS'])
+67600 dict_keys(['BANANAS', 'PEARLS'])
+67700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -5x 10002
+67800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+67900 dict_keys(['BANANAS', 'PEARLS'])
+68000 dict_keys(['BANANAS', 'PEARLS'])
+68100 dict_keys(['BANANAS', 'PEARLS'])
+68200 dict_keys(['BANANAS', 'PEARLS'])
+68300 dict_keys(['BANANAS', 'PEARLS'])
+68400 dict_keys(['BANANAS', 'PEARLS'])
+68500 dict_keys(['BANANAS', 'PEARLS'])
+68600 dict_keys(['BANANAS', 'PEARLS'])
+68700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+68800 dict_keys(['BANANAS', 'PEARLS'])
+68900 dict_keys(['BANANAS', 'PEARLS'])
+69000 dict_keys(['BANANAS', 'PEARLS'])
+69100 dict_keys(['BANANAS', 'PEARLS'])
+69200 dict_keys(['BANANAS', 'PEARLS'])
+69300 dict_keys(['BANANAS', 'PEARLS'])
+69400 dict_keys(['BANANAS', 'PEARLS'])
+69500 dict_keys(['BANANAS', 'PEARLS'])
+69600 dict_keys(['BANANAS', 'PEARLS'])
+69700 dict_keys(['BANANAS', 'PEARLS'])
+69800 dict_keys(['BANANAS', 'PEARLS'])
+69900 dict_keys(['BANANAS', 'PEARLS'])
+70000 dict_keys(['BANANAS', 'PEARLS'])
+70100 dict_keys(['BANANAS', 'PEARLS'])
+70200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -3
+BUY 3x 10000
+70300 dict_keys(['BANANAS', 'PEARLS'])
+70400 dict_keys(['BANANAS', 'PEARLS'])
+70500 dict_keys(['BANANAS', 'PEARLS'])
+70600 dict_keys(['BANANAS', 'PEARLS'])
+70700 dict_keys(['BANANAS', 'PEARLS'])
+70800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+70900 dict_keys(['BANANAS', 'PEARLS'])
+71000 dict_keys(['BANANAS', 'PEARLS'])
+71100 dict_keys(['BANANAS', 'PEARLS'])
+71200 dict_keys(['BANANAS', 'PEARLS'])
+71300 dict_keys(['BANANAS', 'PEARLS'])
+71400 dict_keys(['BANANAS', 'PEARLS'])
+71500 dict_keys(['BANANAS', 'PEARLS'])
+71600 dict_keys(['BANANAS', 'PEARLS'])
+71700 dict_keys(['BANANAS', 'PEARLS'])
+71800 dict_keys(['BANANAS', 'PEARLS'])
+71900 dict_keys(['BANANAS', 'PEARLS'])
+72000 dict_keys(['BANANAS', 'PEARLS'])
+72100 dict_keys(['BANANAS', 'PEARLS'])
+72200 dict_keys(['BANANAS', 'PEARLS'])
+72300 dict_keys(['BANANAS', 'PEARLS'])
+72400 dict_keys(['BANANAS', 'PEARLS'])
+72500 dict_keys(['BANANAS', 'PEARLS'])
+72600 dict_keys(['BANANAS', 'PEARLS'])
+72700 dict_keys(['BANANAS', 'PEARLS'])
+72800 dict_keys(['BANANAS', 'PEARLS'])
+72900 dict_keys(['BANANAS', 'PEARLS'])
+73000 dict_keys(['BANANAS', 'PEARLS'])
+73100 dict_keys(['BANANAS', 'PEARLS'])
+73200 dict_keys(['BANANAS', 'PEARLS'])
+73300 dict_keys(['BANANAS', 'PEARLS'])
+73400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+73500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+73600 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -6x 10002
+73700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -10
+BUY 10x 9998
+73800 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -10x 10002
+73900 dict_keys(['BANANAS', 'PEARLS'])
+74000 dict_keys(['BANANAS', 'PEARLS'])
+74100 dict_keys(['BANANAS', 'PEARLS'])
+74200 dict_keys(['BANANAS', 'PEARLS'])
+74300 dict_keys(['BANANAS', 'PEARLS'])
+74400 dict_keys(['BANANAS', 'PEARLS'])
+74500 dict_keys(['BANANAS', 'PEARLS'])
+74600 dict_keys(['BANANAS', 'PEARLS'])
+74700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+74800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+74900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+75000 dict_keys(['BANANAS', 'PEARLS'])
+75100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -4x 10002
+75200 dict_keys(['BANANAS', 'PEARLS'])
+75300 dict_keys(['BANANAS', 'PEARLS'])
+75400 dict_keys(['BANANAS', 'PEARLS'])
+75500 dict_keys(['BANANAS', 'PEARLS'])
+75600 dict_keys(['BANANAS', 'PEARLS'])
+75700 dict_keys(['BANANAS', 'PEARLS'])
+75800 dict_keys(['BANANAS', 'PEARLS'])
+75900 dict_keys(['BANANAS', 'PEARLS'])
+76000 dict_keys(['BANANAS', 'PEARLS'])
+76100 dict_keys(['BANANAS', 'PEARLS'])
+76200 dict_keys(['BANANAS', 'PEARLS'])
+76300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -12
+BUY 12x 9998
+76400 dict_keys(['BANANAS', 'PEARLS'])
+76500 dict_keys(['BANANAS', 'PEARLS'])
+76600 dict_keys(['BANANAS', 'PEARLS'])
+76700 dict_keys(['BANANAS', 'PEARLS'])
+76800 dict_keys(['BANANAS', 'PEARLS'])
+76900 dict_keys(['BANANAS', 'PEARLS'])
+77000 dict_keys(['BANANAS', 'PEARLS'])
+77100 dict_keys(['BANANAS', 'PEARLS'])
+77200 dict_keys(['BANANAS', 'PEARLS'])
+77300 dict_keys(['BANANAS', 'PEARLS'])
+77400 dict_keys(['BANANAS', 'PEARLS'])
+77500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -3
+BUY 3x 9998
+77600 dict_keys(['BANANAS', 'PEARLS'])
+77700 dict_keys(['BANANAS', 'PEARLS'])
+77800 dict_keys(['BANANAS', 'PEARLS'])
+77900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+78000 dict_keys(['BANANAS', 'PEARLS'])
+78100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -16x 10002
+78200 dict_keys(['BANANAS', 'PEARLS'])
+78300 dict_keys(['BANANAS', 'PEARLS'])
+78400 dict_keys(['BANANAS', 'PEARLS'])
+78500 dict_keys(['BANANAS', 'PEARLS'])
+78600 dict_keys(['BANANAS', 'PEARLS'])
+78700 dict_keys(['BANANAS', 'PEARLS'])
+78800 dict_keys(['BANANAS', 'PEARLS'])
+78900 dict_keys(['BANANAS', 'PEARLS'])
+79000 dict_keys(['BANANAS', 'PEARLS'])
+79100 dict_keys(['BANANAS', 'PEARLS'])
+79200 dict_keys(['BANANAS', 'PEARLS'])
+79300 dict_keys(['BANANAS', 'PEARLS'])
+79400 dict_keys(['BANANAS', 'PEARLS'])
+79500 dict_keys(['BANANAS', 'PEARLS'])
+79600 dict_keys(['BANANAS', 'PEARLS'])
+79700 dict_keys(['BANANAS', 'PEARLS'])
+79800 dict_keys(['BANANAS', 'PEARLS'])
+79900 dict_keys(['BANANAS', 'PEARLS'])
+80000 dict_keys(['BANANAS', 'PEARLS'])
+80100 dict_keys(['BANANAS', 'PEARLS'])
+80200 dict_keys(['BANANAS', 'PEARLS'])
+80300 dict_keys(['BANANAS', 'PEARLS'])
+80400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+80500 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+80600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+80700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+80800 dict_keys(['BANANAS', 'PEARLS'])
+80900 dict_keys(['BANANAS', 'PEARLS'])
+81000 dict_keys(['BANANAS', 'PEARLS'])
+81100 dict_keys(['BANANAS', 'PEARLS'])
+81200 dict_keys(['BANANAS', 'PEARLS'])
+81300 dict_keys(['BANANAS', 'PEARLS'])
+81400 dict_keys(['BANANAS', 'PEARLS'])
+81500 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+81600 dict_keys(['BANANAS', 'PEARLS'])
+81700 dict_keys(['BANANAS', 'PEARLS'])
+81800 dict_keys(['BANANAS', 'PEARLS'])
+81900 dict_keys(['BANANAS', 'PEARLS'])
+82000 dict_keys(['BANANAS', 'PEARLS'])
+82100 dict_keys(['BANANAS', 'PEARLS'])
+82200 dict_keys(['BANANAS', 'PEARLS'])
+82300 dict_keys(['BANANAS', 'PEARLS'])
+82400 dict_keys(['BANANAS', 'PEARLS'])
+82500 dict_keys(['BANANAS', 'PEARLS'])
+82600 dict_keys(['BANANAS', 'PEARLS'])
+82700 dict_keys(['BANANAS', 'PEARLS'])
+82800 dict_keys(['BANANAS', 'PEARLS'])
+82900 dict_keys(['BANANAS', 'PEARLS'])
+83000 dict_keys(['BANANAS', 'PEARLS'])
+83100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+83200 dict_keys(['BANANAS', 'PEARLS'])
+83300 dict_keys(['BANANAS', 'PEARLS'])
+83400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+83500 dict_keys(['BANANAS', 'PEARLS'])
+83600 dict_keys(['BANANAS', 'PEARLS'])
+83700 dict_keys(['BANANAS', 'PEARLS'])
+83800 dict_keys(['BANANAS', 'PEARLS'])
+83900 dict_keys(['BANANAS', 'PEARLS'])
+84000 dict_keys(['BANANAS', 'PEARLS'])
+84100 dict_keys(['BANANAS', 'PEARLS'])
+84200 dict_keys(['BANANAS', 'PEARLS'])
+84300 dict_keys(['BANANAS', 'PEARLS'])
+84400 dict_keys(['BANANAS', 'PEARLS'])
+84500 dict_keys(['BANANAS', 'PEARLS'])
+84600 dict_keys(['BANANAS', 'PEARLS'])
+84700 dict_keys(['BANANAS', 'PEARLS'])
+84800 dict_keys(['BANANAS', 'PEARLS'])
+84900 dict_keys(['BANANAS', 'PEARLS'])
+85000 dict_keys(['BANANAS', 'PEARLS'])
+85100 dict_keys(['BANANAS', 'PEARLS'])
+85200 dict_keys(['BANANAS', 'PEARLS'])
+85300 dict_keys(['BANANAS', 'PEARLS'])
+85400 dict_keys(['BANANAS', 'PEARLS'])
+85500 dict_keys(['BANANAS', 'PEARLS'])
+85600 dict_keys(['BANANAS', 'PEARLS'])
+85700 dict_keys(['BANANAS', 'PEARLS'])
+85800 dict_keys(['BANANAS', 'PEARLS'])
+85900 dict_keys(['BANANAS', 'PEARLS'])
+86000 dict_keys(['BANANAS', 'PEARLS'])
+86100 dict_keys(['BANANAS', 'PEARLS'])
+86200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+86300 dict_keys(['BANANAS', 'PEARLS'])
+86400 dict_keys(['BANANAS', 'PEARLS'])
+86500 dict_keys(['BANANAS', 'PEARLS'])
+86600 dict_keys(['BANANAS', 'PEARLS'])
+86700 dict_keys(['BANANAS', 'PEARLS'])
+86800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+86900 dict_keys(['BANANAS', 'PEARLS'])
+87000 dict_keys(['BANANAS', 'PEARLS'])
+87100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+87200 dict_keys(['BANANAS', 'PEARLS'])
+87300 dict_keys(['BANANAS', 'PEARLS'])
+87400 dict_keys(['BANANAS', 'PEARLS'])
+87500 dict_keys(['BANANAS', 'PEARLS'])
+87600 dict_keys(['BANANAS', 'PEARLS'])
+87700 dict_keys(['BANANAS', 'PEARLS'])
+87800 dict_keys(['BANANAS', 'PEARLS'])
+87900 dict_keys(['BANANAS', 'PEARLS'])
+88000 dict_keys(['BANANAS', 'PEARLS'])
+88100 dict_keys(['BANANAS', 'PEARLS'])
+88200 dict_keys(['BANANAS', 'PEARLS'])
+88300 dict_keys(['BANANAS', 'PEARLS'])
+88400 dict_keys(['BANANAS', 'PEARLS'])
+88500 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -5x 10002
+88600 dict_keys(['BANANAS', 'PEARLS'])
+88700 dict_keys(['BANANAS', 'PEARLS'])
+88800 dict_keys(['BANANAS', 'PEARLS'])
+88900 dict_keys(['BANANAS', 'PEARLS'])
+89000 dict_keys(['BANANAS', 'PEARLS'])
+89100 dict_keys(['BANANAS', 'PEARLS'])
+89200 dict_keys(['BANANAS', 'PEARLS'])
+89300 dict_keys(['BANANAS', 'PEARLS'])
+89400 dict_keys(['BANANAS', 'PEARLS'])
+89500 dict_keys(['BANANAS', 'PEARLS'])
+89600 dict_keys(['BANANAS', 'PEARLS'])
+89700 dict_keys(['BANANAS', 'PEARLS'])
+89800 dict_keys(['BANANAS', 'PEARLS'])
+89900 dict_keys(['BANANAS', 'PEARLS'])
+90000 dict_keys(['BANANAS', 'PEARLS'])
+90100 dict_keys(['BANANAS', 'PEARLS'])
+90200 dict_keys(['BANANAS', 'PEARLS'])
+90300 dict_keys(['BANANAS', 'PEARLS'])
+90400 dict_keys(['BANANAS', 'PEARLS'])
+90500 dict_keys(['BANANAS', 'PEARLS'])
+90600 dict_keys(['BANANAS', 'PEARLS'])
+90700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+90800 dict_keys(['BANANAS', 'PEARLS'])
+90900 dict_keys(['BANANAS', 'PEARLS'])
+91000 dict_keys(['BANANAS', 'PEARLS'])
+91100 dict_keys(['BANANAS', 'PEARLS'])
+91200 dict_keys(['BANANAS', 'PEARLS'])
+91300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+91400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -6x 10002
+91500 dict_keys(['BANANAS', 'PEARLS'])
+91600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+91700 dict_keys(['BANANAS', 'PEARLS'])
+91800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -3
+BUY 3x 9998
+91900 dict_keys(['BANANAS', 'PEARLS'])
+92000 dict_keys(['BANANAS', 'PEARLS'])
+92100 dict_keys(['BANANAS', 'PEARLS'])
+92200 dict_keys(['BANANAS', 'PEARLS'])
+92300 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -4x 10002
+92400 dict_keys(['BANANAS', 'PEARLS'])
+92500 dict_keys(['BANANAS', 'PEARLS'])
+92600 dict_keys(['BANANAS', 'PEARLS'])
+92700 dict_keys(['BANANAS', 'PEARLS'])
+92800 dict_keys(['BANANAS', 'PEARLS'])
+92900 dict_keys(['BANANAS', 'PEARLS'])
+93000 dict_keys(['BANANAS', 'PEARLS'])
+93100 dict_keys(['BANANAS', 'PEARLS'])
+93200 dict_keys(['BANANAS', 'PEARLS'])
+93300 dict_keys(['BANANAS', 'PEARLS'])
+93400 dict_keys(['BANANAS', 'PEARLS'])
+93500 dict_keys(['BANANAS', 'PEARLS'])
+93600 dict_keys(['BANANAS', 'PEARLS'])
+93700 dict_keys(['BANANAS', 'PEARLS'])
+93800 dict_keys(['BANANAS', 'PEARLS'])
+93900 dict_keys(['BANANAS', 'PEARLS'])
+94000 dict_keys(['BANANAS', 'PEARLS'])
+94100 dict_keys(['BANANAS', 'PEARLS'])
+94200 dict_keys(['BANANAS', 'PEARLS'])
+94300 dict_keys(['BANANAS', 'PEARLS'])
+94400 dict_keys(['BANANAS', 'PEARLS'])
+94500 dict_keys(['BANANAS', 'PEARLS'])
+94600 dict_keys(['BANANAS', 'PEARLS'])
+94700 dict_keys(['BANANAS', 'PEARLS'])
+94800 dict_keys(['BANANAS', 'PEARLS'])
+94900 dict_keys(['BANANAS', 'PEARLS'])
+95000 dict_keys(['BANANAS', 'PEARLS'])
+95100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+95200 dict_keys(['BANANAS', 'PEARLS'])
+95300 dict_keys(['BANANAS', 'PEARLS'])
+95400 dict_keys(['BANANAS', 'PEARLS'])
+95500 dict_keys(['BANANAS', 'PEARLS'])
+95600 dict_keys(['BANANAS', 'PEARLS'])
+95700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+95800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+95900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+96000 dict_keys(['BANANAS', 'PEARLS'])
+96100 dict_keys(['BANANAS', 'PEARLS'])
+96200 dict_keys(['BANANAS', 'PEARLS'])
+96300 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -4x 10002
+96400 dict_keys(['BANANAS', 'PEARLS'])
+96500 dict_keys(['BANANAS', 'PEARLS'])
+96600 dict_keys(['BANANAS', 'PEARLS'])
+96700 dict_keys(['BANANAS', 'PEARLS'])
+96800 dict_keys(['BANANAS', 'PEARLS'])
+96900 dict_keys(['BANANAS', 'PEARLS'])
+97000 dict_keys(['BANANAS', 'PEARLS'])
+97100 dict_keys(['BANANAS', 'PEARLS'])
+97200 dict_keys(['BANANAS', 'PEARLS'])
+97300 dict_keys(['BANANAS', 'PEARLS'])
+97400 dict_keys(['BANANAS', 'PEARLS'])
+97500 dict_keys(['BANANAS', 'PEARLS'])
+97600 dict_keys(['BANANAS', 'PEARLS'])
+97700 dict_keys(['BANANAS', 'PEARLS'])
+97800 dict_keys(['BANANAS', 'PEARLS'])
+97900 dict_keys(['BANANAS', 'PEARLS'])
+98000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+98100 dict_keys(['BANANAS', 'PEARLS'])
+98200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+98300 dict_keys(['BANANAS', 'PEARLS'])
+98400 dict_keys(['BANANAS', 'PEARLS'])
+98500 dict_keys(['BANANAS', 'PEARLS'])
+98600 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  4
+SELL -6x 10002
+98700 dict_keys(['BANANAS', 'PEARLS'])
+98800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+98900 dict_keys(['BANANAS', 'PEARLS'])
+99000 dict_keys(['BANANAS', 'PEARLS'])
+99100 dict_keys(['BANANAS', 'PEARLS'])
+99200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -3
+BUY 3x 9998
+99300 dict_keys(['BANANAS', 'PEARLS'])
+99400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+99500 dict_keys(['BANANAS', 'PEARLS'])
+99600 dict_keys(['BANANAS', 'PEARLS'])
+99700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -9x 10002
+99800 dict_keys(['BANANAS', 'PEARLS'])
+99900 dict_keys(['BANANAS', 'PEARLS'])
+100000 dict_keys(['BANANAS', 'PEARLS'])
+100100 dict_keys(['BANANAS', 'PEARLS'])
+100200 dict_keys(['BANANAS', 'PEARLS'])
+100300 dict_keys(['BANANAS', 'PEARLS'])
+100400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -9
+BUY 9x 9998
+100500 dict_keys(['BANANAS', 'PEARLS'])
+100600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+100700 dict_keys(['BANANAS', 'PEARLS'])
+100800 dict_keys(['BANANAS', 'PEARLS'])
+100900 dict_keys(['BANANAS', 'PEARLS'])
+101000 dict_keys(['BANANAS', 'PEARLS'])
+101100 dict_keys(['BANANAS', 'PEARLS'])
+101200 dict_keys(['BANANAS', 'PEARLS'])
+101300 dict_keys(['BANANAS', 'PEARLS'])
+101400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+101500 dict_keys(['BANANAS', 'PEARLS'])
+101600 dict_keys(['BANANAS', 'PEARLS'])
+101700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -12x 10002
+101800 dict_keys(['BANANAS', 'PEARLS'])
+101900 dict_keys(['BANANAS', 'PEARLS'])
+102000 dict_keys(['BANANAS', 'PEARLS'])
+102100 dict_keys(['BANANAS', 'PEARLS'])
+102200 dict_keys(['BANANAS', 'PEARLS'])
+102300 dict_keys(['BANANAS', 'PEARLS'])
+102400 dict_keys(['BANANAS', 'PEARLS'])
+102500 dict_keys(['BANANAS', 'PEARLS'])
+102600 dict_keys(['BANANAS', 'PEARLS'])
+102700 dict_keys(['BANANAS', 'PEARLS'])
+102800 dict_keys(['BANANAS', 'PEARLS'])
+102900 dict_keys(['BANANAS', 'PEARLS'])
+103000 dict_keys(['BANANAS', 'PEARLS'])
+103100 dict_keys(['BANANAS', 'PEARLS'])
+103200 dict_keys(['BANANAS', 'PEARLS'])
+103300 dict_keys(['BANANAS', 'PEARLS'])
+103400 dict_keys(['BANANAS', 'PEARLS'])
+103500 dict_keys(['BANANAS', 'PEARLS'])
+103600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+103700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+103800 dict_keys(['BANANAS', 'PEARLS'])
+103900 dict_keys(['BANANAS', 'PEARLS'])
+104000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+104100 dict_keys(['BANANAS', 'PEARLS'])
+104200 dict_keys(['BANANAS', 'PEARLS'])
+104300 dict_keys(['BANANAS', 'PEARLS'])
+104400 dict_keys(['BANANAS', 'PEARLS'])
+104500 dict_keys(['BANANAS', 'PEARLS'])
+104600 dict_keys(['BANANAS', 'PEARLS'])
+104700 dict_keys(['BANANAS', 'PEARLS'])
+104800 dict_keys(['BANANAS', 'PEARLS'])
+104900 dict_keys(['BANANAS', 'PEARLS'])
+105000 dict_keys(['BANANAS', 'PEARLS'])
+105100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -7x 10002
+105200 dict_keys(['BANANAS', 'PEARLS'])
+105300 dict_keys(['BANANAS', 'PEARLS'])
+105400 dict_keys(['BANANAS', 'PEARLS'])
+105500 dict_keys(['BANANAS', 'PEARLS'])
+105600 dict_keys(['BANANAS', 'PEARLS'])
+105700 dict_keys(['BANANAS', 'PEARLS'])
+105800 dict_keys(['BANANAS', 'PEARLS'])
+105900 dict_keys(['BANANAS', 'PEARLS'])
+106000 dict_keys(['BANANAS', 'PEARLS'])
+106100 dict_keys(['BANANAS', 'PEARLS'])
+106200 dict_keys(['BANANAS', 'PEARLS'])
+106300 dict_keys(['BANANAS', 'PEARLS'])
+106400 dict_keys(['BANANAS', 'PEARLS'])
+106500 dict_keys(['BANANAS', 'PEARLS'])
+106600 dict_keys(['BANANAS', 'PEARLS'])
+106700 dict_keys(['BANANAS', 'PEARLS'])
+106800 dict_keys(['BANANAS', 'PEARLS'])
+106900 dict_keys(['BANANAS', 'PEARLS'])
+107000 dict_keys(['BANANAS', 'PEARLS'])
+107100 dict_keys(['BANANAS', 'PEARLS'])
+107200 dict_keys(['BANANAS', 'PEARLS'])
+107300 dict_keys(['BANANAS', 'PEARLS'])
+107400 dict_keys(['BANANAS', 'PEARLS'])
+107500 dict_keys(['BANANAS', 'PEARLS'])
+107600 dict_keys(['BANANAS', 'PEARLS'])
+107700 dict_keys(['BANANAS', 'PEARLS'])
+107800 dict_keys(['BANANAS', 'PEARLS'])
+107900 dict_keys(['BANANAS', 'PEARLS'])
+108000 dict_keys(['BANANAS', 'PEARLS'])
+108100 dict_keys(['BANANAS', 'PEARLS'])
+108200 dict_keys(['BANANAS', 'PEARLS'])
+108300 dict_keys(['BANANAS', 'PEARLS'])
+108400 dict_keys(['BANANAS', 'PEARLS'])
+108500 dict_keys(['BANANAS', 'PEARLS'])
+108600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+108700 dict_keys(['BANANAS', 'PEARLS'])
+108800 dict_keys(['BANANAS', 'PEARLS'])
+108900 dict_keys(['BANANAS', 'PEARLS'])
+109000 dict_keys(['BANANAS', 'PEARLS'])
+109100 dict_keys(['BANANAS', 'PEARLS'])
+109200 dict_keys(['BANANAS', 'PEARLS'])
+109300 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+109400 dict_keys(['BANANAS', 'PEARLS'])
+109500 dict_keys(['BANANAS', 'PEARLS'])
+109600 dict_keys(['BANANAS', 'PEARLS'])
+109700 dict_keys(['BANANAS', 'PEARLS'])
+109800 dict_keys(['BANANAS', 'PEARLS'])
+109900 dict_keys(['BANANAS', 'PEARLS'])
+110000 dict_keys(['BANANAS', 'PEARLS'])
+110100 dict_keys(['BANANAS', 'PEARLS'])
+110200 dict_keys(['BANANAS', 'PEARLS'])
+110300 dict_keys(['BANANAS', 'PEARLS'])
+110400 dict_keys(['BANANAS', 'PEARLS'])
+110500 dict_keys(['BANANAS', 'PEARLS'])
+110600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+110700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+110800 dict_keys(['BANANAS', 'PEARLS'])
+110900 dict_keys(['BANANAS', 'PEARLS'])
+111000 dict_keys(['BANANAS', 'PEARLS'])
+111100 dict_keys(['BANANAS', 'PEARLS'])
+111200 dict_keys(['BANANAS', 'PEARLS'])
+111300 dict_keys(['BANANAS', 'PEARLS'])
+111400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+111500 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  5
+SELL -1x 10002
+111600 dict_keys(['BANANAS', 'PEARLS'])
+111700 dict_keys(['BANANAS', 'PEARLS'])
+111800 dict_keys(['BANANAS', 'PEARLS'])
+111900 dict_keys(['BANANAS', 'PEARLS'])
+112000 dict_keys(['BANANAS', 'PEARLS'])
+112100 dict_keys(['BANANAS', 'PEARLS'])
+112200 dict_keys(['BANANAS', 'PEARLS'])
+112300 dict_keys(['BANANAS', 'PEARLS'])
+112400 dict_keys(['BANANAS', 'PEARLS'])
+112500 dict_keys(['BANANAS', 'PEARLS'])
+112600 dict_keys(['BANANAS', 'PEARLS'])
+112700 dict_keys(['BANANAS', 'PEARLS'])
+112800 dict_keys(['BANANAS', 'PEARLS'])
+112900 dict_keys(['BANANAS', 'PEARLS'])
+113000 dict_keys(['BANANAS', 'PEARLS'])
+113100 dict_keys(['BANANAS', 'PEARLS'])
+113200 dict_keys(['BANANAS', 'PEARLS'])
+113300 dict_keys(['BANANAS', 'PEARLS'])
+113400 dict_keys(['BANANAS', 'PEARLS'])
+113500 dict_keys(['BANANAS', 'PEARLS'])
+113600 dict_keys(['BANANAS', 'PEARLS'])
+113700 dict_keys(['BANANAS', 'PEARLS'])
+113800 dict_keys(['BANANAS', 'PEARLS'])
+113900 dict_keys(['BANANAS', 'PEARLS'])
+114000 dict_keys(['BANANAS', 'PEARLS'])
+114100 dict_keys(['BANANAS', 'PEARLS'])
+114200 dict_keys(['BANANAS', 'PEARLS'])
+114300 dict_keys(['BANANAS', 'PEARLS'])
+114400 dict_keys(['BANANAS', 'PEARLS'])
+114500 dict_keys(['BANANAS', 'PEARLS'])
+114600 dict_keys(['BANANAS', 'PEARLS'])
+114700 dict_keys(['BANANAS', 'PEARLS'])
+114800 dict_keys(['BANANAS', 'PEARLS'])
+114900 dict_keys(['BANANAS', 'PEARLS'])
+115000 dict_keys(['BANANAS', 'PEARLS'])
+115100 dict_keys(['BANANAS', 'PEARLS'])
+115200 dict_keys(['BANANAS', 'PEARLS'])
+115300 dict_keys(['BANANAS', 'PEARLS'])
+115400 dict_keys(['BANANAS', 'PEARLS'])
+115500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+115600 dict_keys(['BANANAS', 'PEARLS'])
+115700 dict_keys(['BANANAS', 'PEARLS'])
+115800 dict_keys(['BANANAS', 'PEARLS'])
+115900 dict_keys(['BANANAS', 'PEARLS'])
+116000 dict_keys(['BANANAS', 'PEARLS'])
+116100 dict_keys(['BANANAS', 'PEARLS'])
+116200 dict_keys(['BANANAS', 'PEARLS'])
+116300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+116400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+116500 dict_keys(['BANANAS', 'PEARLS'])
+116600 dict_keys(['BANANAS', 'PEARLS'])
+116700 dict_keys(['BANANAS', 'PEARLS'])
+116800 dict_keys(['BANANAS', 'PEARLS'])
+116900 dict_keys(['BANANAS', 'PEARLS'])
+117000 dict_keys(['BANANAS', 'PEARLS'])
+117100 dict_keys(['BANANAS', 'PEARLS'])
+117200 dict_keys(['BANANAS', 'PEARLS'])
+117300 dict_keys(['BANANAS', 'PEARLS'])
+117400 dict_keys(['BANANAS', 'PEARLS'])
+117500 dict_keys(['BANANAS', 'PEARLS'])
+117600 dict_keys(['BANANAS', 'PEARLS'])
+117700 dict_keys(['BANANAS', 'PEARLS'])
+117800 dict_keys(['BANANAS', 'PEARLS'])
+117900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+118000 dict_keys(['BANANAS', 'PEARLS'])
+118100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -7x 10002
+118200 dict_keys(['BANANAS', 'PEARLS'])
+118300 dict_keys(['BANANAS', 'PEARLS'])
+118400 dict_keys(['BANANAS', 'PEARLS'])
+118500 dict_keys(['BANANAS', 'PEARLS'])
+118600 dict_keys(['BANANAS', 'PEARLS'])
+118700 dict_keys(['BANANAS', 'PEARLS'])
+118800 dict_keys(['BANANAS', 'PEARLS'])
+118900 dict_keys(['BANANAS', 'PEARLS'])
+119000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+119100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+119200 dict_keys(['BANANAS', 'PEARLS'])
+119300 dict_keys(['BANANAS', 'PEARLS'])
+119400 dict_keys(['BANANAS', 'PEARLS'])
+119500 dict_keys(['BANANAS', 'PEARLS'])
+119600 dict_keys(['BANANAS', 'PEARLS'])
+119700 dict_keys(['BANANAS', 'PEARLS'])
+119800 dict_keys(['BANANAS', 'PEARLS'])
+119900 dict_keys(['BANANAS', 'PEARLS'])
+120000 dict_keys(['BANANAS', 'PEARLS'])
+120100 dict_keys(['BANANAS', 'PEARLS'])
+120200 dict_keys(['BANANAS', 'PEARLS'])
+120300 dict_keys(['BANANAS', 'PEARLS'])
+120400 dict_keys(['BANANAS', 'PEARLS'])
+120500 dict_keys(['BANANAS', 'PEARLS'])
+120600 dict_keys(['BANANAS', 'PEARLS'])
+120700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+120800 dict_keys(['BANANAS', 'PEARLS'])
+120900 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+121000 dict_keys(['BANANAS', 'PEARLS'])
+121100 dict_keys(['BANANAS', 'PEARLS'])
+121200 dict_keys(['BANANAS', 'PEARLS'])
+121300 dict_keys(['BANANAS', 'PEARLS'])
+121400 dict_keys(['BANANAS', 'PEARLS'])
+121500 dict_keys(['BANANAS', 'PEARLS'])
+121600 dict_keys(['BANANAS', 'PEARLS'])
+121700 dict_keys(['BANANAS', 'PEARLS'])
+121800 dict_keys(['BANANAS', 'PEARLS'])
+121900 dict_keys(['BANANAS', 'PEARLS'])
+122000 dict_keys(['BANANAS', 'PEARLS'])
+122100 dict_keys(['BANANAS', 'PEARLS'])
+122200 dict_keys(['BANANAS', 'PEARLS'])
+122300 dict_keys(['BANANAS', 'PEARLS'])
+122400 dict_keys(['BANANAS', 'PEARLS'])
+122500 dict_keys(['BANANAS', 'PEARLS'])
+122600 dict_keys(['BANANAS', 'PEARLS'])
+122700 dict_keys(['BANANAS', 'PEARLS'])
+122800 dict_keys(['BANANAS', 'PEARLS'])
+122900 dict_keys(['BANANAS', 'PEARLS'])
+123000 dict_keys(['BANANAS', 'PEARLS'])
+123100 dict_keys(['BANANAS', 'PEARLS'])
+123200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+123300 dict_keys(['BANANAS', 'PEARLS'])
+123400 dict_keys(['BANANAS', 'PEARLS'])
+123500 dict_keys(['BANANAS', 'PEARLS'])
+123600 dict_keys(['BANANAS', 'PEARLS'])
+123700 dict_keys(['BANANAS', 'PEARLS'])
+123800 dict_keys(['BANANAS', 'PEARLS'])
+123900 dict_keys(['BANANAS', 'PEARLS'])
+124000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+124100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -3
+BUY 3x 9998
+124200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+124300 dict_keys(['BANANAS', 'PEARLS'])
+124400 dict_keys(['BANANAS', 'PEARLS'])
+124500 dict_keys(['BANANAS', 'PEARLS'])
+124600 dict_keys(['BANANAS', 'PEARLS'])
+124700 dict_keys(['BANANAS', 'PEARLS'])
+124800 dict_keys(['BANANAS', 'PEARLS'])
+124900 dict_keys(['BANANAS', 'PEARLS'])
+125000 dict_keys(['BANANAS', 'PEARLS'])
+125100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+125200 dict_keys(['BANANAS', 'PEARLS'])
+125300 dict_keys(['BANANAS', 'PEARLS'])
+125400 dict_keys(['BANANAS', 'PEARLS'])
+125500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+125600 dict_keys(['BANANAS', 'PEARLS'])
+125700 dict_keys(['BANANAS', 'PEARLS'])
+125800 dict_keys(['BANANAS', 'PEARLS'])
+125900 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  2
+SELL -14x 10000
+126000 dict_keys(['BANANAS', 'PEARLS'])
+126100 dict_keys(['BANANAS', 'PEARLS'])
+126200 dict_keys(['BANANAS', 'PEARLS'])
+126300 dict_keys(['BANANAS', 'PEARLS'])
+126400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+126500 dict_keys(['BANANAS', 'PEARLS'])
+126600 dict_keys(['BANANAS', 'PEARLS'])
+126700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+126800 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -7x 10002
+126900 dict_keys(['BANANAS', 'PEARLS'])
+127000 dict_keys(['BANANAS', 'PEARLS'])
+127100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+127200 dict_keys(['BANANAS', 'PEARLS'])
+127300 dict_keys(['BANANAS', 'PEARLS'])
+127400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+127500 dict_keys(['BANANAS', 'PEARLS'])
+127600 dict_keys(['BANANAS', 'PEARLS'])
+127700 dict_keys(['BANANAS', 'PEARLS'])
+127800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 10000
+127900 dict_keys(['BANANAS', 'PEARLS'])
+128000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  2
+SELL -5x 10002
+128100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 10000
+128200 dict_keys(['BANANAS', 'PEARLS'])
+128300 dict_keys(['BANANAS', 'PEARLS'])
+128400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+128500 dict_keys(['BANANAS', 'PEARLS'])
+128600 dict_keys(['BANANAS', 'PEARLS'])
+128700 dict_keys(['BANANAS', 'PEARLS'])
+128800 dict_keys(['BANANAS', 'PEARLS'])
+128900 dict_keys(['BANANAS', 'PEARLS'])
+129000 dict_keys(['BANANAS', 'PEARLS'])
+129100 dict_keys(['BANANAS', 'PEARLS'])
+129200 dict_keys(['BANANAS', 'PEARLS'])
+129300 dict_keys(['BANANAS', 'PEARLS'])
+129400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+129500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+129600 dict_keys(['BANANAS', 'PEARLS'])
+129700 dict_keys(['BANANAS', 'PEARLS'])
+129800 dict_keys(['BANANAS', 'PEARLS'])
+129900 dict_keys(['BANANAS', 'PEARLS'])
+130000 dict_keys(['BANANAS', 'PEARLS'])
+130100 dict_keys(['BANANAS', 'PEARLS'])
+130200 dict_keys(['BANANAS', 'PEARLS'])
+130300 dict_keys(['BANANAS', 'PEARLS'])
+130400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  5
+SELL -2x 10002
+130500 dict_keys(['BANANAS', 'PEARLS'])
+130600 dict_keys(['BANANAS', 'PEARLS'])
+130700 dict_keys(['BANANAS', 'PEARLS'])
+130800 dict_keys(['BANANAS', 'PEARLS'])
+130900 dict_keys(['BANANAS', 'PEARLS'])
+131000 dict_keys(['BANANAS', 'PEARLS'])
+131100 dict_keys(['BANANAS', 'PEARLS'])
+131200 dict_keys(['BANANAS', 'PEARLS'])
+131300 dict_keys(['BANANAS', 'PEARLS'])
+131400 dict_keys(['BANANAS', 'PEARLS'])
+131500 dict_keys(['BANANAS', 'PEARLS'])
+131600 dict_keys(['BANANAS', 'PEARLS'])
+131700 dict_keys(['BANANAS', 'PEARLS'])
+131800 dict_keys(['BANANAS', 'PEARLS'])
+131900 dict_keys(['BANANAS', 'PEARLS'])
+132000 dict_keys(['BANANAS', 'PEARLS'])
+132100 dict_keys(['BANANAS', 'PEARLS'])
+132200 dict_keys(['BANANAS', 'PEARLS'])
+132300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -3
+BUY 3x 9998
+132400 dict_keys(['BANANAS', 'PEARLS'])
+132500 dict_keys(['BANANAS', 'PEARLS'])
+132600 dict_keys(['BANANAS', 'PEARLS'])
+132700 dict_keys(['BANANAS', 'PEARLS'])
+132800 dict_keys(['BANANAS', 'PEARLS'])
+132900 dict_keys(['BANANAS', 'PEARLS'])
+133000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+133100 dict_keys(['BANANAS', 'PEARLS'])
+133200 dict_keys(['BANANAS', 'PEARLS'])
+133300 dict_keys(['BANANAS', 'PEARLS'])
+133400 dict_keys(['BANANAS', 'PEARLS'])
+133500 dict_keys(['BANANAS', 'PEARLS'])
+133600 dict_keys(['BANANAS', 'PEARLS'])
+133700 dict_keys(['BANANAS', 'PEARLS'])
+133800 dict_keys(['BANANAS', 'PEARLS'])
+133900 dict_keys(['BANANAS', 'PEARLS'])
+134000 dict_keys(['BANANAS', 'PEARLS'])
+134100 dict_keys(['BANANAS', 'PEARLS'])
+134200 dict_keys(['BANANAS', 'PEARLS'])
+134300 dict_keys(['BANANAS', 'PEARLS'])
+134400 dict_keys(['BANANAS', 'PEARLS'])
+134500 dict_keys(['BANANAS', 'PEARLS'])
+134600 dict_keys(['BANANAS', 'PEARLS'])
+134700 dict_keys(['BANANAS', 'PEARLS'])
+134800 dict_keys(['BANANAS', 'PEARLS'])
+134900 dict_keys(['BANANAS', 'PEARLS'])
+135000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  3
+SELL -4x 10002
+135100 dict_keys(['BANANAS', 'PEARLS'])
+135200 dict_keys(['BANANAS', 'PEARLS'])
+135300 dict_keys(['BANANAS', 'PEARLS'])
+135400 dict_keys(['BANANAS', 'PEARLS'])
+135500 dict_keys(['BANANAS', 'PEARLS'])
+135600 dict_keys(['BANANAS', 'PEARLS'])
+135700 dict_keys(['BANANAS', 'PEARLS'])
+135800 dict_keys(['BANANAS', 'PEARLS'])
+135900 dict_keys(['BANANAS', 'PEARLS'])
+136000 dict_keys(['BANANAS', 'PEARLS'])
+136100 dict_keys(['BANANAS', 'PEARLS'])
+136200 dict_keys(['BANANAS', 'PEARLS'])
+136300 dict_keys(['BANANAS', 'PEARLS'])
+136400 dict_keys(['BANANAS', 'PEARLS'])
+136500 dict_keys(['BANANAS', 'PEARLS'])
+136600 dict_keys(['BANANAS', 'PEARLS'])
+136700 dict_keys(['BANANAS', 'PEARLS'])
+136800 dict_keys(['BANANAS', 'PEARLS'])
+136900 dict_keys(['BANANAS', 'PEARLS'])
+137000 dict_keys(['BANANAS', 'PEARLS'])
+137100 dict_keys(['BANANAS', 'PEARLS'])
+137200 dict_keys(['BANANAS', 'PEARLS'])
+137300 dict_keys(['BANANAS', 'PEARLS'])
+137400 dict_keys(['BANANAS', 'PEARLS'])
+137500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+137600 dict_keys(['BANANAS', 'PEARLS'])
+137700 dict_keys(['BANANAS', 'PEARLS'])
+137800 dict_keys(['BANANAS', 'PEARLS'])
+137900 dict_keys(['BANANAS', 'PEARLS'])
+138000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -8
+BUY 8x 9998
+138100 dict_keys(['BANANAS', 'PEARLS'])
+138200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+138300 dict_keys(['BANANAS', 'PEARLS'])
+138400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  9
+SELL -11x 10002
+138500 dict_keys(['BANANAS', 'PEARLS'])
+138600 dict_keys(['BANANAS', 'PEARLS'])
+138700 dict_keys(['BANANAS', 'PEARLS'])
+138800 dict_keys(['BANANAS', 'PEARLS'])
+138900 dict_keys(['BANANAS', 'PEARLS'])
+139000 dict_keys(['BANANAS', 'PEARLS'])
+139100 dict_keys(['BANANAS', 'PEARLS'])
+139200 dict_keys(['BANANAS', 'PEARLS'])
+139300 dict_keys(['BANANAS', 'PEARLS'])
+139400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+139500 dict_keys(['BANANAS', 'PEARLS'])
+139600 dict_keys(['BANANAS', 'PEARLS'])
+139700 dict_keys(['BANANAS', 'PEARLS'])
+139800 dict_keys(['BANANAS', 'PEARLS'])
+139900 dict_keys(['BANANAS', 'PEARLS'])
+140000 dict_keys(['BANANAS', 'PEARLS'])
+140100 dict_keys(['BANANAS', 'PEARLS'])
+140200 dict_keys(['BANANAS', 'PEARLS'])
+140300 dict_keys(['BANANAS', 'PEARLS'])
+140400 dict_keys(['BANANAS', 'PEARLS'])
+140500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+140600 dict_keys(['BANANAS', 'PEARLS'])
+140700 dict_keys(['BANANAS', 'PEARLS'])
+140800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+140900 dict_keys(['BANANAS', 'PEARLS'])
+141000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+141100 dict_keys(['BANANAS', 'PEARLS'])
+141200 dict_keys(['BANANAS', 'PEARLS'])
+141300 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  3
+SELL -4x 10000
+141400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+141500 dict_keys(['BANANAS', 'PEARLS'])
+141600 dict_keys(['BANANAS', 'PEARLS'])
+141700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+141800 dict_keys(['BANANAS', 'PEARLS'])
+141900 dict_keys(['BANANAS', 'PEARLS'])
+142000 dict_keys(['BANANAS', 'PEARLS'])
+142100 dict_keys(['BANANAS', 'PEARLS'])
+142200 dict_keys(['BANANAS', 'PEARLS'])
+142300 dict_keys(['BANANAS', 'PEARLS'])
+142400 dict_keys(['BANANAS', 'PEARLS'])
+142500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+142600 dict_keys(['BANANAS', 'PEARLS'])
+142700 dict_keys(['BANANAS', 'PEARLS'])
+142800 dict_keys(['BANANAS', 'PEARLS'])
+142900 dict_keys(['BANANAS', 'PEARLS'])
+143000 dict_keys(['BANANAS', 'PEARLS'])
+143100 dict_keys(['BANANAS', 'PEARLS'])
+143200 dict_keys(['BANANAS', 'PEARLS'])
+143300 dict_keys(['BANANAS', 'PEARLS'])
+143400 dict_keys(['BANANAS', 'PEARLS'])
+143500 dict_keys(['BANANAS', 'PEARLS'])
+143600 dict_keys(['BANANAS', 'PEARLS'])
+143700 dict_keys(['BANANAS', 'PEARLS'])
+143800 dict_keys(['BANANAS', 'PEARLS'])
+143900 dict_keys(['BANANAS', 'PEARLS'])
+144000 dict_keys(['BANANAS', 'PEARLS'])
+144100 dict_keys(['BANANAS', 'PEARLS'])
+144200 dict_keys(['BANANAS', 'PEARLS'])
+144300 dict_keys(['BANANAS', 'PEARLS'])
+144400 dict_keys(['BANANAS', 'PEARLS'])
+144500 dict_keys(['BANANAS', 'PEARLS'])
+144600 dict_keys(['BANANAS', 'PEARLS'])
+144700 dict_keys(['BANANAS', 'PEARLS'])
+144800 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+144900 dict_keys(['BANANAS', 'PEARLS'])
+145000 dict_keys(['BANANAS', 'PEARLS'])
+145100 dict_keys(['BANANAS', 'PEARLS'])
+145200 dict_keys(['BANANAS', 'PEARLS'])
+145300 dict_keys(['BANANAS', 'PEARLS'])
+145400 dict_keys(['BANANAS', 'PEARLS'])
+145500 dict_keys(['BANANAS', 'PEARLS'])
+145600 dict_keys(['BANANAS', 'PEARLS'])
+145700 dict_keys(['BANANAS', 'PEARLS'])
+145800 dict_keys(['BANANAS', 'PEARLS'])
+145900 dict_keys(['BANANAS', 'PEARLS'])
+146000 dict_keys(['BANANAS', 'PEARLS'])
+146100 dict_keys(['BANANAS', 'PEARLS'])
+146200 dict_keys(['BANANAS', 'PEARLS'])
+146300 dict_keys(['BANANAS', 'PEARLS'])
+146400 dict_keys(['BANANAS', 'PEARLS'])
+146500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+146600 dict_keys(['BANANAS', 'PEARLS'])
+146700 dict_keys(['BANANAS', 'PEARLS'])
+146800 dict_keys(['BANANAS', 'PEARLS'])
+146900 dict_keys(['BANANAS', 'PEARLS'])
+147000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+147100 dict_keys(['BANANAS', 'PEARLS'])
+147200 dict_keys(['BANANAS', 'PEARLS'])
+147300 dict_keys(['BANANAS', 'PEARLS'])
+147400 dict_keys(['BANANAS', 'PEARLS'])
+147500 dict_keys(['BANANAS', 'PEARLS'])
+147600 dict_keys(['BANANAS', 'PEARLS'])
+147700 dict_keys(['BANANAS', 'PEARLS'])
+147800 dict_keys(['BANANAS', 'PEARLS'])
+147900 dict_keys(['BANANAS', 'PEARLS'])
+148000 dict_keys(['BANANAS', 'PEARLS'])
+148100 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+148200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+148300 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  5
+SELL -5x 10002
+148400 dict_keys(['BANANAS', 'PEARLS'])
+148500 dict_keys(['BANANAS', 'PEARLS'])
+148600 dict_keys(['BANANAS', 'PEARLS'])
+148700 dict_keys(['BANANAS', 'PEARLS'])
+148800 dict_keys(['BANANAS', 'PEARLS'])
+148900 dict_keys(['BANANAS', 'PEARLS'])
+149000 dict_keys(['BANANAS', 'PEARLS'])
+149100 dict_keys(['BANANAS', 'PEARLS'])
+149200 dict_keys(['BANANAS', 'PEARLS'])
+149300 dict_keys(['BANANAS', 'PEARLS'])
+149400 dict_keys(['BANANAS', 'PEARLS'])
+149500 dict_keys(['BANANAS', 'PEARLS'])
+149600 dict_keys(['BANANAS', 'PEARLS'])
+149700 dict_keys(['BANANAS', 'PEARLS'])
+149800 dict_keys(['BANANAS', 'PEARLS'])
+149900 dict_keys(['BANANAS', 'PEARLS'])
+150000 dict_keys(['BANANAS', 'PEARLS'])
+150100 dict_keys(['BANANAS', 'PEARLS'])
+150200 dict_keys(['BANANAS', 'PEARLS'])
+150300 dict_keys(['BANANAS', 'PEARLS'])
+150400 dict_keys(['BANANAS', 'PEARLS'])
+150500 dict_keys(['BANANAS', 'PEARLS'])
+150600 dict_keys(['BANANAS', 'PEARLS'])
+150700 dict_keys(['BANANAS', 'PEARLS'])
+150800 dict_keys(['BANANAS', 'PEARLS'])
+150900 dict_keys(['BANANAS', 'PEARLS'])
+151000 dict_keys(['BANANAS', 'PEARLS'])
+151100 dict_keys(['BANANAS', 'PEARLS'])
+151200 dict_keys(['BANANAS', 'PEARLS'])
+151300 dict_keys(['BANANAS', 'PEARLS'])
+151400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+151500 dict_keys(['BANANAS', 'PEARLS'])
+151600 dict_keys(['BANANAS', 'PEARLS'])
+151700 dict_keys(['BANANAS', 'PEARLS'])
+151800 dict_keys(['BANANAS', 'PEARLS'])
+151900 dict_keys(['BANANAS', 'PEARLS'])
+152000 dict_keys(['BANANAS', 'PEARLS'])
+152100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -1x 10002
+152200 dict_keys(['BANANAS', 'PEARLS'])
+152300 dict_keys(['BANANAS', 'PEARLS'])
+152400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+152500 dict_keys(['BANANAS', 'PEARLS'])
+152600 dict_keys(['BANANAS', 'PEARLS'])
+152700 dict_keys(['BANANAS', 'PEARLS'])
+152800 dict_keys(['BANANAS', 'PEARLS'])
+152900 dict_keys(['BANANAS', 'PEARLS'])
+153000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+153100 dict_keys(['BANANAS', 'PEARLS'])
+153200 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  2
+SELL -2x 10002
+153300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+153400 dict_keys(['BANANAS', 'PEARLS'])
+153500 dict_keys(['BANANAS', 'PEARLS'])
+153600 dict_keys(['BANANAS', 'PEARLS'])
+153700 dict_keys(['BANANAS', 'PEARLS'])
+153800 dict_keys(['BANANAS', 'PEARLS'])
+153900 dict_keys(['BANANAS', 'PEARLS'])
+154000 dict_keys(['BANANAS', 'PEARLS'])
+154100 dict_keys(['BANANAS', 'PEARLS'])
+154200 dict_keys(['BANANAS', 'PEARLS'])
+154300 dict_keys(['BANANAS', 'PEARLS'])
+154400 dict_keys(['BANANAS', 'PEARLS'])
+154500 dict_keys(['BANANAS', 'PEARLS'])
+154600 dict_keys(['BANANAS', 'PEARLS'])
+154700 dict_keys(['BANANAS', 'PEARLS'])
+154800 dict_keys(['BANANAS', 'PEARLS'])
+154900 dict_keys(['BANANAS', 'PEARLS'])
+155000 dict_keys(['BANANAS', 'PEARLS'])
+155100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  5
+SELL -1x 10002
+155200 dict_keys(['BANANAS', 'PEARLS'])
+155300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -3
+BUY 3x 9998
+155400 dict_keys(['BANANAS', 'PEARLS'])
+155500 dict_keys(['BANANAS', 'PEARLS'])
+155600 dict_keys(['BANANAS', 'PEARLS'])
+155700 dict_keys(['BANANAS', 'PEARLS'])
+155800 dict_keys(['BANANAS', 'PEARLS'])
+155900 dict_keys(['BANANAS', 'PEARLS'])
+156000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  3
+SELL -3x 10002
+156100 dict_keys(['BANANAS', 'PEARLS'])
+156200 dict_keys(['BANANAS', 'PEARLS'])
+156300 dict_keys(['BANANAS', 'PEARLS'])
+156400 dict_keys(['BANANAS', 'PEARLS'])
+156500 dict_keys(['BANANAS', 'PEARLS'])
+156600 dict_keys(['BANANAS', 'PEARLS'])
+156700 dict_keys(['BANANAS', 'PEARLS'])
+156800 dict_keys(['BANANAS', 'PEARLS'])
+156900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+157000 dict_keys(['BANANAS', 'PEARLS'])
+157100 dict_keys(['BANANAS', 'PEARLS'])
+157200 dict_keys(['BANANAS', 'PEARLS'])
+157300 dict_keys(['BANANAS', 'PEARLS'])
+157400 dict_keys(['BANANAS', 'PEARLS'])
+157500 dict_keys(['BANANAS', 'PEARLS'])
+157600 dict_keys(['BANANAS', 'PEARLS'])
+157700 dict_keys(['BANANAS', 'PEARLS'])
+157800 dict_keys(['BANANAS', 'PEARLS'])
+157900 dict_keys(['BANANAS', 'PEARLS'])
+158000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+158100 dict_keys(['BANANAS', 'PEARLS'])
+158200 dict_keys(['BANANAS', 'PEARLS'])
+158300 dict_keys(['BANANAS', 'PEARLS'])
+158400 dict_keys(['BANANAS', 'PEARLS'])
+158500 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+158600 dict_keys(['BANANAS', 'PEARLS'])
+158700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+158800 dict_keys(['BANANAS', 'PEARLS'])
+158900 dict_keys(['BANANAS', 'PEARLS'])
+159000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+159100 dict_keys(['BANANAS', 'PEARLS'])
+159200 dict_keys(['BANANAS', 'PEARLS'])
+159300 dict_keys(['BANANAS', 'PEARLS'])
+159400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+159500 dict_keys(['BANANAS', 'PEARLS'])
+159600 dict_keys(['BANANAS', 'PEARLS'])
+159700 dict_keys(['BANANAS', 'PEARLS'])
+159800 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  6
+SELL -6x 10002
+159900 dict_keys(['BANANAS', 'PEARLS'])
+160000 dict_keys(['BANANAS', 'PEARLS'])
+160100 dict_keys(['BANANAS', 'PEARLS'])
+160200 dict_keys(['BANANAS', 'PEARLS'])
+160300 dict_keys(['BANANAS', 'PEARLS'])
+160400 dict_keys(['BANANAS', 'PEARLS'])
+160500 dict_keys(['BANANAS', 'PEARLS'])
+160600 dict_keys(['BANANAS', 'PEARLS'])
+160700 dict_keys(['BANANAS', 'PEARLS'])
+160800 dict_keys(['BANANAS', 'PEARLS'])
+160900 dict_keys(['BANANAS', 'PEARLS'])
+161000 dict_keys(['BANANAS', 'PEARLS'])
+161100 dict_keys(['BANANAS', 'PEARLS'])
+161200 dict_keys(['BANANAS', 'PEARLS'])
+161300 dict_keys(['BANANAS', 'PEARLS'])
+161400 dict_keys(['BANANAS', 'PEARLS'])
+161500 dict_keys(['BANANAS', 'PEARLS'])
+161600 dict_keys(['BANANAS', 'PEARLS'])
+161700 dict_keys(['BANANAS', 'PEARLS'])
+161800 dict_keys(['BANANAS', 'PEARLS'])
+161900 dict_keys(['BANANAS', 'PEARLS'])
+162000 dict_keys(['BANANAS', 'PEARLS'])
+162100 dict_keys(['BANANAS', 'PEARLS'])
+162200 dict_keys(['BANANAS', 'PEARLS'])
+162300 dict_keys(['BANANAS', 'PEARLS'])
+162400 dict_keys(['BANANAS', 'PEARLS'])
+162500 dict_keys(['BANANAS', 'PEARLS'])
+162600 dict_keys(['BANANAS', 'PEARLS'])
+162700 dict_keys(['BANANAS', 'PEARLS'])
+162800 dict_keys(['BANANAS', 'PEARLS'])
+162900 dict_keys(['BANANAS', 'PEARLS'])
+163000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -6
+BUY 6x 10000
+163100 dict_keys(['BANANAS', 'PEARLS'])
+163200 dict_keys(['BANANAS', 'PEARLS'])
+163300 dict_keys(['BANANAS', 'PEARLS'])
+163400 dict_keys(['BANANAS', 'PEARLS'])
+163500 dict_keys(['BANANAS', 'PEARLS'])
+163600 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  2
+SELL -6x 10002
+163700 dict_keys(['BANANAS', 'PEARLS'])
+163800 dict_keys(['BANANAS', 'PEARLS'])
+163900 dict_keys(['BANANAS', 'PEARLS'])
+164000 dict_keys(['BANANAS', 'PEARLS'])
+164100 dict_keys(['BANANAS', 'PEARLS'])
+164200 dict_keys(['BANANAS', 'PEARLS'])
+164300 dict_keys(['BANANAS', 'PEARLS'])
+164400 dict_keys(['BANANAS', 'PEARLS'])
+164500 dict_keys(['BANANAS', 'PEARLS'])
+164600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+164700 dict_keys(['BANANAS', 'PEARLS'])
+164800 dict_keys(['BANANAS', 'PEARLS'])
+164900 dict_keys(['BANANAS', 'PEARLS'])
+165000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+165100 dict_keys(['BANANAS', 'PEARLS'])
+165200 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+165300 dict_keys(['BANANAS', 'PEARLS'])
+165400 dict_keys(['BANANAS', 'PEARLS'])
+165500 dict_keys(['BANANAS', 'PEARLS'])
+165600 dict_keys(['BANANAS', 'PEARLS'])
+165700 dict_keys(['BANANAS', 'PEARLS'])
+165800 dict_keys(['BANANAS', 'PEARLS'])
+165900 dict_keys(['BANANAS', 'PEARLS'])
+166000 dict_keys(['BANANAS', 'PEARLS'])
+166100 dict_keys(['BANANAS', 'PEARLS'])
+166200 dict_keys(['BANANAS', 'PEARLS'])
+166300 dict_keys(['BANANAS', 'PEARLS'])
+166400 dict_keys(['BANANAS', 'PEARLS'])
+166500 dict_keys(['BANANAS', 'PEARLS'])
+166600 dict_keys(['BANANAS', 'PEARLS'])
+166700 dict_keys(['BANANAS', 'PEARLS'])
+166800 dict_keys(['BANANAS', 'PEARLS'])
+166900 dict_keys(['BANANAS', 'PEARLS'])
+167000 dict_keys(['BANANAS', 'PEARLS'])
+167100 dict_keys(['BANANAS', 'PEARLS'])
+167200 dict_keys(['BANANAS', 'PEARLS'])
+167300 dict_keys(['BANANAS', 'PEARLS'])
+167400 dict_keys(['BANANAS', 'PEARLS'])
+167500 dict_keys(['BANANAS', 'PEARLS'])
+167600 dict_keys(['BANANAS', 'PEARLS'])
+167700 dict_keys(['BANANAS', 'PEARLS'])
+167800 dict_keys(['BANANAS', 'PEARLS'])
+167900 dict_keys(['BANANAS', 'PEARLS'])
+168000 dict_keys(['BANANAS', 'PEARLS'])
+168100 dict_keys(['BANANAS', 'PEARLS'])
+168200 dict_keys(['BANANAS', 'PEARLS'])
+168300 dict_keys(['BANANAS', 'PEARLS'])
+168400 dict_keys(['BANANAS', 'PEARLS'])
+168500 dict_keys(['BANANAS', 'PEARLS'])
+168600 dict_keys(['BANANAS', 'PEARLS'])
+168700 dict_keys(['BANANAS', 'PEARLS'])
+168800 dict_keys(['BANANAS', 'PEARLS'])
+168900 dict_keys(['BANANAS', 'PEARLS'])
+169000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+169100 dict_keys(['BANANAS', 'PEARLS'])
+169200 dict_keys(['BANANAS', 'PEARLS'])
+169300 dict_keys(['BANANAS', 'PEARLS'])
+169400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  2
+SELL -1x 10002
+169500 dict_keys(['BANANAS', 'PEARLS'])
+169600 dict_keys(['BANANAS', 'PEARLS'])
+169700 dict_keys(['BANANAS', 'PEARLS'])
+169800 dict_keys(['BANANAS', 'PEARLS'])
+169900 dict_keys(['BANANAS', 'PEARLS'])
+170000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+170100 dict_keys(['BANANAS', 'PEARLS'])
+170200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+170300 dict_keys(['BANANAS', 'PEARLS'])
+170400 dict_keys(['BANANAS', 'PEARLS'])
+170500 dict_keys(['BANANAS', 'PEARLS'])
+170600 dict_keys(['BANANAS', 'PEARLS'])
+170700 dict_keys(['BANANAS', 'PEARLS'])
+170800 dict_keys(['BANANAS', 'PEARLS'])
+170900 dict_keys(['BANANAS', 'PEARLS'])
+171000 dict_keys(['BANANAS', 'PEARLS'])
+171100 dict_keys(['BANANAS', 'PEARLS'])
+171200 dict_keys(['BANANAS', 'PEARLS'])
+171300 dict_keys(['BANANAS', 'PEARLS'])
+171400 dict_keys(['BANANAS', 'PEARLS'])
+171500 dict_keys(['BANANAS', 'PEARLS'])
+171600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+171700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  2
+SELL -7x 10002
+171800 dict_keys(['BANANAS', 'PEARLS'])
+171900 dict_keys(['BANANAS', 'PEARLS'])
+172000 dict_keys(['BANANAS', 'PEARLS'])
+172100 dict_keys(['BANANAS', 'PEARLS'])
+172200 dict_keys(['BANANAS', 'PEARLS'])
+172300 dict_keys(['BANANAS', 'PEARLS'])
+172400 dict_keys(['BANANAS', 'PEARLS'])
+172500 dict_keys(['BANANAS', 'PEARLS'])
+172600 dict_keys(['BANANAS', 'PEARLS'])
+172700 dict_keys(['BANANAS', 'PEARLS'])
+172800 dict_keys(['BANANAS', 'PEARLS'])
+172900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+173000 dict_keys(['BANANAS', 'PEARLS'])
+173100 dict_keys(['BANANAS', 'PEARLS'])
+173200 dict_keys(['BANANAS', 'PEARLS'])
+173300 dict_keys(['BANANAS', 'PEARLS'])
+173400 dict_keys(['BANANAS', 'PEARLS'])
+173500 dict_keys(['BANANAS', 'PEARLS'])
+173600 dict_keys(['BANANAS', 'PEARLS'])
+173700 dict_keys(['BANANAS', 'PEARLS'])
+173800 dict_keys(['BANANAS', 'PEARLS'])
+173900 dict_keys(['BANANAS', 'PEARLS'])
+174000 dict_keys(['BANANAS', 'PEARLS'])
+174100 dict_keys(['BANANAS', 'PEARLS'])
+174200 dict_keys(['BANANAS', 'PEARLS'])
+174300 dict_keys(['BANANAS', 'PEARLS'])
+174400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+174500 dict_keys(['BANANAS', 'PEARLS'])
+174600 dict_keys(['BANANAS', 'PEARLS'])
+174700 dict_keys(['BANANAS', 'PEARLS'])
+174800 dict_keys(['BANANAS', 'PEARLS'])
+174900 dict_keys(['BANANAS', 'PEARLS'])
+175000 dict_keys(['BANANAS', 'PEARLS'])
+175100 dict_keys(['BANANAS', 'PEARLS'])
+175200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+175300 dict_keys(['BANANAS', 'PEARLS'])
+175400 dict_keys(['BANANAS', 'PEARLS'])
+175500 dict_keys(['BANANAS', 'PEARLS'])
+175600 dict_keys(['BANANAS', 'PEARLS'])
+175700 dict_keys(['BANANAS', 'PEARLS'])
+175800 dict_keys(['BANANAS', 'PEARLS'])
+175900 dict_keys(['BANANAS', 'PEARLS'])
+176000 dict_keys(['BANANAS', 'PEARLS'])
+176100 dict_keys(['BANANAS', 'PEARLS'])
+176200 dict_keys(['BANANAS', 'PEARLS'])
+176300 dict_keys(['BANANAS', 'PEARLS'])
+176400 dict_keys(['BANANAS', 'PEARLS'])
+176500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+176600 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+176700 dict_keys(['BANANAS', 'PEARLS'])
+176800 dict_keys(['BANANAS', 'PEARLS'])
+176900 dict_keys(['BANANAS', 'PEARLS'])
+177000 dict_keys(['BANANAS', 'PEARLS'])
+177100 dict_keys(['BANANAS', 'PEARLS'])
+177200 dict_keys(['BANANAS', 'PEARLS'])
+177300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+177400 dict_keys(['BANANAS', 'PEARLS'])
+177500 dict_keys(['BANANAS', 'PEARLS'])
+177600 dict_keys(['BANANAS', 'PEARLS'])
+177700 dict_keys(['BANANAS', 'PEARLS'])
+177800 dict_keys(['BANANAS', 'PEARLS'])
+177900 dict_keys(['BANANAS', 'PEARLS'])
+178000 dict_keys(['BANANAS', 'PEARLS'])
+178100 dict_keys(['BANANAS', 'PEARLS'])
+178200 dict_keys(['BANANAS', 'PEARLS'])
+178300 dict_keys(['BANANAS', 'PEARLS'])
+178400 dict_keys(['BANANAS', 'PEARLS'])
+178500 dict_keys(['BANANAS', 'PEARLS'])
+178600 dict_keys(['BANANAS', 'PEARLS'])
+178700 dict_keys(['BANANAS', 'PEARLS'])
+178800 dict_keys(['BANANAS', 'PEARLS'])
+178900 dict_keys(['BANANAS', 'PEARLS'])
+179000 dict_keys(['BANANAS', 'PEARLS'])
+179100 dict_keys(['BANANAS', 'PEARLS'])
+179200 dict_keys(['BANANAS', 'PEARLS'])
+179300 dict_keys(['BANANAS', 'PEARLS'])
+179400 dict_keys(['BANANAS', 'PEARLS'])
+179500 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -10x 10002
+179600 dict_keys(['BANANAS', 'PEARLS'])
+179700 dict_keys(['BANANAS', 'PEARLS'])
+179800 dict_keys(['BANANAS', 'PEARLS'])
+179900 dict_keys(['BANANAS', 'PEARLS'])
+180000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+180100 dict_keys(['BANANAS', 'PEARLS'])
+180200 dict_keys(['BANANAS', 'PEARLS'])
+180300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+180400 dict_keys(['BANANAS', 'PEARLS'])
+180500 dict_keys(['BANANAS', 'PEARLS'])
+180600 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+180700 dict_keys(['BANANAS', 'PEARLS'])
+180800 dict_keys(['BANANAS', 'PEARLS'])
+180900 dict_keys(['BANANAS', 'PEARLS'])
+181000 dict_keys(['BANANAS', 'PEARLS'])
+181100 dict_keys(['BANANAS', 'PEARLS'])
+181200 dict_keys(['BANANAS', 'PEARLS'])
+181300 dict_keys(['BANANAS', 'PEARLS'])
+181400 dict_keys(['BANANAS', 'PEARLS'])
+181500 dict_keys(['BANANAS', 'PEARLS'])
+181600 dict_keys(['BANANAS', 'PEARLS'])
+181700 dict_keys(['BANANAS', 'PEARLS'])
+181800 dict_keys(['BANANAS', 'PEARLS'])
+181900 dict_keys(['BANANAS', 'PEARLS'])
+182000 dict_keys(['BANANAS', 'PEARLS'])
+182100 dict_keys(['BANANAS', 'PEARLS'])
+182200 dict_keys(['BANANAS', 'PEARLS'])
+182300 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 10000
+182400 dict_keys(['BANANAS', 'PEARLS'])
+182500 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+182600 dict_keys(['BANANAS', 'PEARLS'])
+182700 dict_keys(['BANANAS', 'PEARLS'])
+182800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 10000
+182900 dict_keys(['BANANAS', 'PEARLS'])
+183000 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -5x 10002
+183100 dict_keys(['BANANAS', 'PEARLS'])
+183200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -4
+BUY 4x 9998
+183300 dict_keys(['BANANAS', 'PEARLS'])
+183400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+183500 dict_keys(['BANANAS', 'PEARLS'])
+183600 dict_keys(['BANANAS', 'PEARLS'])
+183700 dict_keys(['BANANAS', 'PEARLS'])
+183800 dict_keys(['BANANAS', 'PEARLS'])
+183900 dict_keys(['BANANAS', 'PEARLS'])
+184000 dict_keys(['BANANAS', 'PEARLS'])
+184100 dict_keys(['BANANAS', 'PEARLS'])
+184200 dict_keys(['BANANAS', 'PEARLS'])
+184300 dict_keys(['BANANAS', 'PEARLS'])
+184400 dict_keys(['BANANAS', 'PEARLS'])
+184500 dict_keys(['BANANAS', 'PEARLS'])
+184600 dict_keys(['BANANAS', 'PEARLS'])
+184700 dict_keys(['BANANAS', 'PEARLS'])
+184800 dict_keys(['BANANAS', 'PEARLS'])
+184900 dict_keys(['BANANAS', 'PEARLS'])
+185000 dict_keys(['BANANAS', 'PEARLS'])
+185100 dict_keys(['BANANAS', 'PEARLS'])
+185200 dict_keys(['BANANAS', 'PEARLS'])
+185300 dict_keys(['BANANAS', 'PEARLS'])
+185400 dict_keys(['BANANAS', 'PEARLS'])
+185500 dict_keys(['BANANAS', 'PEARLS'])
+185600 dict_keys(['BANANAS', 'PEARLS'])
+185700 dict_keys(['BANANAS', 'PEARLS'])
+185800 dict_keys(['BANANAS', 'PEARLS'])
+185900 dict_keys(['BANANAS', 'PEARLS'])
+186000 dict_keys(['BANANAS', 'PEARLS'])
+186100 dict_keys(['BANANAS', 'PEARLS'])
+186200 dict_keys(['BANANAS', 'PEARLS'])
+186300 dict_keys(['BANANAS', 'PEARLS'])
+186400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+186500 dict_keys(['BANANAS', 'PEARLS'])
+186600 dict_keys(['BANANAS', 'PEARLS'])
+186700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+186800 dict_keys(['BANANAS', 'PEARLS'])
+186900 dict_keys(['BANANAS', 'PEARLS'])
+187000 dict_keys(['BANANAS', 'PEARLS'])
+187100 dict_keys(['BANANAS', 'PEARLS'])
+187200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+187300 dict_keys(['BANANAS', 'PEARLS'])
+187400 dict_keys(['BANANAS', 'PEARLS'])
+187500 dict_keys(['BANANAS', 'PEARLS'])
+187600 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  10
+SELL -11x 10002
+187700 dict_keys(['BANANAS', 'PEARLS'])
+187800 dict_keys(['BANANAS', 'PEARLS'])
+187900 dict_keys(['BANANAS', 'PEARLS'])
+188000 dict_keys(['BANANAS', 'PEARLS'])
+188100 dict_keys(['BANANAS', 'PEARLS'])
+188200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+188300 dict_keys(['BANANAS', 'PEARLS'])
+188400 dict_keys(['BANANAS', 'PEARLS'])
+188500 dict_keys(['BANANAS', 'PEARLS'])
+188600 dict_keys(['BANANAS', 'PEARLS'])
+188700 dict_keys(['BANANAS', 'PEARLS'])
+188800 dict_keys(['BANANAS', 'PEARLS'])
+188900 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -5
+BUY 5x 9998
+189000 dict_keys(['BANANAS', 'PEARLS'])
+189100 dict_keys(['BANANAS', 'PEARLS'])
+189200 dict_keys(['BANANAS', 'PEARLS'])
+189300 dict_keys(['BANANAS', 'PEARLS'])
+189400 dict_keys(['BANANAS', 'PEARLS'])
+189500 dict_keys(['BANANAS', 'PEARLS'])
+189600 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  8
+SELL -6x 10002
+189700 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+189800 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+189900 dict_keys(['BANANAS', 'PEARLS'])
+190000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+190100 dict_keys(['BANANAS', 'PEARLS'])
+190200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+190300 dict_keys(['BANANAS', 'PEARLS'])
+190400 dict_keys(['BANANAS', 'PEARLS'])
+190500 dict_keys(['BANANAS', 'PEARLS'])
+190600 dict_keys(['BANANAS', 'PEARLS'])
+190700 dict_keys(['BANANAS', 'PEARLS'])
+190800 dict_keys(['BANANAS', 'PEARLS'])
+190900 dict_keys(['BANANAS', 'PEARLS'])
+191000 dict_keys(['BANANAS', 'PEARLS'])
+191100 dict_keys(['BANANAS', 'PEARLS'])
+191200 dict_keys(['BANANAS', 'PEARLS'])
+191300 dict_keys(['BANANAS', 'PEARLS'])
+191400 dict_keys(['BANANAS', 'PEARLS'])
+191500 dict_keys(['BANANAS', 'PEARLS'])
+191600 dict_keys(['BANANAS', 'PEARLS'])
+191700 dict_keys(['BANANAS', 'PEARLS'])
+191800 dict_keys(['BANANAS', 'PEARLS'])
+191900 dict_keys(['BANANAS', 'PEARLS'])
+192000 dict_keys(['BANANAS', 'PEARLS'])
+192100 dict_keys(['BANANAS', 'PEARLS'])
+192200 dict_keys(['BANANAS', 'PEARLS'])
+192300 dict_keys(['BANANAS', 'PEARLS'])
+192400 dict_keys(['BANANAS', 'PEARLS'])
+192500 dict_keys(['BANANAS', 'PEARLS'])
+192600 dict_keys(['BANANAS', 'PEARLS'])
+192700 dict_keys(['BANANAS', 'PEARLS'])
+192800 dict_keys(['BANANAS', 'PEARLS'])
+192900 dict_keys(['BANANAS', 'PEARLS'])
+193000 dict_keys(['BANANAS', 'PEARLS'])
+193100 dict_keys(['BANANAS', 'PEARLS'])
+193200 dict_keys(['BANANAS', 'PEARLS'])
+193300 dict_keys(['BANANAS', 'PEARLS'])
+193400 dict_keys(['BANANAS', 'PEARLS'])
+193500 dict_keys(['BANANAS', 'PEARLS'])
+193600 dict_keys(['BANANAS', 'PEARLS'])
+193700 dict_keys(['BANANAS', 'PEARLS'])
+193800 dict_keys(['BANANAS', 'PEARLS'])
+193900 dict_keys(['BANANAS', 'PEARLS'])
+194000 dict_keys(['BANANAS', 'PEARLS'])
+194100 dict_keys(['BANANAS', 'PEARLS'])
+194200 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -4x 10002
+194300 dict_keys(['BANANAS', 'PEARLS'])
+194400 dict_keys(['BANANAS', 'PEARLS'])
+194500 dict_keys(['BANANAS', 'PEARLS'])
+194600 dict_keys(['BANANAS', 'PEARLS'])
+194700 dict_keys(['BANANAS', 'PEARLS'])
+194800 dict_keys(['BANANAS', 'PEARLS'])
+194900 dict_keys(['BANANAS', 'PEARLS'])
+195000 dict_keys(['BANANAS', 'PEARLS'])
+195100 dict_keys(['BANANAS', 'PEARLS'])
+195200 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -9
+BUY 9x 9998
+195300 dict_keys(['BANANAS', 'PEARLS'])
+195400 dict_keys(['BANANAS', 'PEARLS'])
+195500 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -9x 10002
+195600 dict_keys(['BANANAS', 'PEARLS'])
+195700 dict_keys(['BANANAS', 'PEARLS'])
+195800 dict_keys(['BANANAS', 'PEARLS'])
+195900 dict_keys(['BANANAS', 'PEARLS'])
+196000 dict_keys(['BANANAS', 'PEARLS'])
+196100 dict_keys(['BANANAS', 'PEARLS'])
+196200 dict_keys(['BANANAS', 'PEARLS'])
+196300 dict_keys(['BANANAS', 'PEARLS'])
+196400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -6
+BUY 6x 10000
+196500 dict_keys(['BANANAS', 'PEARLS'])
+196600 dict_keys(['BANANAS', 'PEARLS'])
+196700 dict_keys(['BANANAS', 'PEARLS'])
+196800 dict_keys(['BANANAS', 'PEARLS'])
+196900 dict_keys(['BANANAS', 'PEARLS'])
+197000 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+197100 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -7x 10002
+197200 dict_keys(['BANANAS', 'PEARLS'])
+197300 dict_keys(['BANANAS', 'PEARLS'])
+197400 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -1
+BUY 1x 9998
+197500 dict_keys(['BANANAS', 'PEARLS'])
+197600 dict_keys(['BANANAS', 'PEARLS'])
+197700 dict_keys(['BANANAS', 'PEARLS'])
+197800 dict_keys(['BANANAS', 'PEARLS'])
+197900 dict_keys(['BANANAS', 'PEARLS'])
+198000 dict_keys(['BANANAS', 'PEARLS'])
+198100 dict_keys(['BANANAS', 'PEARLS'])
+198200 dict_keys(['BANANAS', 'PEARLS'])
+198300 dict_keys(['BANANAS', 'PEARLS'])
+198400 dict_keys(['BANANAS', 'PEARLS'])
+198500 dict_keys(['BANANAS', 'PEARLS'])
+198600 dict_keys(['BANANAS', 'PEARLS'])
+198700 dict_keys(['BANANAS', 'PEARLS'])
+198800 dict_keys(['BANANAS', 'PEARLS'])
+198900 dict_keys(['BANANAS', 'PEARLS'])
+199000 dict_keys(['BANANAS', 'PEARLS'])
+199100 dict_keys(['BANANAS', 'PEARLS'])
+199200 dict_keys(['BANANAS', 'PEARLS'])
+199300 dict_keys(['BANANAS', 'PEARLS'])
+199400 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  4
+SELL -1x 10002
+199500 dict_keys(['BANANAS', 'PEARLS'])
+best_ask_volume:  -2
+BUY 2x 9998
+199600 dict_keys(['BANANAS', 'PEARLS'])
+199700 dict_keys(['BANANAS', 'PEARLS'])
+best_bid_volume:  1
+SELL -2x 10002
+199800 dict_keys(['BANANAS', 'PEARLS'])
+199900 dict_keys(['BANANAS', 'PEARLS'])
+
+
+Submission logs:
+2023-03-06T01:42:01Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:02Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:03Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:04Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:06Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:07Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:08Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:11Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:12Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:13Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:14Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:15Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:16Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:17Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:18Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:20Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:21Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:22Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:23Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:24Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:25Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:32Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:33Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:34Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:35Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:36Z Orders for product PEARLS exceeded limit of 20 set
+2023-03-06T01:42:38Z Orders for product PEARLS exceeded limit of 20 set
