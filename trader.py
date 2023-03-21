@@ -9,7 +9,8 @@ Supported Libraries:
 
 from math import ceil, floor
 from typing import Dict, List
-from datamodel import TradingState, Order
+from datamodel import *
+import numpy as np
 
 
 # DONE: Make buy/sell wall at top of book
@@ -21,7 +22,81 @@ from datamodel import TradingState, Order
 # TODO: Try changing the market-making bid/ask prices
 
 
-class Trader:
+class BaseStrategy:
+    def __init__(self):
+        self.orders = {}
+        self.state = None
+
+    def strategy(self):
+        raise NotImplementedError
+
+    def __call__(self, state: TradingState) -> Dict[str, List[Order]]:
+        self.state = state
+        self.orders = {}
+        self.strategy()
+        return self.orders
+
+
+class BolBStrategy(BaseStrategy):
+    def __init__(self, smoothing: int = 20, stds: int = 2):
+        super().__init__()
+        self.smoothing = smoothing
+        self.stds = stds
+
+        self.product = None
+        self.current_steps = 0
+        self.data = {}
+
+    def accumulate(self):
+        if self.product in self.state.order_depths.keys():
+            depth = self.state.order_depths[self.product]
+            self.data['top_bid'] = max(depth.buy_orders.keys())
+            self.data['top_ask'] = min(depth.sell_orders.keys())
+            self.data['mid_price'] = self.data['mid_price'].get(self.current_steps, []) + [(self.data['top_bid'] + self.data['top_ask']) / 2]
+            self.current_steps += 1
+
+    def strategy(self):
+        self.accumulate()
+
+        if self.current_steps < self.smoothing:
+            return
+
+        prices = self.data['mid_price'][self.current_steps - self.smoothing:]
+        bolu = np.mean(prices) + self.stds * np.std(prices)
+        bold = np.mean(prices) - self.stds * np.std(prices)
+
+        if prices[-1] > bolu:
+            self.orders[self.product] = [Order(self.product, self.data['top_bid'], -1)]
+
+        elif prices[-1] < bold:
+            self.orders[self.product] = [Order(self.product, self.data['top_ask'], 1)]
+
+
+class BaseTrader:
+    def __init__(self, strategies: Dict[str, BaseStrategy]):
+        self.strategies = strategies
+
+    def run(self, state: TradingState) -> Dict[str, List[Order]]:
+        result = {}
+
+        for strategy in self.strategies.values():
+            strategy_out = strategy(state)
+
+            for product, orders in strategy_out.items():
+                if product not in result.keys():
+                    result[product] = result.get(product, []) + orders
+
+        return result
+
+
+class Trader(BaseTrader):
+    def __init__(self):
+        super().__init__({
+            'PEARLS': BolBStrategy(),
+        })
+
+
+'''class Trader:
     pearls_ema = None
     pearls_limit = 20
 
@@ -119,4 +194,4 @@ class Trader:
                 result[product] = orders
 
         print()
-        return result
+        return result'''
