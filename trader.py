@@ -19,7 +19,10 @@ class BaseStrategy:
 
     def __call__(self, state: TradingState) -> Dict[str, List[Order]]:
         self.state = state
-        self.orders = {}
+        self.orders = {
+            'PEARLS': [],
+            'BANANAS': [],
+        }
         self.accumulate()
         self.current_steps += 1
         self.strategy()
@@ -27,11 +30,12 @@ class BaseStrategy:
 
 
 class AvellanedaMM(BaseStrategy):
-    def __int__(self, product: str, y: float, k: float, limit: int, max_t: float = 20000, vol_window: int = 30):
+    def __init__(self, product: str, y: float, k: float, limit: int, max_t: float = 20000, vol_window: int = 30):
         super().__init__()
         self.product = product
         self.y = y
-        self.k = k
+        self.k = 0
+        self.ks = np.linspace(0.000000001, 10000000, 20000)
         self.limit = limit
         self.max_t = max_t
         self.vol_window = vol_window
@@ -40,6 +44,7 @@ class AvellanedaMM(BaseStrategy):
             'top_bid': [],
             'top_ask': [],
             'mid_price': [],
+            'log_return': [],
         }
 
     def accumulate(self):
@@ -49,19 +54,23 @@ class AvellanedaMM(BaseStrategy):
             self.data['top_ask'].append(min(depth.sell_orders.keys()))
             self.data['mid_price'].append((self.data['top_bid'][-1] + self.data['top_ask'][-1]) / 2)
 
+            if self.current_steps > 1:
+                self.data['log_return'].append(math.log(self.data['mid_price'][-1] / self.data['mid_price'][-2]))
+
     def strategy(self):
-        if self.current_steps < self.vol_window:
+        if self.current_steps < self.vol_window + 1:
             return
 
-        vol = np.std(self.data['mid_price'][-self.vol_window:]) ** 2
+        self.k = self.ks[self.current_steps]
+        vol = np.std(self.data['log_return'][-self.vol_window:]) ** 2
         s = self.data['mid_price'][-1]
-        q = self.state.position[self.product]
+        q = self.state.position.get(self.product, 0)
         r = s - q * self.y * vol * (self.max_t - self.current_steps)
         spread = self.y * vol * (self.max_t - self.current_steps) + (2 / self.y) * math.log(1 + self.y / self.k)
         bid = r - spread / 2
         ask = r + spread / 2
 
-        self.orders[self.product] = []
+        print(f'Bid: {bid}, Ask: {ask}')
 
         if s < 20:
             self.orders[self.product].append(Order(self.product, bid, self.limit - s))
@@ -90,8 +99,6 @@ class BolBStrategy(BaseStrategy):
             self.current_steps += 1
 
     def strategy(self):
-        self.accumulate()
-
         if self.current_steps < self.smoothing:
             return
 
@@ -214,7 +221,7 @@ class Trader(BaseTrader):
     def __init__(self):
         super().__init__(
             {'PEARLS': AvellanedaMM(
-            'PEARLS', 0.01, 1.5, 20000,
+                'PEARLS', 0.01, 100, 20000,
             )
             }
         )
