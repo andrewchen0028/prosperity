@@ -1,12 +1,18 @@
 from typing import Dict, List
 from datamodel import *
 import numpy as np
+import math
 
 
 class BaseStrategy:
     def __init__(self):
         self.orders = {}
         self.state = None
+        self.current_steps = 0
+        self.data = {}
+
+    def accumulate(self):
+        pass
 
     def strategy(self):
         raise NotImplementedError
@@ -14,8 +20,54 @@ class BaseStrategy:
     def __call__(self, state: TradingState) -> Dict[str, List[Order]]:
         self.state = state
         self.orders = {}
+        self.accumulate()
+        self.current_steps += 1
         self.strategy()
         return self.orders
+
+
+class AvellanedaMM(BaseStrategy):
+    def __int__(self, product: str, y: float, k: float, limit: int, max_t: float = 20000, vol_window: int = 30):
+        super().__init__()
+        self.product = product
+        self.y = y
+        self.k = k
+        self.limit = limit
+        self.max_t = max_t
+        self.vol_window = vol_window
+
+        self.data = {
+            'top_bid': [],
+            'top_ask': [],
+            'mid_price': [],
+        }
+
+    def accumulate(self):
+        if self.product in self.state.order_depths.keys():
+            depth = self.state.order_depths[self.product]
+            self.data['top_bid'].append(max(depth.buy_orders.keys()))
+            self.data['top_ask'].append(min(depth.sell_orders.keys()))
+            self.data['mid_price'].append((self.data['top_bid'][-1] + self.data['top_ask'][-1]) / 2)
+
+    def strategy(self):
+        if self.current_steps < self.vol_window:
+            return
+
+        vol = np.std(self.data['mid_price'][-self.vol_window:]) ** 2
+        s = self.data['mid_price'][-1]
+        q = self.state.position[self.product]
+        r = s - q * self.y * vol * (self.max_t - self.current_steps)
+        spread = self.y * vol * (self.max_t - self.current_steps) + (2 / self.y) * math.log(1 + self.y / self.k)
+        bid = r - spread / 2
+        ask = r + spread / 2
+
+        self.orders[self.product] = []
+
+        if s < 20:
+            self.orders[self.product].append(Order(self.product, bid, self.limit - s))
+
+        if s > -20:
+            self.orders[self.product].append(Order(self.product, ask, -(self.limit - s)))
 
 
 class BolBStrategy(BaseStrategy):
@@ -160,4 +212,9 @@ class BaseTrader:
 
 class Trader(BaseTrader):
     def __init__(self):
-        super().__init__({'PEARLS': NaiveMM()})
+        super().__init__(
+            {'PEARLS': AvellanedaMM(
+            'PEARLS', 0.01, 1.5, 20000,
+            )
+            }
+        )
