@@ -1,25 +1,6 @@
-"""
-Supported Libraries:
- - pandas
- - numpy
- - statistics
- - math
- - typing
-"""
-
-from math import ceil, floor
 from typing import Dict, List
 from datamodel import *
 import numpy as np
-
-
-# DONE: Make buy/sell wall at top of book
-#       Bid just below fair value if we are short.
-#       Ask just above fair value if we are long.
-# (unreasoned heuristic to keep balanced book)
-# NOTE: This change improved PnL from 1546 to 1605
-
-# TODO: Try changing the market-making bid/ask prices
 
 
 class BaseStrategy:
@@ -52,7 +33,8 @@ class BolBStrategy(BaseStrategy):
             depth = self.state.order_depths[self.product]
             self.data['top_bid'] = max(depth.buy_orders.keys())
             self.data['top_ask'] = min(depth.sell_orders.keys())
-            self.data['mid_price'] = self.data['mid_price'].get(self.current_steps, []) + [(self.data['top_bid'] + self.data['top_ask']) / 2]
+            self.data['mid_price'] = self.data['mid_price'].get(
+                self.current_steps, []) + [(self.data['top_bid'] + self.data['top_ask']) / 2]
             self.current_steps += 1
 
     def strategy(self):
@@ -66,10 +48,12 @@ class BolBStrategy(BaseStrategy):
         bold = np.mean(prices) - self.stds * np.std(prices)
 
         if prices[-1] > bolu:
-            self.orders[self.product] = [Order(self.product, self.data['top_bid'], -1)]
+            self.orders[self.product] = [
+                Order(self.product, self.data['top_bid'], -1)]
 
         elif prices[-1] < bold:
-            self.orders[self.product] = [Order(self.product, self.data['top_ask'], 1)]
+            self.orders[self.product] = [
+                Order(self.product, self.data['top_ask'], 1)]
 
 
 class NaiveMM(BaseStrategy):
@@ -106,15 +90,15 @@ class NaiveMM(BaseStrategy):
                     best_ask = min(asks.keys())
                     best_ask_volume = asks[best_ask]
 
-                # TODO: The following two if statements don't yet handle the situation
+                # TODO: Make these two "if" statements handle the situation
                 #           (best ask volume) < (remainder of position limit).
-                #       So they won't fill the "second-best bid/ask".
-                #       Make it do that.
+                #       I.e., fill the "second-best bid/ask".
                 # NOTE: positive quantity => buy order
 
                 # Fill asks below price
                 if position < self.pearls_limit and best_ask < 10000:
-                    qty = max(position - self.pearls_limit, best_ask_volume)  # NEGATIVE
+                    qty = max(position - self.pearls_limit,
+                              best_ask_volume)  # NEGATIVE
                     print("best_ask_volume: ", best_ask_volume)
                     print("BUY", str(-qty), "at", best_ask)
                     orders.append(Order(product, best_ask, -qty))
@@ -122,17 +106,20 @@ class NaiveMM(BaseStrategy):
                     if position + abs(qty) > 0:
                         # We will be long pearls after this purchase.
                         # Ask just above fair value.
-                        orders.append(Order(product, 10000, -(position + abs(qty))))
+                        orders.append(
+                            Order(product, 10000, -(position + abs(qty))))
                         print("ASK", str(-(position + abs(qty))), "at", 10000)
                     elif position + abs(qty) < 0:
                         # We will be short pearls after this purchase.
                         # Bid just below fair value.
-                        orders.append(Order(product, 10000, -(position + abs(qty))))
+                        orders.append(
+                            Order(product, 10000, -(position + abs(qty))))
                         print("BID", str(-(position + abs(qty))), "at", 10000)
 
                 # Fill bids above price
                 if position > -self.pearls_limit and best_bid > 10000:
-                    qty = min(position + self.pearls_limit, best_bid_volume)  # POSITIVE
+                    qty = min(position + self.pearls_limit,
+                              best_bid_volume)  # POSITIVE
                     print("best_bid_volume: ", best_bid_volume)
                     print("SELL", str(qty), "at", best_bid)
                     orders.append(Order(product, best_bid, -qty))
@@ -140,12 +127,14 @@ class NaiveMM(BaseStrategy):
                     if position - abs(qty) > 0:
                         # We will be long pearls after this sale.
                         # Ask just above fair value.
-                        orders.append(Order(product, 10000, -(position - abs(qty))))
+                        orders.append(
+                            Order(product, 10000, -(position - abs(qty))))
                         print("ASK", str(-(position - abs(qty))), "at", 10000)
                     elif position - abs(qty) < 0:
                         # We will be short pearls after this sale.
                         # Bid just below fair value.
-                        orders.append(Order(product, 10000, -(position - abs(qty))))
+                        orders.append(
+                            Order(product, 10000, -(position - abs(qty))))
                         print("BID", str(-(position - abs(qty))), "at", 10000)
 
                 # Add orders to result dict
