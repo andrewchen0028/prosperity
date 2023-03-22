@@ -33,9 +33,9 @@ class AvellanedaMM(BaseStrategy):
     def __init__(self, product: str, y: float, k: float, limit: int, max_t: float = 20000, vol_window: int = 30):
         super().__init__()
         self.product = product
-        self.y = y          # 1.5
-        self.k = k          # 10
-        self.limit = limit  # 20
+        self.y = y
+        self.k = k
+        self.limit = limit
         self.max_t = max_t
         self.vol_window = vol_window
 
@@ -88,23 +88,22 @@ class AvellanedaMM(BaseStrategy):
 
 
 class BolBStrategy(BaseStrategy):
-    def __init__(self, smoothing: int = 20, stds: int = 2):
+    def __init__(self, product, smoothing: int = 20, stds: int = 2, limit=20):
         super().__init__()
         self.smoothing = smoothing
         self.stds = stds
+        self.limit = limit
 
-        self.product = None
-        self.current_steps = 0
-        self.data = {}
+        self.product = product
+        self.data = {'mid_price': []}
 
     def accumulate(self):
         if self.product in self.state.order_depths.keys():
             depth = self.state.order_depths[self.product]
             self.data['top_bid'] = max(depth.buy_orders.keys())
             self.data['top_ask'] = min(depth.sell_orders.keys())
-            self.data['mid_price'] = self.data['mid_price'].get(
-                self.current_steps, []) + [(self.data['top_bid'] + self.data['top_ask']) / 2]
-            self.current_steps += 1
+            self.data['mid_price'].append(
+                (self.data['top_bid'] + self.data['top_ask']) / 2)
 
     def strategy(self):
         if self.current_steps < self.smoothing:
@@ -114,13 +113,17 @@ class BolBStrategy(BaseStrategy):
         bolu = np.mean(prices) + self.stds * np.std(prices)
         bold = np.mean(prices) - self.stds * np.std(prices)
 
-        if prices[-1] > bolu:
-            self.orders[self.product] = [
-                Order(self.product, self.data['top_bid'], -1)]
+        q = self.state.position.get(self.product, 0)
+        bid_amount = self.limit - q
+        ask_amount = -self.limit - q
 
-        elif prices[-1] < bold:
+        if prices[-1] > bolu and ask_amount < 0:
             self.orders[self.product] = [
-                Order(self.product, self.data['top_ask'], 1)]
+                Order(self.product, self.data['top_bid'], ask_amount)]
+
+        elif prices[-1] < bold and bid_amount > 0:
+            self.orders[self.product] = [
+                Order(self.product, self.data['top_ask'], bid_amount)]
 
 
 class NaiveMM(BaseStrategy):
@@ -134,7 +137,6 @@ class NaiveMM(BaseStrategy):
         Takes all buy and sell orders for all symbols as an input,
         and outputs a list of orders to be sent
         """
-        print(vars(self.state))
 
         for product in self.state.order_depths.keys():
             if product == "PEARLS":
@@ -208,6 +210,28 @@ class NaiveMM(BaseStrategy):
                 self.orders[product] = orders
 
 
+class GreatWall(BaseStrategy):
+    def __init__(self, product, upper, lower, limit=20):
+        super().__init__()
+        self.product = product
+        self.limit = limit
+        self.upper = upper + 10000
+        self.lower = lower + 10000
+
+    def strategy(self):
+        q = self.state.position.get(self.product, 0)
+        bid_amount = self.limit - q
+        ask_amount = -self.limit - q
+
+        if bid_amount > 0:
+            self.orders[self.product].append(
+                Order(self.product, self.lower, bid_amount))
+
+        if ask_amount < 0:
+            self.orders[self.product].append(
+                Order(self.product, self.upper, ask_amount))
+
+
 class BaseTrader:
     def __init__(self, strategies: Dict[str, BaseStrategy]):
         self.strategies = strategies
@@ -219,15 +243,16 @@ class BaseTrader:
             strategy_out = strategy(state)
 
             for product, orders in strategy_out.items():
-                if product not in result.keys():
-                    result[product] = result.get(product, []) + orders
+                result[product] = result.get(product, []) + orders
 
         return result
 
 
 class Trader(BaseTrader):
     def __init__(self):
+        # 1.99 => 1.1k
+        # 3.99 => 731
+        # 19, 2.3 => 139
         super().__init__(
-            # {'PEARLS': AvellanedaMM('PEARLS', 1.5, 5, 20, vol_window=60),
-            {'BANANAS': AvellanedaMM('BANANAS', 1.5, 10, 20, vol_window=60)}
-        )
+            {'PEARLS': GreatWall('PEARLS', 1.99, -1.99),
+             'BANANAS': BolBStrategy('BANANAS', 19, 2.3)})
