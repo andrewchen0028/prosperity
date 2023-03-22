@@ -33,9 +33,9 @@ class AvellanedaMM(BaseStrategy):
     def __init__(self, product: str, y: float, k: float, limit: int, max_t: float = 20000, vol_window: int = 30):
         super().__init__()
         self.product = product
-        self.y = y
-        self.k = k
-        self.limit = limit
+        self.y = y          # 1.5
+        self.k = k          # 10
+        self.limit = limit  # 20
         self.max_t = max_t
         self.vol_window = vol_window
 
@@ -51,10 +51,12 @@ class AvellanedaMM(BaseStrategy):
             depth = self.state.order_depths[self.product]
             self.data['top_bid'].append(max(depth.buy_orders.keys()))
             self.data['top_ask'].append(min(depth.sell_orders.keys()))
-            self.data['mid_price'].append((self.data['top_bid'][-1] + self.data['top_ask'][-1]) / 2)
+            self.data['mid_price'].append(
+                (self.data['top_bid'][-1] + self.data['top_ask'][-1]) / 2)
 
             if self.current_steps > 1:
-                self.data['log_return'].append(math.log(self.data['mid_price'][-1] / self.data['mid_price'][-2]))
+                self.data['log_return'].append(
+                    math.log(self.data['mid_price'][-1] / self.data['mid_price'][-2]))
 
     def strategy(self):
         if self.current_steps < self.vol_window + 1:
@@ -64,17 +66,25 @@ class AvellanedaMM(BaseStrategy):
         s = self.data['mid_price'][-1]
         q = self.state.position.get(self.product, 0)
         r = s - q * self.y * vol * (self.max_t - self.current_steps)
-        spread = self.y * vol * (self.max_t - self.current_steps) + (2 / self.y) * math.log(1 + self.y / self.k)
+        spread = self.y * vol * \
+            (self.max_t - self.current_steps) + \
+            (2 / self.y) * math.log(1 + self.y / self.k)
         bid = r - spread / 2
         ask = r + spread / 2
         bid_amount = self.limit - q
         ask_amount = -self.limit - q
 
         if bid_amount > 0:
-            self.orders[self.product].append(Order(self.product, bid, bid_amount))
+            self.orders[self.product].append(
+                Order(self.product, bid, bid_amount))
 
         if ask_amount < 0:
-            self.orders[self.product].append(Order(self.product, ask, ask_amount))
+            self.orders[self.product].append(
+                Order(self.product, ask, ask_amount))
+
+        # bid ask spread vol position product
+        print(
+            f' {bid} {self.data["mid_price"][-1]} {ask} {spread} {vol} {q} {self.product}')
 
 
 class BolBStrategy(BaseStrategy):
@@ -218,7 +228,6 @@ class BaseTrader:
 class Trader(BaseTrader):
     def __init__(self):
         super().__init__(
-            {'PEARLS': AvellanedaMM('PEARLS', 1.5, 10, 20, vol_window=60),
-             'BANANAS': AvellanedaMM('BANANAS', 1.5, 10, 20, vol_window=60),
-             }
+            # {'PEARLS': AvellanedaMM('PEARLS', 1.5, 5, 20, vol_window=60),
+            {'BANANAS': AvellanedaMM('BANANAS', 1.5, 10, 20, vol_window=60)}
         )
