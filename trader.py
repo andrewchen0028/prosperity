@@ -250,9 +250,6 @@ class BaseTrader:
 
 class Trader(BaseTrader):
     def __init__(self):
-        # 1.99 => 1.1k
-        # 3.99 => 731
-        # 19, 2.3 => 139
         super().__init__(
             {'PEARLS': GreatWall('PEARLS', 1.99, -1.99),
              'BANANAS': BolBStrategy('BANANAS', 19, 2.3)})
