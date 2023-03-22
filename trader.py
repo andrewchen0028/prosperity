@@ -60,7 +60,6 @@ class AvellanedaMM(BaseStrategy):
         if self.current_steps < self.vol_window + 1:
             return
 
-        self.k = self.ks[self.current_steps]
         vol = np.std(self.data['log_return'][-self.vol_window:]) ** 2
         s = self.data['mid_price'][-1]
         q = self.state.position.get(self.product, 0)
@@ -220,8 +219,7 @@ class BaseTrader:
 class Trader(BaseTrader):
     def __init__(self):
         super().__init__(
-            {'PEARLS': AvellanedaMM(
-                'PEARLS', 1.5, 10, 20, vol_window=60
-            )
-            }
+            {'PEARLS': AvellanedaMM('PEARLS', 1.5, 10, 20, vol_window=60),
+             'BANANAS': AvellanedaMM('BANANAS', 1.5, 10, 20, vol_window=60),
+             }
         )
