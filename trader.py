@@ -34,7 +34,7 @@ class AvellanedaMM(BaseStrategy):
         super().__init__()
         self.product = product
         self.y = y
-        self.k = 0
+        self.k = k
         self.limit = limit
         self.max_t = max_t
         self.vol_window = vol_window
@@ -67,7 +67,6 @@ class AvellanedaMM(BaseStrategy):
         spread = self.y * vol * (self.max_t - self.current_steps) + (2 / self.y) * math.log(1 + self.y / self.k)
         bid = r - spread / 2
         ask = r + spread / 2
-
         bid_amount = self.limit - q
         ask_amount = -self.limit - q
 
