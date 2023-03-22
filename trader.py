@@ -35,7 +35,6 @@ class AvellanedaMM(BaseStrategy):
         self.product = product
         self.y = y
         self.k = 0
-        self.ks = np.linspace(0.000000001, 10000000, 20000)
         self.limit = limit
         self.max_t = max_t
         self.vol_window = vol_window
@@ -70,13 +69,14 @@ class AvellanedaMM(BaseStrategy):
         bid = r - spread / 2
         ask = r + spread / 2
 
-        print(f'Bid: {bid}, Ask: {ask}')
+        bid_amount = self.limit - q
+        ask_amount = -self.limit - q
 
-        if s < 20:
-            self.orders[self.product].append(Order(self.product, bid, self.limit - s))
+        if bid_amount > 0:
+            self.orders[self.product].append(Order(self.product, bid, bid_amount))
 
-        if s > -20:
-            self.orders[self.product].append(Order(self.product, ask, -(self.limit - s)))
+        if ask_amount < 0:
+            self.orders[self.product].append(Order(self.product, ask, ask_amount))
 
 
 class BolBStrategy(BaseStrategy):
@@ -221,7 +221,7 @@ class Trader(BaseTrader):
     def __init__(self):
         super().__init__(
             {'PEARLS': AvellanedaMM(
-                'PEARLS', 0.01, 100, 20000,
+                'PEARLS', 1.5, 10, 20, vol_window=60
             )
             }
         )
