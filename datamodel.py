@@ -18,7 +18,7 @@ class Listing:
 
 
 class Order:
-    def __init__(self, symbol: Symbol, price: int, quantity: int) -> None:
+    def __init__(self, symbol: Symbol, price: float, quantity: int) -> None:
         self.symbol = symbol
         self.price = price
         self.quantity = quantity

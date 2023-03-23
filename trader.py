@@ -1,7 +1,24 @@
-from typing import Dict, List
+from typing import Dict, List, Any
 from datamodel import *
 import numpy as np
 import math
+
+
+class Logger:
+    def __init__(self) -> None:
+        self.logs = ""
+
+    def print(self, *objects: Any, sep: str = " ", end: str = "\n") -> None:
+        self.logs += sep.join(map(str, objects)) + end
+
+    def flush(self, state: TradingState, orders: dict[Symbol, list[Order]]) -> None:
+        print(json.dumps({
+            "state": state,
+            "orders": orders,
+            "logs": self.logs,
+        }, cls=ProsperityEncoder, separators=(",", ":"), sort_keys=True))
+
+        self.logs = ""
 
 
 class BaseStrategy:
@@ -30,18 +47,17 @@ class BaseStrategy:
 
 
 class AvellanedaMM(BaseStrategy):
-    def __init__(self, product: str, y: float, k: float, limit: int, max_t: float = 20000, vol_window: int = 30):
+    def __init__(self, product: str, y: float, k: float, limit: int = 20, vol_window: int = 30):
         super().__init__()
         self.product = product
         self.y = y
         self.k = k
         self.limit = limit
-        self.max_t = max_t
         self.vol_window = vol_window
 
         self.data = {
-            'top_bid': [],
-            'top_ask': [],
+            'bid': [],
+            'ask': [],
             'mid_price': [],
             'log_return': [],
         }
@@ -49,10 +65,10 @@ class AvellanedaMM(BaseStrategy):
     def accumulate(self):
         if self.product in self.state.order_depths.keys():
             depth = self.state.order_depths[self.product]
-            self.data['top_bid'].append(max(depth.buy_orders.keys()))
-            self.data['top_ask'].append(min(depth.sell_orders.keys()))
+            self.data['bid'].append(min(depth.buy_orders.keys()))
+            self.data['ask'].append(max(depth.sell_orders.keys()))
             self.data['mid_price'].append(
-                (self.data['top_bid'][-1] + self.data['top_ask'][-1]) / 2)
+                (self.data['bid'][-1] + self.data['ask'][-1]) / 2)
 
             if self.current_steps > 1:
                 self.data['log_return'].append(
@@ -65,10 +81,8 @@ class AvellanedaMM(BaseStrategy):
         vol = np.std(self.data['log_return'][-self.vol_window:]) ** 2
         s = self.data['mid_price'][-1]
         q = self.state.position.get(self.product, 0)
-        r = s - q * self.y * vol * (self.max_t - self.current_steps)
-        spread = self.y * vol * \
-            (self.max_t - self.current_steps) + \
-            (2 / self.y) * math.log(1 + self.y / self.k)
+        r = s - q * self.y * vol
+        spread = self.y * vol + (2 / self.y) * math.log(1 + self.y / self.k)
         bid = r - spread / 2
         ask = r + spread / 2
         bid_amount = self.limit - q
@@ -224,32 +238,101 @@ class GreatWall(BaseStrategy):
         ask_amount = -self.limit - q
 
         if bid_amount > 0:
-            self.orders[self.product].append(
-                Order(self.product, self.lower, bid_amount))
+            self.orders[self.product].append(Order(self.product, self.lower, bid_amount))
 
         if ask_amount < 0:
-            self.orders[self.product].append(
-                Order(self.product, self.upper, ask_amount))
+            self.orders[self.product].append(Order(self.product, self.upper, ask_amount))
+
+
+class StatArb(BaseStrategy):
+    def __init__(self, u_tresh, l_thresh, limit=20):
+        super().__init__()
+        self.products = ('COCONUTS', 'PINA_COLADAS')
+        self.normalizers = (8000, 15000)
+        self.U = u_tresh
+        self.L = l_thresh
+        self.limit = limit
+        self.data = {
+            'norm_price': [0.0, 0.0],
+            'top_bid': [0.0, 0.0],
+            'top_ask': [0.0, 0.0],
+        }
+        self.skip = False
+
+    def get_order_amount(self, product, type):
+        if type == 'bid':
+            return -self.limit - self.state.position.get(product, 0)
+
+        elif type == 'ask':
+            return self.limit - self.state.position.get(product, 0)
+
+    def accumulate(self):
+        for i, product in enumerate(self.products):
+            if product in self.state.order_depths.keys():
+                depth1 = self.state.order_depths[product]
+                self.data['top_bid'][i] = tb = max(depth1.buy_orders.keys())
+                self.data['top_ask'][i] = ta = min(depth1.sell_orders.keys())
+                self.data['norm_price'][i] = (tb + ta) / (2 * self.normalizers[i])
+
+            else:
+                self.skip = True
+
+    def strategy(self):
+        if self.skip:
+            self.skip = False
+            return
+
+        dif = self.data['norm_price'][0] - self.data['norm_price'][1]
+
+        if dif > self.U:
+            bid_amount = self.get_order_amount(self.products[0], 'bid')
+            ask_amount = self.get_order_amount(self.products[1], 'ask')
+
+            if bid_amount < 0:
+                self.orders[self.products[0]].append(Order(self.products[0], self.data['top_bid'][0], bid_amount))
+
+            if ask_amount > 0:
+                self.orders[self.products[1]].append(Order(self.products[1], self.data['top_ask'][1], ask_amount))
+
+            print(bid_amount, ask_amount)
+
+        elif dif < self.L:
+            bid_amount = self.get_order_amount(self.products[1], 'bid')
+            ask_amount = self.get_order_amount(self.products[0], 'ask')
+
+            if bid_amount < 0:
+                self.orders[self.products[1]].append(Order(self.products[1], self.data['top_bid'][1], bid_amount))
+
+            if ask_amount > 0:
+                self.orders[self.products[0]].append(Order(self.products[0], self.data['top_ask'][0], ask_amount))
+
+            print(bid_amount, ask_amount)
+
+        print(dif, self.data['norm_price'])
 
 
 class BaseTrader:
-    def __init__(self, strategies: Dict[str, BaseStrategy]):
+    def __init__(self, strategies: List[BaseStrategy]):
         self.strategies = strategies
+        self.logger = Logger()
 
     def run(self, state: TradingState) -> Dict[str, List[Order]]:
         result = {}
 
-        for strategy in self.strategies.values():
+        for strategy in self.strategies:
             strategy_out = strategy(state)
 
             for product, orders in strategy_out.items():
                 result[product] = result.get(product, []) + orders
 
+        self.logger.flush(state, result)
         return result
 
 
 class Trader(BaseTrader):
     def __init__(self):
         super().__init__(
-            {'PEARLS': GreatWall('PEARLS', 1.99, -1.99),
-             'BANANAS': BolBStrategy('BANANAS', 19, 2.3)})
+            [GreatWall('PEARLS', 1.99, -1.99),
+             AvellanedaMM('BANANAS', 5, 0.01),
+             ]
+        )
