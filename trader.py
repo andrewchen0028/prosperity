@@ -39,6 +39,8 @@ class BaseStrategy:
         self.orders = {
             'PEARLS': [],
             'BANANAS': [],
+            'COCONUTS': [],
+            'PINA_COLADAS': [],
         }
         self.accumulate()
         self.current_steps += 1
@@ -245,26 +247,41 @@ class GreatWall(BaseStrategy):
 
 
 class StatArb(BaseStrategy):
-    def __init__(self, u_tresh, l_thresh, limit=20):
+    def __init__(self, gamma, mu, u_thresh, l_thresh, exit_thresh, limit=(300, 600)):
         super().__init__()
-        self.products = ('COCONUTS', 'PINA_COLADAS')
-        self.normalizers = (8000, 15000)
-        self.U = u_tresh
+        self.gamma = gamma
+        self.mu = mu
+        self.U = u_thresh
         self.L = l_thresh
+        self.exit = exit_thresh
         self.limit = limit
+
+        self.products = ('COCONUTS', 'PINA_COLADAS')
+        self.target_pos = (limit[0], gamma * limit[0])
         self.data = {
-            'norm_price': [0.0, 0.0],
+            'mid': [0.0, 0.0],
             'top_bid': [0.0, 0.0],
             'top_ask': [0.0, 0.0],
         }
         self.skip = False
 
-    def get_order_amount(self, product, type):
-        if type == 'bid':
-            return -self.limit - self.state.position.get(product, 0)
+    def place_order(self, i, target_pos):
+        product = self.products[i]
+        pos = self.state.position.get(product, 0)
 
-        elif type == 'ask':
-            return self.limit - self.state.position.get(product, 0)
+        if pos == target_pos:
+            return
+
+        else:
+            order_size = target_pos - pos
+
+        if order_size > 0:
+            price = self.data['top_ask'][i]
+
+        elif order_size < 0:
+            price = self.data['top_bid'][i]
+
+        self.orders[product].append(Order(product, price, order_size))
 
     def accumulate(self):
         for i, product in enumerate(self.products):
@@ -272,7 +289,7 @@ class StatArb(BaseStrategy):
                 depth1 = self.state.order_depths[product]
                 self.data['top_bid'][i] = tb = max(depth1.buy_orders.keys())
                 self.data['top_ask'][i] = ta = min(depth1.sell_orders.keys())
-                self.data['norm_price'][i] = (tb + ta) / (2 * self.normalizers[i])
+                self.data['mid'][i] = (tb + ta) / 2
 
             else:
                 self.skip = True
@@ -282,33 +299,21 @@ class StatArb(BaseStrategy):
             self.skip = False
             return
 
-        dif = self.data['norm_price'][0] - self.data['norm_price'][1]
+        dif = self.data['mid'][1] - self.gamma * self.data['mid'][1] - self.mu
 
         if dif > self.U:
-            bid_amount = self.get_order_amount(self.products[0], 'bid')
-            ask_amount = self.get_order_amount(self.products[1], 'ask')
-
-            if bid_amount < 0:
-                self.orders[self.products[0]].append(Order(self.products[0], self.data['top_bid'][0], bid_amount))
-
-            if ask_amount > 0:
-                self.orders[self.products[1]].append(Order(self.products[1], self.data['top_ask'][1], ask_amount))
-
-            print(bid_amount, ask_amount)
+            for i in range(2):
+                target = (self.target_pos[0], -self.target_pos[1])[i]
+                self.place_order(i, target)
 
         elif dif < self.L:
-            bid_amount = self.get_order_amount(self.products[1], 'bid')
-            ask_amount = self.get_order_amount(self.products[0], 'ask')
+            for i in range(2):
+                target = (-self.target_pos[0], self.target_pos[1])[i]
+                self.place_order(i, target)
 
-            if bid_amount < 0:
-                self.orders[self.products[1]].append(Order(self.products[1], self.data['top_bid'][1], bid_amount))
-
-            if ask_amount > 0:
-                self.orders[self.products[0]].append(Order(self.products[0], self.data['top_ask'][0], ask_amount))
-
-            print(bid_amount, ask_amount)
-
-        print(dif, self.data['norm_price'])
+        elif -self.exit < dif < self.exit:
+            for i in range(2):
+                self.place_order(i, 0)
 
 
 class BaseTrader:
@@ -334,5 +339,6 @@ class Trader(BaseTrader):
         super().__init__(
             [GreatWall('PEARLS', 1.99, -1.99),
              AvellanedaMM('BANANAS', 5, 0.01),
+             StatArb(1.927451, -439.161182, 39, -39, 10)
              ]
         )
