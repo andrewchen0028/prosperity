@@ -10,9 +10,9 @@ def fit(Q, R):
     km = KalmanFilter(INIT_P, Q, R, calc_error=True)
 
     for row in train.to_numpy():
-        out = km(row[1], row[0])
+        km(row[1], row[0])
 
-    return np.std(np.asarray(km.eta), axis=0), np.std(np.asarray(km.epsilon), axis=0)
+    return np.var(np.asarray(km.eta), axis=0), np.var(np.asarray(km.epsilon), axis=0)
 
 
 if __name__ == '__main__':
@@ -25,4 +25,4 @@ if __name__ == '__main__':
 
     for i in range(50):
         print(res)
-        res = fit(res[0] * np.eye(2), res[1][0])
+        res = fit(0.0001 * np.eye(2), res[1][0])

@@ -24,7 +24,8 @@ class KalmanFilter:
         y2 = np.array([[y2, 1]])
         self.xm = self.xp
         self.PM = self.Pp + self.Q
-        gain = self.PM @ y2.T @ inv(y2 @ self.PM @ y2.T + self.R)
+        MV = y2 @ self.PM @ y2.T + self.R
+        gain = (self.PM @ y2.T) / MV
         self.xp = self.xm + gain @ (y1 - y2 @ self.xm)
         z = (self.I - gain @ y2)
         self.PP = z @ self.PM @ z.T + gain @ gain.T * self.R
@@ -33,7 +34,7 @@ class KalmanFilter:
             self.eta.append(gain @ (y1 - y2 @ self.xm).flatten())
             self.epsilon.append((y1 - y2 @ self.xm).flatten())
 
-        return self.xp.flatten()
+        return list(self.xp.flatten()) + list(MV.flatten())
 
 
 class Logger:
@@ -275,17 +276,18 @@ class GreatWall(BaseStrategy):
 
 
 class StatArb(BaseStrategy):
-    def __init__(self, gamma, mu, u_thresh, l_thresh, exit_thresh, limit=(600, 300)):
+    def __init__(self, gamma, mu, frac=1, limit=(600, 300)):
         super().__init__()
         self.gamma = gamma
         self.mu = mu
-        self.U = u_thresh
-        self.L = l_thresh
-        self.exit = exit_thresh
         self.limit = limit
 
+        self.U = None
+        self.L = None
+        self.frac = frac
+
         self.products = ('COCONUTS', 'PINA_COLADAS')
-        self.target_pos = (limit[0], limit[0] / gamma)
+        self.target_pos = (gamma * limit[1], limit[1])
         self.data = {
             'mid': [0.0, 0.0],
             'bid': [0.0, 0.0],
@@ -329,24 +331,20 @@ class StatArb(BaseStrategy):
 
         signal = self.data['signal']
 
-        if signal > self.U:
+        if signal > self.U * self.frac:
             for i in range(2):
                 target = (self.target_pos[0], -self.target_pos[1])[i]
                 self.place_order(i, target)
 
-        elif signal < self.L:
+        elif signal < self.L * self.frac:
             for i in range(2):
-                target = (self.target_pos[0], self.target_pos[1])[i]
+                target = (self.target_pos[0], -self.target_pos[1])[i]
                 self.place_order(i, -target)
-
-        elif -self.exit < signal < self.exit:
-            for i in range(2):
-                self.place_order(i, 0)
 
 
 class Kalman(StatArb):
-    def __init__(self, init_gamma, init_mu, q, r, u_thresh, l_thresh, exit_thresh, limit=(600, 300)):
-        super().__init__(init_gamma, init_mu, u_thresh, l_thresh, exit_thresh, limit)
+    def __init__(self, init_gamma, init_mu, q, r, frac=1, limit=(600, 300)):
+        super().__init__(init_gamma, init_mu, frac, limit)
         init_params = np.array([init_gamma, init_mu]).reshape(2, 1)
         self.kf = KalmanFilter(init_params, q, r)
 
@@ -360,19 +358,62 @@ class Kalman(StatArb):
             self.data['mid'][i] = (tb + ta) / 2
 
         out = self.kf(self.data['mid'][1], self.data['mid'][0])
+        self.U = out[2] ** 0.5
+        self.L = -(out[2] ** 0.5)
         self.data['signal'] = self.data['mid'][1] - out[0] * self.data['mid'][0] - out[1]
 
-        self.target_pos = (self.limit[0], self.limit[0] / out[0])
+        self.target_pos = (out[0] * self.limit[1], self.limit[1])
+
+        if self.target_pos[0] > self.limit[0]:
+            self.target_pos = (self.limit[0], self.limit[1])
+
+
+class RollLS(StatArb):
+    def __init__(self, ul, ll, mid, window, limit=(600, 300)):
+        super().__init__(None, None, limit=limit)
+        self.ul = ul
+        self.ll = ll
+        self.mid = mid
+        self.window = window
+
+    def accumulate(self):
+        for i, product in enumerate(self.products):
+            depth1 = self.state.order_depths[product]
+            self.data['bid'][i] = min(depth1.buy_orders.keys())
+            self.data['ask'][i] = max(depth1.sell_orders.keys())
+            tb = max(depth1.buy_orders.keys())
+            ta = min(depth1.sell_orders.keys())
+            self.data['mid'][i] = (tb + ta) / 2
+
+    def strategy(self):
+        if self.current_steps == 0:
+            return
+
+        signal = self.data['signal']
+
+        if signal > self.U * self.frac:
+            for i in range(2):
+                target = (self.target_pos[0], -self.target_pos[1])[i]
+                self.place_order(i, target)
+
+        elif signal < self.L * self.frac:
+            for i in range(2):
+                target = (self.target_pos[0], -self.target_pos[1])[i]
+                self.place_order(i, -target)
+
+        '''else:
+            for i in range(2):
+                self.place_order(i, 0)'''
 
 
 class Trader:
     def __init__(self):
-        Q = np.asarray([[0.00021424, 0],
-                        [0, 0]])
+        Q = np.asarray([[4.58648333e-08, 0],
+                        [0, 7.08011170e-16]])
 
         self.strategies = [GreatWall('PEARLS', 1.99, -1.99),
                            AvellanedaMM('BANANAS', 5, 0.01),
-                           Kalman(1.927451, -439.161182, Q, 1.72464704, 0.0005, -0.0005, 0.0001)
+                           Kalman(1.927451, -439.161182, Q, 2.97414069, 0.8)
                            ]
 
         self.logger = Logger()
