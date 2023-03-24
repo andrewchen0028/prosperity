@@ -247,7 +247,7 @@ class GreatWall(BaseStrategy):
 
 
 class StatArb(BaseStrategy):
-    def __init__(self, gamma, mu, u_thresh, l_thresh, exit_thresh, limit=(300, 600)):
+    def __init__(self, gamma, mu, u_thresh, l_thresh, exit_thresh, limit=(600, 300)):
         super().__init__()
         self.gamma = gamma
         self.mu = mu
@@ -257,11 +257,11 @@ class StatArb(BaseStrategy):
         self.limit = limit
 
         self.products = ('COCONUTS', 'PINA_COLADAS')
-        self.target_pos = (limit[0], gamma * limit[0])
+        self.target_pos = (gamma * limit[1], limit[1])
         self.data = {
             'mid': [0.0, 0.0],
-            'top_bid': [0.0, 0.0],
-            'top_ask': [0.0, 0.0],
+            'bid': [0.0, 0.0],
+            'ask': [0.0, 0.0],
         }
         self.skip = False
 
@@ -276,10 +276,10 @@ class StatArb(BaseStrategy):
             order_size = target_pos - pos
 
         if order_size > 0:
-            price = self.data['top_ask'][i]
+            price = self.data['ask'][i]
 
         elif order_size < 0:
-            price = self.data['top_bid'][i]
+            price = self.data['bid'][i]
 
         self.orders[product].append(Order(product, price, order_size))
 
@@ -287,8 +287,10 @@ class StatArb(BaseStrategy):
         for i, product in enumerate(self.products):
             if product in self.state.order_depths.keys():
                 depth1 = self.state.order_depths[product]
-                self.data['top_bid'][i] = tb = max(depth1.buy_orders.keys())
-                self.data['top_ask'][i] = ta = min(depth1.sell_orders.keys())
+                self.data['bid'][i] = min(depth1.buy_orders.keys())
+                self.data['ask'][i] = max(depth1.sell_orders.keys())
+                tb = max(depth1.buy_orders.keys())
+                ta = min(depth1.sell_orders.keys())
                 self.data['mid'][i] = (tb + ta) / 2
 
             else:
