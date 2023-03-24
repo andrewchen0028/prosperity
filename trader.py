@@ -1,7 +1,39 @@
 from typing import Dict, List, Any
+from numpy.linalg import inv
 from datamodel import *
 import numpy as np
 import math
+
+
+class KalmanFilter:
+    def __init__(self, x0, Q, R, calc_error=False):
+        self.xm = None
+        self.xp = x0
+        self.Pm = None
+        self.Pp = np.zeros((x0.shape[0], x0.shape[0]))
+        self.Q = Q
+        self.R = R
+        self.I = np.eye(x0.shape[0])
+        self.gain = None
+
+        self.calc_error = calc_error
+        self.eta = []
+        self.epsilon = []
+
+    def __call__(self, y1, y2):
+        y2 = np.array([[y2, 1]])
+        self.xm = self.xp
+        self.PM = self.Pp + self.Q
+        gain = self.PM @ y2.T @ inv(y2 @ self.PM @ y2.T + self.R)
+        self.xp = self.xm + gain @ (y1 - y2 @ self.xm)
+        z = (self.I - gain @ y2)
+        self.PP = z @ self.PM @ z.T + gain @ gain.T * self.R
+
+        if self.calc_error:
+            self.eta.append(gain @ (y1 - y2 @ self.xm).flatten())
+            self.epsilon.append((y1 - y2 @ self.xm).flatten())
+
+        return self.xp.flatten()
 
 
 class Logger:
@@ -97,10 +129,6 @@ class AvellanedaMM(BaseStrategy):
         if ask_amount < 0:
             self.orders[self.product].append(
                 Order(self.product, ask, ask_amount))
-
-        # bid ask spread vol position product
-        print(
-            f' {bid} {self.data["mid_price"][-1]} {ask} {spread} {vol} {q} {self.product}')
 
 
 class BolBStrategy(BaseStrategy):
@@ -285,35 +313,28 @@ class StatArb(BaseStrategy):
 
     def accumulate(self):
         for i, product in enumerate(self.products):
-            if product in self.state.order_depths.keys():
-                depth1 = self.state.order_depths[product]
-                self.data['bid'][i] = min(depth1.buy_orders.keys())
-                self.data['ask'][i] = max(depth1.sell_orders.keys())
-                tb = max(depth1.buy_orders.keys())
-                ta = min(depth1.sell_orders.keys())
-                self.data['mid'][i] = (tb + ta) / 2
-
-            else:
-                self.skip = True
+            depth1 = self.state.order_depths[product]
+            self.data['bid'][i] = min(depth1.buy_orders.keys())
+            self.data['ask'][i] = max(depth1.sell_orders.keys())
+            tb = max(depth1.buy_orders.keys())
+            ta = min(depth1.sell_orders.keys())
+            self.data['mid'][i] = (tb + ta) / 2
 
     def strategy(self):
-        if self.skip:
-            self.skip = False
-            return
+        signal = self.data['mid'][1] - self.gamma * self.data['mid'][0] - self.mu
+        print(f' {self.state.timestamp} {signal}')
 
-        dif = self.data['mid'][1] - self.gamma * self.data['mid'][1] - self.mu
-
-        if dif > self.U:
+        if signal > self.U:
             for i in range(2):
                 target = (self.target_pos[0], -self.target_pos[1])[i]
                 self.place_order(i, target)
 
-        elif dif < self.L:
+        elif signal < self.L:
             for i in range(2):
-                target = (-self.target_pos[0], self.target_pos[1])[i]
-                self.place_order(i, target)
+                target = (self.target_pos[0], self.target_pos[1])[i]
+                self.place_order(i, -target)
 
-        elif -self.exit < dif < self.exit:
+        elif -self.exit < signal < self.exit:
             for i in range(2):
                 self.place_order(i, 0)
 
@@ -332,7 +353,7 @@ class BaseTrader:
             for product, orders in strategy_out.items():
                 result[product] = result.get(product, []) + orders
 
-        self.logger.flush(state, result)
+        # self.logger.flush(state, result)
         return result
 
 
