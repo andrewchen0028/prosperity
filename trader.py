@@ -171,90 +171,6 @@ class BolBStrategy(BaseStrategy):
                 Order(self.product, self.data['top_ask'], bid_amount)]
 
 
-class NaiveMM(BaseStrategy):
-    def __init__(self):
-        super().__init__()
-        self.product = "PEARLS"
-        self.pearls_limit = 20
-
-    def strategy(self) -> Dict[str, List[Order]]:
-        """
-        Takes all buy and sell orders for all symbols as an input,
-        and outputs a list of orders to be sent
-        """
-
-        for product in self.state.order_depths.keys():
-            if product == "PEARLS":
-                # Mean reversion strategy
-                bids: Dict[int, int] = self.state.order_depths[product].buy_orders
-                asks: Dict[int, int] = self.state.order_depths[product].sell_orders
-                print("bids: ", bids)
-                print("asks: ", asks)
-                position: int = self.state.position["PEARLS"] \
-                    if "PEARLS" in self.state.position.keys() else 0
-                orders: list[Order] = []
-
-                # Get best bid, best ask, and mid price
-                # NOTE: The if statements may not be necessary, not sure if
-                #       this challenge involves no-bid or no-ask situations?
-                if bids:
-                    best_bid = max(bids.keys())
-                    best_bid_volume = bids[best_bid]
-                if asks:
-                    best_ask = min(asks.keys())
-                    best_ask_volume = asks[best_ask]
-
-                # TODO: Make these two "if" statements handle the situation
-                #           (best ask volume) < (remainder of position limit).
-                #       I.e., fill the "second-best bid/ask".
-                # NOTE: positive quantity => buy order
-
-                # Fill asks below price
-                if position < self.pearls_limit and best_ask < 10000:
-                    qty = max(position - self.pearls_limit,
-                              best_ask_volume)  # NEGATIVE
-                    print("best_ask_volume: ", best_ask_volume)
-                    print("BUY", str(-qty), "at", best_ask)
-                    orders.append(Order(product, best_ask, -qty))
-
-                    if position + abs(qty) > 0:
-                        # We will be long pearls after this purchase.
-                        # Ask just above fair value.
-                        orders.append(
-                            Order(product, 10000, -(position + abs(qty))))
-                        print("ASK", str(-(position + abs(qty))), "at", 10000)
-                    elif position + abs(qty) < 0:
-                        # We will be short pearls after this purchase.
-                        # Bid just below fair value.
-                        orders.append(
-                            Order(product, 10000, -(position + abs(qty))))
-                        print("BID", str(-(position + abs(qty))), "at", 10000)
-
-                # Fill bids above price
-                if position > -self.pearls_limit and best_bid > 10000:
-                    qty = min(position + self.pearls_limit,
-                              best_bid_volume)  # POSITIVE
-                    print("best_bid_volume: ", best_bid_volume)
-                    print("SELL", str(qty), "at", best_bid)
-                    orders.append(Order(product, best_bid, -qty))
-
-                    if position - abs(qty) > 0:
-                        # We will be long pearls after this sale.
-                        # Ask just above fair value.
-                        orders.append(
-                            Order(product, 10000, -(position - abs(qty))))
-                        print("ASK", str(-(position - abs(qty))), "at", 10000)
-                    elif position - abs(qty) < 0:
-                        # We will be short pearls after this sale.
-                        # Bid just below fair value.
-                        orders.append(
-                            Order(product, 10000, -(position - abs(qty))))
-                        print("BID", str(-(position - abs(qty))), "at", 10000)
-
-                # Add orders to result dict
-                self.orders[product] = orders
-
-
 class GreatWall(BaseStrategy):
     def __init__(self, product, upper, lower, limit=20):
         super().__init__()
@@ -276,15 +192,14 @@ class GreatWall(BaseStrategy):
 
 
 class StatArb(BaseStrategy):
-    def __init__(self, gamma, mu, frac=1, limit=(600, 300)):
+    def __init__(self, gamma, mu, thresh, limit=(600, 300)):
         super().__init__()
         self.gamma = gamma
         self.mu = mu
         self.limit = limit
 
-        self.U = None
-        self.L = None
-        self.frac = frac
+        self.U = thresh
+        self.L = -thresh
 
         self.products = ('COCONUTS', 'PINA_COLADAS')
         self.target_pos = (gamma * limit[1], limit[1])
@@ -294,7 +209,6 @@ class StatArb(BaseStrategy):
             'ask': [0.0, 0.0],
             'signal': 0
         }
-        self.current_steps = 0
 
     def place_order(self, i, target_pos):
         product = self.products[i]
@@ -331,21 +245,27 @@ class StatArb(BaseStrategy):
 
         signal = self.data['signal']
 
-        if signal > self.U * self.frac:
+        if signal > self.U:
             for i in range(2):
                 target = (self.target_pos[0], -self.target_pos[1])[i]
                 self.place_order(i, target)
 
-        elif signal < self.L * self.frac:
+        elif signal < self.L:
             for i in range(2):
                 target = (self.target_pos[0], -self.target_pos[1])[i]
                 self.place_order(i, -target)
 
+        else:
+            for i in range(2):
+                self.place_order(i, 0)
+
 
 class Kalman(StatArb):
-    def __init__(self, init_gamma, init_mu, q, r, frac=1, limit=(600, 300)):
-        super().__init__(init_gamma, init_mu, frac, limit)
+    def __init__(self, init_gamma, init_mu, q, r, thresh, window, limit=(600, 300)):
+        super().__init__(init_gamma, init_mu, thresh, limit)
+        self.out = (init_gamma, init_mu)
         init_params = np.array([init_gamma, init_mu]).reshape(2, 1)
+        self.window = window
         self.kf = KalmanFilter(init_params, q, r)
 
     def accumulate(self):
@@ -357,53 +277,15 @@ class Kalman(StatArb):
             ta = min(depth1.sell_orders.keys())
             self.data['mid'][i] = (tb + ta) / 2
 
-        out = self.kf(self.data['mid'][1], self.data['mid'][0])
-        self.U = out[2] ** 0.5
-        self.L = -(out[2] ** 0.5)
-        self.data['signal'] = self.data['mid'][1] - out[0] * self.data['mid'][0] - out[1]
+        if self.current_steps % self.window == 0:
+            self.out = self.kf(self.data['mid'][1], self.data['mid'][0])
 
-        self.target_pos = (out[0] * self.limit[1], self.limit[1])
+        self.data['signal'] = self.data['mid'][1] - self.out[0] * self.data['mid'][0] - self.out[1]
+
+        self.target_pos = (self.out[0] * self.limit[1], self.limit[1])
 
         if self.target_pos[0] > self.limit[0]:
             self.target_pos = (self.limit[0], self.limit[1])
-
-
-class RollLS(StatArb):
-    def __init__(self, ul, ll, mid, window, limit=(600, 300)):
-        super().__init__(None, None, limit=limit)
-        self.ul = ul
-        self.ll = ll
-        self.mid = mid
-        self.window = window
-
-    def accumulate(self):
-        for i, product in enumerate(self.products):
-            depth1 = self.state.order_depths[product]
-            self.data['bid'][i] = min(depth1.buy_orders.keys())
-            self.data['ask'][i] = max(depth1.sell_orders.keys())
-            tb = max(depth1.buy_orders.keys())
-            ta = min(depth1.sell_orders.keys())
-            self.data['mid'][i] = (tb + ta) / 2
-
-    def strategy(self):
-        if self.current_steps == 0:
-            return
-
-        signal = self.data['signal']
-
-        if signal > self.U * self.frac:
-            for i in range(2):
-                target = (self.target_pos[0], -self.target_pos[1])[i]
-                self.place_order(i, target)
-
-        elif signal < self.L * self.frac:
-            for i in range(2):
-                target = (self.target_pos[0], -self.target_pos[1])[i]
-                self.place_order(i, -target)
-
-        '''else:
-            for i in range(2):
-                self.place_order(i, 0)'''
 
 
 class Trader:
@@ -411,10 +293,10 @@ class Trader:
         Q = np.asarray([[4.58648333e-08, 0],
                         [0, 7.08011170e-16]])
 
-        self.strategies = [GreatWall('PEARLS', 1.99, -1.99),
-                           AvellanedaMM('BANANAS', 5, 0.01),
-                           Kalman(1.927451, -439.161182, Q, 2.97414069, 0.8)
-                           ]
+        self.strategies = [  # GreatWall('PEARLS', 1.99, -1.99),
+            # AvellanedaMM('BANANAS', 5, 0.01),
+            Kalman(1.927451, -439.161182, Q, 2.97414069, 5, 30)
+        ]
 
         self.logger = Logger()
 
@@ -427,6 +309,5 @@ class Trader:
             for product, orders in strategy_out.items():
                 result[product] = result.get(product, []) + orders
 
-        self.logger.flush(state, result)
+        # self.logger.flush(state, result)
         return result
-
