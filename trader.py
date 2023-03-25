@@ -38,18 +38,25 @@ class KalmanFilter:
 
 
 class Logger:
-    def __init__(self) -> None:
+    local: True
+    local_logs: dict[int, str] = {}
+
+    def __init__(self, local=False) -> None:
         self.logs = ""
+        self.local = local
 
     def print(self, *objects: Any, sep: str = " ", end: str = "\n") -> None:
         self.logs += sep.join(map(str, objects)) + end
 
     def flush(self, state: TradingState, orders: dict[Symbol, list[Order]]) -> None:
-        print(json.dumps({
+        output = json.dumps({
             "state": state,
             "orders": orders,
             "logs": self.logs,
-        }, cls=ProsperityEncoder, separators=(",", ":"), sort_keys=True))
+        }, cls=ProsperityEncoder, separators=(",", ":"), sort_keys=True)
+        if self.local:
+            self.local_logs[state.timestamp] = output
+        print(output)
 
         self.logs = ""
 
@@ -204,7 +211,7 @@ class StatArb(BaseStrategy):
         self.products = ('COCONUTS', 'PINA_COLADAS')
         self.target_pos = (gamma * limit[1], limit[1])
         self.data = {
-            'mid': [[], []],
+            'mid': [0.0, 0.0],
             'bid': [0.0, 0.0],
             'ask': [0.0, 0.0],
             'signal': 0
@@ -235,7 +242,7 @@ class StatArb(BaseStrategy):
             self.data['ask'][i] = max(depth1.sell_orders.keys())
             tb = max(depth1.buy_orders.keys())
             ta = min(depth1.sell_orders.keys())
-            self.data['mid'][i].append((tb + ta) / 2)
+            self.data['mid'][i] = (tb + ta) / 2
 
     def accumulate(self):
         self.calc_prices()
@@ -267,6 +274,12 @@ class RollLS(StatArb):
         super().__init__(0, 0, thresh, limit)
         self.window = window
         self.out = None
+        self.data = {
+            'mid': [[], []],
+            'bid': [0.0, 0.0],
+            'ask': [0.0, 0.0],
+            'signal': 0
+        }
 
     def accumulate(self):
         self.calc_prices()
@@ -308,16 +321,14 @@ class Kalman(StatArb):
 
 
 class Trader:
-    def __init__(self):
+    def __init__(self, local=False):
         Q = np.asarray([[4.58648333e-08, 0],
                         [0, 7.08011170e-16]])
-
         self.strategies = [  # GreatWall('PEARLS', 1.99, -1.99),
             # AvellanedaMM('BANANAS', 5, 0.01),
-            StatArb(1.549153, 2615.272303, )
+            StatArb(1.549153, 2615.272303, 40)
         ]
-
-        self.logger = Logger()
+        self.logger = Logger(local=local)
 
     def run(self, state: TradingState) -> Dict[str, List[Order]]:
         result = {}
@@ -328,5 +339,5 @@ class Trader:
             for product, orders in strategy_out.items():
                 result[product] = result.get(product, []) + orders
 
-        #self.logger.flush(state, result)
+        self.logger.flush(state, result)
         return result
