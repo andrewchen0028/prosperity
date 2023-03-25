@@ -204,7 +204,7 @@ class StatArb(BaseStrategy):
         self.products = ('COCONUTS', 'PINA_COLADAS')
         self.target_pos = (gamma * limit[1], limit[1])
         self.data = {
-            'mid': [0.0, 0.0],
+            'mid': [[], []],
             'bid': [0.0, 0.0],
             'ask': [0.0, 0.0],
             'signal': 0
@@ -228,22 +228,24 @@ class StatArb(BaseStrategy):
 
         self.orders[product].append(Order(product, price, order_size))
 
-    def accumulate(self):
+    def calc_prices(self):
         for i, product in enumerate(self.products):
             depth1 = self.state.order_depths[product]
             self.data['bid'][i] = min(depth1.buy_orders.keys())
             self.data['ask'][i] = max(depth1.sell_orders.keys())
             tb = max(depth1.buy_orders.keys())
             ta = min(depth1.sell_orders.keys())
-            self.data['mid'][i] = (tb + ta) / 2
+            self.data['mid'][i].append((tb + ta) / 2)
 
+    def accumulate(self):
+        self.calc_prices()
         self.data['signal'] = self.data['mid'][1] - self.gamma * self.data['mid'][0] - self.mu
 
     def strategy(self):
-        if self.current_steps == 0:
-            return
-
         signal = self.data['signal']
+
+        if signal is None:
+            return
 
         if signal > self.U:
             for i in range(2):
@@ -255,37 +257,54 @@ class StatArb(BaseStrategy):
                 target = (self.target_pos[0], -self.target_pos[1])[i]
                 self.place_order(i, -target)
 
-        else:
+        elif 0.1 * self.L < signal < 0.1 * self.U:
             for i in range(2):
                 self.place_order(i, 0)
+
+
+class RollLS(StatArb):
+    def __init__(self, window, thresh, limit=(600, 300)):
+        super().__init__(0, 0, thresh, limit)
+        self.window = window
+        self.out = None
+
+    def accumulate(self):
+        self.calc_prices()
+
+        if self.current_steps < self.window:
+            self.data['signal'] = None
+            return
+
+        X = np.vstack((np.asarray(self.data['mid'][0][-self.window:]),
+                       np.ones(self.window))).reshape(-1, 2)
+        Y = np.asarray(self.data['mid'][1][-self.window:]).reshape(-1, 1)
+        self.out = np.linalg.lstsq(X, Y, rcond=None)[0].flatten()
+        self.data['signal'] = self.data['mid'][1][-1] - self.out[0] * self.data['mid'][0][-1] - self.out[1]
+        print( '{}'.format(self.data['signal']))
+        self.target_pos = (self.out[0] * self.limit[1], self.limit[1])
 
 
 class Kalman(StatArb):
     def __init__(self, init_gamma, init_mu, q, r, thresh, window, limit=(600, 300)):
         super().__init__(init_gamma, init_mu, thresh, limit)
         self.out = (init_gamma, init_mu)
+        self.target_pos = (self.out[0] * self.limit[1], self.limit[1])
         init_params = np.array([init_gamma, init_mu]).reshape(2, 1)
         self.window = window
         self.kf = KalmanFilter(init_params, q, r)
 
     def accumulate(self):
-        for i, product in enumerate(self.products):
-            depth1 = self.state.order_depths[product]
-            self.data['bid'][i] = min(depth1.buy_orders.keys())
-            self.data['ask'][i] = max(depth1.sell_orders.keys())
-            tb = max(depth1.buy_orders.keys())
-            ta = min(depth1.sell_orders.keys())
-            self.data['mid'][i] = (tb + ta) / 2
+        self.calc_prices()
 
         if self.current_steps % self.window == 0:
             self.out = self.kf(self.data['mid'][1], self.data['mid'][0])
 
         self.data['signal'] = self.data['mid'][1] - self.out[0] * self.data['mid'][0] - self.out[1]
 
-        self.target_pos = (self.out[0] * self.limit[1], self.limit[1])
+        '''self.target_pos = (self.out[0] * self.limit[1], self.limit[1])
 
         if self.target_pos[0] > self.limit[0]:
-            self.target_pos = (self.limit[0], self.limit[1])
+            self.target_pos = (self.limit[0], self.limit[1])'''
 
 
 class Trader:
@@ -295,7 +314,7 @@ class Trader:
 
         self.strategies = [  # GreatWall('PEARLS', 1.99, -1.99),
             # AvellanedaMM('BANANAS', 5, 0.01),
-            Kalman(1.927451, -439.161182, Q, 2.97414069, 5, 30)
+            StatArb(1.549153, 2615.272303, )
         ]
 
         self.logger = Logger()
@@ -309,5 +328,5 @@ class Trader:
             for product, orders in strategy_out.items():
                 result[product] = result.get(product, []) + orders
 
-        # self.logger.flush(state, result)
+        #self.logger.flush(state, result)
         return result
