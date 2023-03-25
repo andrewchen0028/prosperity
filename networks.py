@@ -31,24 +31,59 @@ class Unsupervised(Dataset):
         return torch.from_numpy(x), torch.from_numpy(y)
 
 
-class GRUTrader(pl.LightningModule):
+class GRU(nn.Module):
     def __init__(self, num_features, window, forward_length, num_layers, hidden_dim=100, dropout=0.1):
         super().__init__()
-        self.save_hyperparameters()
-
         self.dropout = dropout
 
         self.norm = nn.InstanceNorm1d(num_features * window)
         self.gru = nn.GRU(num_features * window, hidden_dim, num_layers=num_layers, batch_first=True, dropout=dropout)
         self.to_out = nn.Linear(hidden_dim, forward_length)
 
-        self.h = torch.zeros(num_layers, hidden_dim).requires_grad_()
+        self.h = torch.zeros(num_layers, hidden_dim).cuda().requires_grad_()
 
     def forward(self, x):
         x, self.h = self.gru(x, self.h.detach())
         x = self.to_out(x)
         x = nnf.dropout(x, p=self.dropout)
         return nnf.tanh(x)
+
+
+class MLP(nn.Module):
+    def __init__(self, num_features, window, forward_length, num_layers, hidden_dim=50, dropout=0.1):
+        super().__init__()
+        self.dropout = dropout
+
+        layers = []
+        for _ in range(num_layers):
+            layers.append(nn.Linear(hidden_dim, hidden_dim))
+            layers.append(nn.Dropout(p=dropout))
+            layers.append(nn.ReLU())
+
+        self.to_hidden = nn.Linear(num_features * window, hidden_dim)
+        self.hidden = nn.Sequential(*layers)
+        self.to_out = nn.Linear(hidden_dim, forward_length)
+
+    def forward(self, x):
+        x = self.to_hidden(x)
+        x = self.hidden(x)
+        x = self.to_out(x)
+        return nnf.tanh(x)
+
+
+class NetTrader(pl.LightningModule):
+    def __init__(self, model_type, **model_params):
+        super().__init__()
+        self.save_hyperparameters()
+
+        if model_type == 'gru':
+            self.model = GRU(**model_params)
+
+        elif model_type == 'mlp':
+            self.model = MLP(**model_params)
+
+    def forward(self, x):
+        return self.model(x)
 
     def training_step(self, batch, batch_nb):
         x, r = batch
@@ -69,6 +104,8 @@ class GRUTrader(pl.LightningModule):
 
 
 if __name__ == '__main__':
+    torch.set_float32_matmul_precision('high')
+
     reader = PriceReader()
     trn = reader(['BERRIES'], [0, 1])
     val = reader(['BERRIES'], [2])
@@ -79,18 +116,22 @@ if __name__ == '__main__':
 
     train_set = Unsupervised(trn, window, features, forward_length)
     val_set = Unsupervised(val, window, features, forward_length)
-    tl = DataLoader(train_set, batch_size=32, num_workers=2, shuffle=False)
-    vl = DataLoader(val_set, batch_size=32, num_workers=2, shuffle=False)
+    tl = DataLoader(train_set, batch_size=32, num_workers=16, shuffle=False)
+    vl = DataLoader(val_set, batch_size=32, num_workers=16, shuffle=False)
 
-    model = GRUTrader(num_features=len(features),
-                      window=window,
-                      forward_length=forward_length,
-                      num_layers=1,
-                      hidden_dim=100,
-                      dropout=0.1)
+    model = NetTrader(
+        'mlp',
+        num_features=len(features),
+        window=window,
+        forward_length=forward_length,
+        num_layers=1,
+        hidden_dim=50,
+        dropout=0.1
+    )
 
     trainer = pl.Trainer(
-        accelerator='cpu',
+        accelerator='gpu',
+        devices=1,
         max_epochs=50,
         callbacks=[pl.callbacks.EarlyStopping(monitor='val_loss', patience=5)],
         fast_dev_run=False
