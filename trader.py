@@ -303,6 +303,9 @@ class BerryGPT(BaseStrategy):
         self.target_pos = out[0] * self.limit
 
     def strategy(self):
+        if self.current_steps < self.window:
+            return
+        
         self.place_order(0, self.target_pos)
 
 
