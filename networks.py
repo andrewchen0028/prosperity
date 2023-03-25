@@ -1,4 +1,5 @@
 from torch.utils.data import Dataset, DataLoader
+from utils import *
 import torch.nn.functional as nnf
 import lightning.pytorch as pl
 import torch.nn as nn
@@ -7,84 +8,86 @@ import numpy as np
 import torch
 
 
-def load_product(obj, product):
-    df = pd.read_csv(f'round2/ob_{obj}.csv', delimiter=';')
-    return df.loc[df['product'] == product]
+def av_return_loss(weights, returns):
+    return torch.mean(weights * returns) * 100
 
 
-class DL(Dataset):
-    def __init__(self, data, features, target, back_length, forward_length):
+class Unsupervised(Dataset):
+    def __init__(self, data, window, features, forward_length):
         self.data = data.loc[:, features].to_numpy().astype(np.float32)
-        self.target = data.loc[:, target].to_numpy().astype(np.float32)
-        self.back_length = back_length
+        self.window = window
+        self.features = data.loc[:, 'r'].to_numpy().astype(np.float32)
         self.forward_length = forward_length
 
     def __len__(self):
-        return len(self.data) - self.back_length - self.forward_length
+        return len(self.data) - self.window - self.forward_length - 1
 
     def __getitem__(self, index):
-        x = self.data[index: index + self.back_length].flatten()
-        y = self.target[index + self.back_length: index + self.back_length + self.forward_length].flatten()
-        return torch.nan_to_num(torch.from_numpy(x)), torch.nan_to_num(torch.from_numpy(y))
+        index += 1
+        x = self.data[index:index + self.window]
+        x = (x - x.mean(axis=0)) / x.std(axis=0)
+        x = x.flatten()
+        y = self.features[index + self.window: index + self.window + self.forward_length].flatten()
+        return torch.from_numpy(x), torch.from_numpy(y)
 
 
-class Net(pl.LightningModule):
-    def __init__(self, num_features, back_length, forward_length, hidden_dim=100, dropout=0.1):
+class GRUTrader(pl.LightningModule):
+    def __init__(self, num_features, window, forward_length, num_layers, hidden_dim=100, dropout=0.1):
         super().__init__()
         self.save_hyperparameters()
 
-        self.lin1 = nn.Linear(num_features * back_length, hidden_dim)
-        self.dropout1 = nn.Dropout(dropout)
-        self.lin2 = nn.Linear(hidden_dim, hidden_dim)
-        self.dropout2 = nn.Dropout(dropout)
-        self.lin3 = nn.Linear(hidden_dim, hidden_dim)
-        self.dropout3 = nn.Dropout(dropout)
-        self.lin4 = nn.Linear(hidden_dim, forward_length)
-        self.dropout4 = nn.Dropout(dropout)
+        self.dropout = dropout
+
+        self.norm = nn.InstanceNorm1d(num_features * window)
+        self.gru = nn.GRU(num_features * window, hidden_dim, num_layers=num_layers, batch_first=True, dropout=dropout)
+        self.to_out = nn.Linear(hidden_dim, forward_length)
+
+        self.h = torch.zeros(num_layers, hidden_dim).requires_grad_()
 
     def forward(self, x):
-        x = self.dropout1(self.lin1(x))
-        x = nnf.relu(x)
-        x = self.dropout2(self.lin2(x))
-        x = nnf.relu(x)
-        x = self.dropout3(self.lin3(x))
-        x = nnf.relu(x)
-        x = self.dropout4(self.lin4(x))
-        return x
+        x, self.h = self.gru(x, self.h.detach())
+        x = self.to_out(x)
+        x = nnf.dropout(x, p=self.dropout)
+        return nnf.tanh(x)
 
     def training_step(self, batch, batch_nb):
-        x, y = batch
-        y_hat = self(x)
-        loss = torch.nn.functional.mse_loss(y_hat, y)
-        self.log('train_loss', loss.item(), on_step=False, on_epoch=True, prog_bar=True)
+        x, r = batch
+        y = self(x)
+        loss = av_return_loss(y, r)
+        self.log('train_loss', loss.item(), on_step=True, on_epoch=True, prog_bar=True)
         return {'loss': loss}
 
     def validation_step(self, batch, batch_nb):
-        x, y = batch
-        y_hat = self(x)
-        loss = torch.nn.functional.mse_loss(y_hat, y)
+        x, r = batch
+        y = self(x)
+        loss = av_return_loss(y, r)
         self.log('val_loss', loss.item(), on_step=False, on_epoch=True, prog_bar=True)
         return {'val_loss': loss}
 
     def configure_optimizers(self):
-        return torch.optim.Adam(self.parameters(), lr=1e-3)
+        return torch.optim.Adam(self.parameters(), lr=1e-3, maximize=True)
 
 
 if __name__ == '__main__':
-    bnn_trn = load_product('train', 'BANANAS')
-    bnn_val = load_product('val', 'BANANAS')
-    features = ['lr']
-    target = ['lr']
-    back_length = 20
-    forward_length = 10
+    reader = PriceReader()
+    trn = reader(['BERRIES'], [0, 1])
+    val = reader(['BERRIES'], [2])
+    features = ['r', 'perc_time']
+    target = ['r']
+    window = 32
+    forward_length = 2
 
-    trainloader = DataLoader(DL(bnn_trn, features, target, back_length, forward_length), batch_size=64, num_workers=2,
-                             shuffle=True)
+    train_set = Unsupervised(trn, window, features, forward_length)
+    val_set = Unsupervised(val, window, features, forward_length)
+    tl = DataLoader(train_set, batch_size=32, num_workers=2, shuffle=False)
+    vl = DataLoader(val_set, batch_size=32, num_workers=2, shuffle=False)
 
-    valloader = DataLoader(DL(bnn_val, features, target, back_length, forward_length), batch_size=64, num_workers=2,
-                           shuffle=False)
-
-    model = Net(len(features), back_length, forward_length)
+    model = GRUTrader(num_features=len(features),
+                      window=window,
+                      forward_length=forward_length,
+                      num_layers=1,
+                      hidden_dim=100,
+                      dropout=0.1)
 
     trainer = pl.Trainer(
         accelerator='cpu',
@@ -93,4 +96,4 @@ if __name__ == '__main__':
         fast_dev_run=False
     )
 
-    trainer.fit(model, trainloader, valloader)
+    trainer.fit(model, tl, vl)

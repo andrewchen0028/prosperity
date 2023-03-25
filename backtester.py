@@ -302,7 +302,6 @@ def create_log_file(states: dict[int, TradingState], day, profits: dict[int, dic
                     f.write(f'{median_price};{profits[time][symbol]}\n')
 
 
-# Adjust accordingly the round and day to your needs
 if __name__ == "__main__":
     trader = Trader(True)
     simulate_alternative(3, 2, trader, False)

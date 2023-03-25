@@ -314,11 +314,6 @@ class Kalman(StatArb):
 
         self.data['signal'] = self.data['mid'][1] - self.out[0] * self.data['mid'][0] - self.out[1]
 
-        '''self.target_pos = (self.out[0] * self.limit[1], self.limit[1])
-
-        if self.target_pos[0] > self.limit[0]:
-            self.target_pos = (self.limit[0], self.limit[1])'''
-
 
 class Trader:
     def __init__(self, local=False):
