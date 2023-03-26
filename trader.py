@@ -37,7 +37,7 @@ class BerryModel:
         x = x @ self.hidden_weight + self.hidden_bias
         x = np.maximum(x, 0)
         x = x @ self.to_out_weight + self.to_out_bias
-        return x
+        return np.tanh(x)
 
 
 class Logger:
