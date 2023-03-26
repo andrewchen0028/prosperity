@@ -25,6 +25,7 @@ class Unsupervised(Dataset):
 
     def __getitem__(self, index):
         x = self.data[index:index + self.window]
+        print(x)
         x = (x - x.mean(axis=0)) / x.std(axis=0)
         x = x.flatten() + self.time[index:index + self.window].flatten()
         y = self.features[index + self.window: index + self.window + self.forward_length].flatten()
