@@ -26,6 +26,12 @@ class PriceReader:
 
     def calc_features(self, ret, length):
         ret['perc_time'] = list(np.linspace(0, 1, 10000)) * length
+        bids = ret.loc[:, ['bid_price_1', 'bid_price_2', 'bid_price_3']]
+        asks = ret.loc[:, ['ask_price_1', 'ask_price_2', 'ask_price_3']]
+        ret['mid_price'] = (np.nansum(bids, axis=1) + np.nansum(asks, axis=1)) / (
+            np.count_nonzero(~np.isnan(bids), axis=1) + np.count_nonzero(~np.isnan(asks), axis=1)
+        )
+
         ret['r'] = ret['mid_price'].pct_change()
         ret['r'] = ret['r'].fillna(0)
         return ret

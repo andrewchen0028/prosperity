@@ -39,7 +39,7 @@ class BerryModel:
         x = x @ self.to_out_weight + self.to_out_bias
         return np.tanh(x)
 
-
+    
 class Logger:
     def __init__(self) -> None:
         self.logs = ''
@@ -90,7 +90,7 @@ class BaseStrategy:
         self.orders[product].append(Order(product, price, order_size))
 
     def accumulate(self):
-        raise NotImplementedError
+        return
 
     def strategy(self):
         raise NotImplementedError
@@ -161,21 +161,21 @@ class AvellanedaMM(BaseStrategy):
 class GreatWall(BaseStrategy):
     def __init__(self, product, upper, lower, limit=20):
         super().__init__()
-        self.product = product
+        self.products = (product)
         self.limit = limit
         self.upper = upper + 10000
         self.lower = lower + 10000
 
     def strategy(self):
-        q = self.state.position.get(self.product, 0)
+        q = self.state.position.get(self.products[0], 0)
         bid_amount = self.limit - q
         ask_amount = -self.limit - q
 
         if bid_amount > 0:
-            self.orders[self.product].append(Order(self.product, self.lower, bid_amount))
+            self.orders[self.products[0]].append(Order(self.products[0], self.lower, bid_amount))
 
         if ask_amount < 0:
-            self.orders[self.product].append(Order(self.product, self.upper, ask_amount))
+            self.orders[self.products[0]].append(Order(self.products[0], self.upper, ask_amount))
 
 
 class StatArb(BaseStrategy):
@@ -282,7 +282,7 @@ class BerryGPT(BaseStrategy):
         super().__init__()
         self.limit = limit
 
-        self.model = BerryModel()
+        #self.model = BerryModel()
         self.window = 24
         self.products = ('BERRIES')
         self.times = np.linspace(0, 1, 10000)
@@ -291,11 +291,11 @@ class BerryGPT(BaseStrategy):
 
     def calc_prices(self):
         depth = self.state.order_depths['BERRIES']
-        self.data['bid'][0] = min(depth.buy_orders.keys())
-        self.data['ask'][0] = (depth.sell_orders.keys())
-        tb = max(depth.buy_orders.keys())
-        ta = min(depth.sell_orders.keys())
-        self.data['mid'][0].append((tb + ta) / 2)
+        bids = list(depth.buy_orders.keys())
+        asks = list(depth.sell_orders.keys())
+        self.data['bid'][0] = min(bids)
+        self.data['ask'][0] = max(asks)
+        self.data['mid'][0].append((sum(bids) + sum(asks)) / (len(bids) + len(asks)))
 
     def accumulate(self):
         self.calc_prices()
@@ -307,12 +307,14 @@ class BerryGPT(BaseStrategy):
         x = np.asarray(self.data['mid'][0][-window:])
         x = np.diff(x) / x[1:]
         x = (x - np.mean(x)) / np.std(x)
-        print(x)
-        time = self.times[-self.window:]
-        x += (time - np.mean(time)) / np.std(time)
+        x += self.times[-self.window:]
         out = self.model(x.astype(np.float16)).flatten()
+
+        if np.isnan(out[0]):
+            self.target_pos = 0
+            return
+
         self.target_pos = int(out[0] * self.limit)
-        print(self.target_pos)
 
     def strategy(self):
         if self.current_steps < self.window + 1:
@@ -325,10 +327,11 @@ class Trader:
     def __init__(self):
         Q = np.asarray([[4.58648333e-08, 0],
                         [0, 7.08011170e-16]])
-        self.strategies = [  # GreatWall('PEARLS', 1.99, -1.99),
+        self.strategies = [
+            GreatWall('PEARLS', 1.99, -1.99),
             # AvellanedaMM('BANANAS', 5, 0.01),
             #StatArb(1.549153, 2615.272303, 40)
-            BerryGPT()
+            #BerryGPT()
         ]
         self.logger = Logger()
 
@@ -339,7 +342,8 @@ class Trader:
             strategy_out = strategy(state)
 
             for product, orders in strategy_out.items():
-                result[product] = result.get(product, []) + orders
+                if len(orders):
+                    result[product] = result.get(product, []) + orders
 
-        #self.logger.flush(state, result)
+        self.logger.flush(state, result)
         return result
