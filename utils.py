@@ -1,3 +1,4 @@
+from io import BytesIO
 import pandas as pd
 import numpy as np
 
@@ -44,6 +45,12 @@ class PriceReader:
         return self.calc_features(ret, len(days))
 
 
-def load_trades(obj, product, round):
-    df = pd.read_csv(f'round{round}/trd_{obj}.csv', delimiter=';', index_col=0)
-    return df.loc[df['symbol'] == product]
+def array_to_bytes(x: np.ndarray) -> bytes:
+    np_bytes = BytesIO()
+    np.save(np_bytes, x, allow_pickle=True)
+    return np_bytes.getvalue()
+
+
+def bytes_to_array(b: bytes) -> np.ndarray:
+    np_bytes = BytesIO(b)
+    return np.load(np_bytes, allow_pickle=True)
