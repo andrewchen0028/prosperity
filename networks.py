@@ -14,19 +14,19 @@ def av_return_loss(weights, returns):
 
 class Unsupervised(Dataset):
     def __init__(self, data, window, features, forward_length):
-        self.data = data.loc[:, features].to_numpy().astype(np.float32)
         self.window = window
+        self.data = data.loc[:, features].to_numpy().astype(np.float32)
         self.features = data.loc[:, 'r'].to_numpy().astype(np.float32)
+        self.time = data.loc[:, 'perc_time'].to_numpy().astype(np.float32)
         self.forward_length = forward_length
 
     def __len__(self):
-        return len(self.data) - self.window - self.forward_length - 1
+        return len(self.data) - self.window - self.forward_length
 
     def __getitem__(self, index):
-        index += 1
         x = self.data[index:index + self.window]
         x = (x - x.mean(axis=0)) / x.std(axis=0)
-        x = x.flatten()
+        x = x.flatten() + self.time[index:index + self.window].flatten()
         y = self.features[index + self.window: index + self.window + self.forward_length].flatten()
         return torch.from_numpy(x), torch.from_numpy(y)
 
@@ -109,9 +109,9 @@ if __name__ == '__main__':
     reader = PriceReader()
     trn = reader(['BERRIES'], [0, 1])
     val = reader(['BERRIES'], [2])
-    features = ['r', 'perc_time']
+    features = ['r']
     target = ['r']
-    window = 32
+    window = 24
     forward_length = 2
 
     train_set = Unsupervised(trn, window, features, forward_length)
@@ -125,15 +125,23 @@ if __name__ == '__main__':
         window=window,
         forward_length=forward_length,
         num_layers=1,
-        hidden_dim=50,
+        hidden_dim=40,
         dropout=0.1
+    )
+
+    checkpoint = pl.callbacks.ModelCheckpoint(
+        monitor='val_loss',
+        dirpath='checkpoints',
+        mode='max',
+        save_top_k=1,
     )
 
     trainer = pl.Trainer(
         accelerator='gpu',
         devices=1,
         max_epochs=50,
-        callbacks=[pl.callbacks.EarlyStopping(monitor='val_loss', patience=5)],
+        callbacks=[pl.callbacks.EarlyStopping(monitor='val_loss', patience=3, mode='max'),
+                   checkpoint],
         fast_dev_run=False
     )
 

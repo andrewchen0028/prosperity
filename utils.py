@@ -26,6 +26,7 @@ class PriceReader:
     def calc_features(self, ret, length):
         ret['perc_time'] = list(np.linspace(0, 1, 10000)) * length
         ret['r'] = ret['mid_price'].pct_change()
+        ret['r'] = ret['r'].fillna(0)
         return ret
 
     def __call__(self, products, days):
