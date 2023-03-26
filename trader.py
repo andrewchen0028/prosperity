@@ -71,7 +71,7 @@ class Logger:
 class BaseStrategy:
     def __init__(self):
         self.orders = {}
-        self.products = ()
+        self.products = []
         self.state = None
         self.current_steps = 0
 
@@ -107,9 +107,6 @@ class BaseStrategy:
         raise NotImplementedError
 
     def __call__(self, state: TradingState) -> Dict[str, List[Order]]:
-        if self.current_steps == 0:
-            self.create_data_dict()
-
         self.state = state
         self.orders = {product: [] for product in self.products}
         self.accumulate()
@@ -119,40 +116,40 @@ class BaseStrategy:
 
 
 class AvellanedaMM(BaseStrategy):
-    def __init__(self, product: str, y: float, k: float, limit: int = 20, vol_window: int = 30):
+    def __init__(self, products: str, y: float, k: float, limit: int = 20, vol_window: int = 30):
         super().__init__()
-        self.product = product
+        self.products = [products]
         self.y = y
         self.k = k
         self.limit = limit
         self.vol_window = vol_window
 
+        self.create_data_dict()
         self.data = {
-            'bid': [],
-            'ask': [],
-            'mid_price': [],
             'log_return': [],
         }
 
-    def accumulate(self):
-        if self.product in self.state.order_depths.keys():
-            depth = self.state.order_depths[self.product]
-            self.data['bid'].append(min(depth.buy_orders.keys()))
-            self.data['ask'].append(max(depth.sell_orders.keys()))
-            self.data['mid_price'].append(
-                (self.data['bid'][-1] + self.data['ask'][-1]) / 2)
+    def calc_prices(self):
+        depth = self.state.order_depths[self.products[0]]
+        bids = list(depth.buy_orders.keys())
+        asks = list(depth.sell_orders.keys())
+        self.data['bid'][0] = min(bids)
+        self.data['ask'][0] = max(asks)
+        self.data['mid'][0].append((self.data['bid'][0] + self.data['ask'][0]) / 2)
 
-            if self.current_steps > 1:
-                self.data['log_return'].append(
-                    math.log(self.data['mid_price'][-1] / self.data['mid_price'][-2]))
+        if self.current_steps > 1:
+            self.data['log_return'].append(math.log(self.data['mid'][0][-1] / self.data['mid'][0][-2]))
+
+    def accumulate(self):
+        self.calc_prices()
 
     def strategy(self):
         if self.current_steps < self.vol_window + 1:
             return
 
         vol = np.std(self.data['log_return'][-self.vol_window:]) ** 2
-        s = self.data['mid_price'][-1]
-        q = self.state.position.get(self.product, 0)
+        s = self.data['mid'][-1]
+        q = self.state.position.get(self.products[0], 0)
         r = s - q * self.y * vol
         spread = self.y * vol + (2 / self.y) * math.log(1 + self.y / self.k)
         bid = r - spread / 2
@@ -161,18 +158,18 @@ class AvellanedaMM(BaseStrategy):
         ask_amount = -self.limit - q
 
         if bid_amount > 0:
-            self.orders[self.product].append(
-                Order(self.product, bid, bid_amount))
+            self.orders[self.products[0]].append(
+                Order(self.products[0], bid, bid_amount))
 
         if ask_amount < 0:
-            self.orders[self.product].append(
-                Order(self.product, ask, ask_amount))
+            self.orders[self.products[0]].append(
+                Order(self.products[0], ask, ask_amount))
 
 
 class GreatWall(BaseStrategy):
     def __init__(self, product, upper, lower, limit=20):
         super().__init__()
-        self.products = (product)
+        self.products = [product]
         self.limit = limit
         self.upper = upper + 10000
         self.lower = lower + 10000
@@ -289,14 +286,20 @@ class RollLS(StatArb):
 
 
 class BerryGPT(BaseStrategy):
-    def __init__(self, limit=250):
+    def __init__(self, y, k, vol_window, limit=250):
         super().__init__()
+        self.y = y
+        self.k = k
+        self.vol_window = vol_window
         self.limit = limit
 
-        #self.model = BerryModel()
+        self.model = BerryModel()
         self.window = 24
-        self.products = ('BERRIES')
-        self.times = np.linspace(0, 1, 10000)
+        self.products = ['BERRIES']
+        self.times = np.linspace(0, 1, 10000) / 10000
+
+        self.create_data_dict()
+        self.data['log_return'] = []
 
         self.target_pos = None
 
@@ -306,7 +309,10 @@ class BerryGPT(BaseStrategy):
         asks = list(depth.sell_orders.keys())
         self.data['bid'][0] = min(bids)
         self.data['ask'][0] = max(asks)
-        self.data['mid'][0].append((sum(bids) + sum(asks)) / (len(bids) + len(asks)))
+        self.data['mid'][0].append((self.data['bid'][0] + self.data['ask'][0]) / 2)
+
+        if self.current_steps > 1:
+            self.data['log_return'].append(math.log(self.data['mid'][0][-1] / self.data['mid'][0][-2]))
 
     def accumulate(self):
         self.calc_prices()
@@ -322,16 +328,32 @@ class BerryGPT(BaseStrategy):
         out = self.model(x.astype(np.float16)).flatten()
 
         if np.isnan(out[0]):
-            self.target_pos = 0
+            self.target_pos = None
             return
 
         self.target_pos = int(out[0] * self.limit)
 
     def strategy(self):
-        if self.current_steps < self.window + 1:
+        if self.current_steps < self.window + 1 or self.target_pos is None:
             return
 
-        self.place_order(0, self.target_pos)
+        vol = np.std(self.data['log_return'][-self.vol_window:]) ** 2
+        s = self.data['mid'][0][-1]
+        q = self.state.position.get(self.products[0], 0)
+        r = s - self.target_pos * self.y * vol
+        spread = self.y * vol + (2 / self.y) * math.log(1 + self.y / self.k)
+        bid = r - spread / 2
+        ask = r + spread / 2
+        bid_amount = self.limit - q
+        ask_amount = -self.limit - q
+
+        if bid_amount > 0:
+            self.orders[self.products[0]].append(
+                Order(self.products[0], bid, bid_amount))
+
+        if ask_amount < 0:
+            self.orders[self.products[0]].append(
+                Order(self.products[0], ask, ask_amount))
 
 
 class Trader:
@@ -340,9 +362,8 @@ class Trader:
                         [0, 7.08011170e-16]])
         self.strategies = [
             GreatWall('PEARLS', 1.99, -1.99),
-            # AvellanedaMM('BANANAS', 5, 0.01),
-            #StatArb(1.549153, 2615.272303, 40)
-            #BerryGPT()
+            AvellanedaMM('BANANAS', 5, 0.01),
+            BerryGPT(10, 0.05, 0)
         ]
         self.logger = Logger(local)
 

@@ -312,8 +312,8 @@ def create_log_file(states: dict[int, TradingState], day, profits: dict[int, dic
 # Adjust accordingly the round and day to your needs
 if __name__ == "__main__":
     trader = Trader(True)
-    inp = int(input("Input a timestamp to end (blank for 999000): ") or 999000)
-    rnd = int(input("Input a round (blank for 3): ") or 3)
-    day = int(input("Input a day (blank for random): ") or random.randint(0, 2))
+    inp = 999000
+    rnd = 3
+    day = 2
     print(f"Running simulation on round {rnd} day {day} for time {inp}")
     simulate_alternative(rnd, day, trader, False, inp)

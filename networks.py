@@ -8,8 +8,11 @@ import numpy as np
 import torch
 
 
-def av_return_loss(weights, returns):
-    return torch.mean(weights * returns) * 100
+def av_return_loss(weights, returns, penalty=0.001):
+    ret = torch.prod(weights * returns * 100, dim=-1)
+    penalty = torch.diff(weights, dim=-1) * penalty
+    ret -= torch.sum(penalty ** 2, dim=1)
+    return torch.mean(ret)
 
 
 class Unsupervised(Dataset):
@@ -25,7 +28,6 @@ class Unsupervised(Dataset):
 
     def __getitem__(self, index):
         x = self.data[index:index + self.window]
-        print(x)
         x = (x - x.mean(axis=0)) / x.std(axis=0)
         x = x.flatten() + self.time[index:index + self.window].flatten()
         y = self.features[index + self.window: index + self.window + self.forward_length].flatten()
@@ -113,7 +115,7 @@ if __name__ == '__main__':
     features = ['r']
     target = ['r']
     window = 24
-    forward_length = 2
+    forward_length = 10
 
     train_set = Unsupervised(trn, window, features, forward_length)
     val_set = Unsupervised(val, window, features, forward_length)
