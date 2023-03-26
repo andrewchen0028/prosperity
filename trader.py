@@ -68,6 +68,7 @@ class BaseStrategy:
         self.data = {
             'ask': [0 for _ in range(len(self.products))],
             'bid': [0 for _ in range(len(self.products))],
+            'mid_price': [[] for _ in range(len(self.products))],
         }
 
     def place_order(self, i, target_pos):
@@ -285,7 +286,6 @@ class BerryGPT(BaseStrategy):
         self.window = 32
         self.products = ('BERRIES')
         self.times = np.linspace(0, 1, 10000).reshape(-1, 1)
-        self.data['mid'] = []
 
         self.target_pos = None
 
@@ -295,7 +295,7 @@ class BerryGPT(BaseStrategy):
         self.data['ask'][0] = (depth.sell_orders.keys())
         tb = max(depth.buy_orders.keys())
         ta = min(depth.sell_orders.keys())
-        self.data['mid'].append()(tb + ta) / 2
+        self.data['mid'][0].append((tb + ta) / 2)
 
     def accumulate(self):
         self.calc_prices()
