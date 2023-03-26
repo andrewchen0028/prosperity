@@ -37,31 +37,24 @@ class BerryModel:
         x = x @ self.hidden_weight + self.hidden_bias
         x = np.maximum(x, 0)
         x = x @ self.to_out_weight + self.to_out_bias
-        return x
+        return np.tanh(x)
 
 
 class Logger:
-    local: True
-    local_logs: dict[int, str] = {}
+    def __init__(self) -> None:
+        self.logs = ''
 
-    def __init__(self, local=False) -> None:
-        self.logs = ""
-        self.local = local
-
-    def print(self, *objects: Any, sep: str = " ", end: str = "\n") -> None:
+    def print(self, *objects: Any, sep: str = ' ', end: str = '\n') -> None:
         self.logs += sep.join(map(str, objects)) + end
 
     def flush(self, state: TradingState, orders: dict[Symbol, list[Order]]) -> None:
-        output = json.dumps({
-            "state": state,
-            "orders": orders,
-            "logs": self.logs,
-        }, cls=ProsperityEncoder, separators=(",", ":"), sort_keys=True)
-        if self.local:
-            self.local_logs[state.timestamp] = output
-        print(output)
+        print(json.dumps({
+            'state': state,
+            'orders': orders,
+            'logs': self.logs,
+        }, cls=ProsperityEncoder, separators=(',', ':'), sort_keys=True))
 
-        self.logs = ""
+        self.logs = ''
 
 
 class BaseStrategy:
@@ -75,7 +68,7 @@ class BaseStrategy:
         self.data = {
             'ask': [0 for _ in range(len(self.products))],
             'bid': [0 for _ in range(len(self.products))],
-            'mid_price': [[] for _ in range(len(self.products))],
+            'mid': [[] for _ in range(len(self.products))],
         }
 
     def place_order(self, i, target_pos):
@@ -290,9 +283,9 @@ class BerryGPT(BaseStrategy):
         self.limit = limit
 
         self.model = BerryModel()
-        self.window = 32
+        self.window = 24
         self.products = ('BERRIES')
-        self.times = np.linspace(0, 1, 10000).reshape(-1, 1)
+        self.times = np.linspace(0, 1, 10000)
 
         self.target_pos = None
 
@@ -310,11 +303,12 @@ class BerryGPT(BaseStrategy):
         if self.current_steps < self.window:
             return
 
-        x = np.asarray(self.data['mid'][-self.window:])
+        x = np.asarray(self.data['mid'][0][-self.window:])
         time = self.times[-self.window:]
         x += (time - np.mean(time)) / np.std(time)
         out = self.model(x.astype(np.float16)).flatten()
         self.target_pos = out[0] * self.limit
+        print(self.target_pos)
 
     def strategy(self):
         if self.current_steps < self.window:
@@ -324,7 +318,7 @@ class BerryGPT(BaseStrategy):
 
 
 class Trader:
-    def __init__(self, local=False):
+    def __init__(self):
         Q = np.asarray([[4.58648333e-08, 0],
                         [0, 7.08011170e-16]])
         self.strategies = [  # GreatWall('PEARLS', 1.99, -1.99),
@@ -332,7 +326,7 @@ class Trader:
             #StatArb(1.549153, 2615.272303, 40)
             BerryGPT()
         ]
-        self.logger = Logger(local=local)
+        self.logger = Logger()
 
     def run(self, state: TradingState) -> Dict[str, List[Order]]:
         result = {}
@@ -343,5 +337,5 @@ class Trader:
             for product, orders in strategy_out.items():
                 result[product] = result.get(product, []) + orders
 
-        self.logger.flush(state, result)
+        #self.logger.flush(state, result)
         return result
