@@ -41,20 +41,31 @@ class BerryModel:
 
     
 class Logger:
-    def __init__(self) -> None:
-        self.logs = ''
+    # Set this to true, if u want to create
+    # local logs
+    local: bool
+    # this is used as a buffer for logs
+    # instead of stdout
+    local_logs: dict[int, str] = {}
 
-    def print(self, *objects: Any, sep: str = ' ', end: str = '\n') -> None:
+    def __init__(self, local=False) -> None:
+        self.logs = ""
+        self.local = local
+
+    def print(self, *objects: Any, sep: str = " ", end: str = "\n") -> None:
         self.logs += sep.join(map(str, objects)) + end
 
     def flush(self, state: TradingState, orders: dict[Symbol, list[Order]]) -> None:
-        print(json.dumps({
-            'state': state,
-            'orders': orders,
-            'logs': self.logs,
-        }, cls=ProsperityEncoder, separators=(',', ':'), sort_keys=True))
+        output = json.dumps({
+            "state": state,
+            "orders": orders,
+            "logs": self.logs,
+        }, cls=ProsperityEncoder, separators=(",", ":"), sort_keys=True)
+        if self.local:
+            self.local_logs[state.timestamp] = output
+        print(output)
 
-        self.logs = ''
+        self.logs = ""
 
 
 class BaseStrategy:
@@ -324,7 +335,7 @@ class BerryGPT(BaseStrategy):
 
 
 class Trader:
-    def __init__(self):
+    def __init__(self, local=False):
         Q = np.asarray([[4.58648333e-08, 0],
                         [0, 7.08011170e-16]])
         self.strategies = [
@@ -333,7 +344,7 @@ class Trader:
             #StatArb(1.549153, 2615.272303, 40)
             #BerryGPT()
         ]
-        self.logger = Logger()
+        self.logger = Logger(local)
 
     def run(self, state: TradingState) -> Dict[str, List[Order]]:
         result = {}
