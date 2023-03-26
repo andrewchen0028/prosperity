@@ -299,19 +299,23 @@ class BerryGPT(BaseStrategy):
 
     def accumulate(self):
         self.calc_prices()
+        window = self.window + 1
 
-        if self.current_steps < self.window:
+        if self.current_steps < window:
             return
 
-        x = np.asarray(self.data['mid'][0][-self.window:])
+        x = np.asarray(self.data['mid'][0][-window:])
+        x = np.diff(x) / x[1:]
+        x = (x - np.mean(x)) / np.std(x)
+        print(x)
         time = self.times[-self.window:]
         x += (time - np.mean(time)) / np.std(time)
         out = self.model(x.astype(np.float16)).flatten()
-        self.target_pos = out[0] * self.limit
+        self.target_pos = int(out[0] * self.limit)
         print(self.target_pos)
 
     def strategy(self):
-        if self.current_steps < self.window:
+        if self.current_steps < self.window + 1:
             return
 
         self.place_order(0, self.target_pos)
