@@ -39,7 +39,7 @@ class BerryModel:
         x = x @ self.to_out_weight + self.to_out_bias
         return np.tanh(x)
 
-    
+
 class Logger:
     # Set this to true, if u want to create
     # local logs
@@ -135,10 +135,12 @@ class AvellanedaMM(BaseStrategy):
         asks = list(depth.sell_orders.keys())
         self.data['bid'][0] = min(bids)
         self.data['ask'][0] = max(asks)
-        self.data['mid'][0].append((self.data['bid'][0] + self.data['ask'][0]) / 2)
+        self.data['mid'][0].append(
+            (self.data['bid'][0] + self.data['ask'][0]) / 2)
 
         if self.current_steps > 1:
-            self.data['log_return'].append(math.log(self.data['mid'][0][-1] / self.data['mid'][0][-2]))
+            self.data['log_return'].append(
+                math.log(self.data['mid'][0][-1] / self.data['mid'][0][-2]))
 
     def accumulate(self):
         self.calc_prices()
@@ -180,10 +182,12 @@ class GreatWall(BaseStrategy):
         ask_amount = -self.limit - q
 
         if bid_amount > 0:
-            self.orders[self.products[0]].append(Order(self.products[0], self.lower, bid_amount))
+            self.orders[self.products[0]].append(
+                Order(self.products[0], self.lower, bid_amount))
 
         if ask_amount < 0:
-            self.orders[self.products[0]].append(Order(self.products[0], self.upper, ask_amount))
+            self.orders[self.products[0]].append(
+                Order(self.products[0], self.upper, ask_amount))
 
 
 class StatArb(BaseStrategy):
@@ -234,7 +238,8 @@ class StatArb(BaseStrategy):
 
     def accumulate(self):
         self.calc_prices()
-        self.data['signal'] = self.data['mid'][1] - self.gamma * self.data['mid'][0] - self.mu
+        self.data['signal'] = self.data['mid'][1] - \
+            self.gamma * self.data['mid'][0] - self.mu
 
     def strategy(self):
         signal = self.data['signal']
@@ -280,7 +285,8 @@ class RollLS(StatArb):
                        np.ones(self.window))).reshape(-1, 2)
         Y = np.asarray(self.data['mid'][1][-self.window:]).reshape(-1, 1)
         self.out = np.linalg.lstsq(X, Y, rcond=None)[0].flatten()
-        self.data['signal'] = self.data['mid'][1][-1] - self.out[0] * self.data['mid'][0][-1] - self.out[1]
+        self.data['signal'] = self.data['mid'][1][-1] - \
+            self.out[0] * self.data['mid'][0][-1] - self.out[1]
         print('{}'.format(self.data['signal']))
         self.target_pos = (self.out[0] * self.limit[1], self.limit[1])
 
@@ -309,10 +315,12 @@ class BerryGPT(BaseStrategy):
         asks = list(depth.sell_orders.keys())
         self.data['bid'][0] = min(bids)
         self.data['ask'][0] = max(asks)
-        self.data['mid'][0].append((self.data['bid'][0] + self.data['ask'][0]) / 2)
+        self.data['mid'][0].append(
+            (self.data['bid'][0] + self.data['ask'][0]) / 2)
 
         if self.current_steps > 1:
-            self.data['log_return'].append(math.log(self.data['mid'][0][-1] / self.data['mid'][0][-2]))
+            self.data['log_return'].append(
+                math.log(self.data['mid'][0][-1] / self.data['mid'][0][-2]))
 
     def accumulate(self):
         self.calc_prices()
@@ -356,6 +364,79 @@ class BerryGPT(BaseStrategy):
                 Order(self.products[0], ask, ask_amount))
 
 
+class Shipwreck(BaseStrategy):
+    def __init__(self, products, feature, limit=50, stop_loss=0.2, threshold=3, window=50):
+        super().__init__()
+        self.products = products
+        self.feature = feature
+        self.feature_history = []
+        self.limit = limit
+        self.stop_loss = stop_loss
+        self.threshold = threshold
+        self.window = window
+        self.entry = 0
+        self.highOrLow = 0
+
+    def calc_prices(self):
+        depth = self.state.order_depths['DIVING_GEAR']
+        self.data['bid'][0] = min(depth.buy_orders.keys())
+        self.data['ask'][0] = max(depth.sell_orders.keys())
+        tb = max(depth.buy_orders.keys())
+        ta = min(depth.sell_orders.keys())
+        self.data['mid'][0].append((tb + ta) / 2)
+
+    def accumulate(self):
+        self.calc_prices()
+
+        # append new feature data to history
+        self.feature_history.append(self.state.observations[self.feature])
+        if len(self.feature_history) > self.window:
+            self.feature_history.pop(0)
+
+        if self.state.position.get(self.products[0], 0) > 0:
+            # long position open, update high if necessary
+            if self.data['mid'][0][-1] > self.highOrLow or self.highOrLow == 0:
+                self.highOrLow = self.data['mid'][0][-1]
+        elif self.state.position.get(self.products[0], 0) < 0:
+            # short position open, update low if necessary
+            if self.data['mid'][0][-1] < self.highOrLow or self.highOrLow == 0:
+                self.highOrLow = self.data['mid'][0][-1]
+
+    def strategy(self):
+        # OPENING LOGIC: If no positions open, check for spikes
+        # TODO: check this logic, probably wrong
+        if self.state.position.get(self.products[0], 0) == 0 and len(self.feature_history) > 4:
+            # compute latest and running mean diffs. exclude last because it may be a spike
+            diffs = [self.feature_history[i] - self.feature_history[i - 1]
+                     for i in range(1, len(self.feature_history) - 1)]
+            running_mean_diff = abs(sum(diffs)) / (len(diffs) - 2)
+            latest_diff = self.feature_history[-1] - self.feature_history[-2]
+
+            # positive/negative spike => open long/short
+            if latest_diff > self.threshold * running_mean_diff:
+                self.place_order(i=0, target_pos=self.limit)
+                self.entry = self.data['mid'][0][-1]
+            elif latest_diff < -self.threshold * running_mean_diff:
+                self.place_order(i=0, target_pos=-self.limit)
+                self.entry = self.data['mid'][0][-1]
+
+        # CLOSING LOGIC: If position open, check for stop loss hit
+        else:
+            if self.state.position.get(self.products[0], 0) > 0:
+                # we are long
+                lossMag = self.highOrLow - self.data['mid'][0][-1]
+                lossPct = lossMag / self.highOrLow
+            elif self.state.position.get(self.products[0], 0) < 0:
+                # we are short
+                lossMag = self.data['mid'][0][-1] - self.highOrLow
+                lossPct = lossMag / self.highOrLow
+
+            # close position if stop loss is reached
+            if lossPct > self.stop_loss:
+                self.place_order(i=0, target_pos=0)
+                self.entry = self.highOrLow = 0
+
+
 class Trader:
     def __init__(self, local=False):
         Q = np.asarray([[4.58648333e-08, 0],
@@ -363,6 +444,7 @@ class Trader:
         self.strategies = [
             GreatWall('PEARLS', 1.99, -1.99),
             AvellanedaMM('BANANAS', 5, 0.01),
+            Shipwreck('DIVING_GEAR', 'DOLPHIN_SIGHTINGS'),
             BerryGPT(10, 0.05, 0)
         ]
         self.logger = Logger(local)
