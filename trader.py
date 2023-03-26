@@ -61,9 +61,14 @@ class BaseStrategy:
     def __init__(self):
         self.orders = {}
         self.products = ()
-        self.data = {}
         self.state = None
         self.current_steps = 0
+
+    def create_data_dict(self):
+        self.data = {
+            'ask': [0 for _ in range(len(self.products))],
+            'bid': [0 for _ in range(len(self.products))],
+        }
 
     def place_order(self, i, target_pos):
         product = self.products[i]
@@ -90,6 +95,9 @@ class BaseStrategy:
         raise NotImplementedError
 
     def __call__(self, state: TradingState) -> Dict[str, List[Order]]:
+        if self.current_steps == 0:
+            self.create_data_dict()
+
         self.state = state
         self.orders = {product: [] for product in self.products}
         self.accumulate()
@@ -277,16 +285,17 @@ class BerryGPT(BaseStrategy):
         self.window = 32
         self.products = ('BERRIES')
         self.times = np.linspace(0, 1, 10000).reshape(-1, 1)
+        self.data['mid'] = []
 
         self.target_pos = None
 
     def calc_prices(self):
         depth = self.state.order_depths['BERRIES']
-        self.data['bid'] = min(depth.buy_orders.keys())
-        self.data['ask'] = max(depth.sell_orders.keys())
+        self.data['bid'][0] = min(depth.buy_orders.keys())
+        self.data['ask'][0] = (depth.sell_orders.keys())
         tb = max(depth.buy_orders.keys())
         ta = min(depth.sell_orders.keys())
-        self.data['mid'] = self.data['mid'].get('mid', []).append()(tb + ta) / 2
+        self.data['mid'].append()(tb + ta) / 2
 
     def accumulate(self):
         self.calc_prices()
